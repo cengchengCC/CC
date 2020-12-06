@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/CC/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/CC/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/CC/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/CC/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/CC/css/main.css">
+
+
+<link rel="stylesheet" href="/CC/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cengchengcc.github.io","root":"/CC/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="行为型设计模式用于不同对象之间职责划分或算法抽象，行为型设计模式不仅仅涉及类和对象，还涉及类或对象之间的交流模式并加以实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="行为型设计模式">
+<meta property="og:url" content="https://cengchengcc.github.io/CC/posts/3eb267f6.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="行为型设计模式用于不同对象之间职责划分或算法抽象，行为型设计模式不仅仅涉及类和对象，还涉及类或对象之间的交流模式并加以实现">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/4327841-808fd628fd26a2a8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080/format/webp">
+<meta property="og:image" content="https://img.shenyujie.cc/2019-2-9-Command-Pattern.png">
+<meta property="article:published_time" content="2020-07-29T13:32:43.000Z">
+<meta property="article:modified_time" content="2020-12-06T14:23:57.425Z">
+<meta property="article:author" content="CC">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/4327841-808fd628fd26a2a8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080/format/webp">
+
+<link rel="canonical" href="https://cengchengcc.github.io/CC/posts/3eb267f6.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>行为型设计模式 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/CC/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/CC/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/CC/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/CC/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/CC/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/CC/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/CC/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/CC/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/CC/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/cengchengCC/CC" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://cengchengcc.github.io/CC/posts/3eb267f6.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/CC/images/avatar.gif">
+      <meta itemprop="name" content="CC">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          行为型设计模式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-29 21:32:43" itemprop="dateCreated datePublished" datetime="2020-07-29T21:32:43+08:00">2020-07-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-06 22:23:57" itemprop="dateModified" datetime="2020-12-06T22:23:57+08:00">2020-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/CC/categories/JS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">JS设计模式</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>行为型设计模式用于不同对象之间职责划分或算法抽象，行为型设计模式不仅仅涉及类和对象，还涉及类或对象之间的交流模式并加以实现<a id="more"></a></p>
+<h2 id="设计者模式"><a href="#设计者模式" class="headerlink" title="设计者模式"></a>设计者模式</h2><p>观察者模式（Observer）：又被称作发布-订阅者模式或消息机制，定义了一种对象间的一种一对多的依赖关系，解决了主体对象与观察者之间功能的耦合。以便一个对象的状态发生变化时，所有依赖于它的对象都得到通知并自动刷新；</p>
+<p>应用场景<br>当用户在网页执行一些操作（如点击）后就需要执行一些预定的事件（如表单提交、跳转页面）</p>
+<p>优点：在发布者和订阅者间耦合性降低<br>缺点：弱化了对象间的关系，不利于代码的维护和理解。</p>
+<p>简单实现</p>
+<p>观察者模式最主要的作用是解决类或对象之间的耦合，解耦两个相互依赖的对象，使其依赖于观察者的消息机制。这样对于任意一个订阅者对象来说，其他订阅者对象的改变不会影响到自身。对于每一个订阅者来说，其自身既可以是消息的发出者也可以是消息的执行者，这都依赖于调用观察者对象的三种方法（订阅消息，注销消息，发布消息）中的哪一种。观察者模式可以用于模块间通讯，订阅用户的事件、状态，触发执行相应的逻辑处理。</p>
+<blockquote><ul>
+<li>首先要指定发布者；</li>
+<li>然后给发布者添加一个缓存列表，用于存放回调函数以便通知订阅者；</li>
+<li>最后发布消息的时候，发布者会遍历这个缓存列表，依次触发里面存放的订阅者回调函数，还可以往回调函数里填入一些参数，订阅者可以接收这些参数。</li>
+</ul>
+</blockquote>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> event = &#123;&#125;;    <span class="comment">//定义发布者</span></span><br><span class="line">event.list = [];    <span class="comment">// 缓存列表，存放订阅者的回调函数</span></span><br><span class="line">event.listen = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;    <span class="comment">// 增加订阅者</span></span><br><span class="line">    event.list.push(fn);    <span class="comment">// 订阅的消息添加进缓存列表</span></span><br><span class="line">&#125;</span><br><span class="line">event.trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     <span class="comment">//发布消息</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,fn; fn = <span class="built_in">this</span>.list[i++];) &#123;</span><br><span class="line">        fn.apply(<span class="built_in">this</span>,<span class="built_in">arguments</span>);    <span class="comment">// arguments 是发布消息时带上的参数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> click = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     <span class="comment">// click订阅消息</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;event：click&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> hover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;      <span class="comment">// hover订阅消息</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;event：hover&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">event.listen(click);</span><br><span class="line">event.listen(hover);</span><br><span class="line">event.trigger();    <span class="comment">//打印：‘event：click’&#x27;event：hover&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>实际中有必要增加一个标示<code>key</code>，让订阅者只订阅自己感兴趣的消息。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Event = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> list = &#123;&#125;,</span><br><span class="line">        listen,</span><br><span class="line">        trigger,</span><br><span class="line">        remove;</span><br><span class="line">    listen = <span class="function"><span class="keyword">function</span>(<span class="params">key,fn</span>)</span>&#123;</span><br><span class="line">        list[key] = list[key]||[];</span><br><span class="line">        list[key].push(fn);</span><br><span class="line">    &#125;;</span><br><span class="line">    trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> key = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>),</span><br><span class="line">            fns = list[key];</span><br><span class="line">        <span class="keyword">if</span>(!fns || fns.length === <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = fns[i++];) &#123;</span><br><span class="line">            fn.apply(<span class="built_in">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    remove = <span class="function"><span class="keyword">function</span>(<span class="params">key,fn</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> fns = list[key];</span><br><span class="line">        <span class="keyword">if</span>(!fns) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!fn) &#123;</span><br><span class="line">            fns &amp;&amp; (fns.length = <span class="number">0</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = fns.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">                <span class="keyword">var</span> _fn = fns[i];</span><br><span class="line">                <span class="keyword">if</span>(_fn === fn) &#123;</span><br><span class="line">                    fns.splice(i,<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        listen: listen,</span><br><span class="line">        trigger: trigger,</span><br><span class="line">        remove: remove</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">Event.listen(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">type</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;event: &#x27;</span> + type +<span class="string">&#x27; click&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Event.trigger(<span class="string">&#x27;click&#x27;</span> , <span class="string">&#x27;button&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Event)</span><br><span class="line"><span class="comment">//打印 &#x27;event: button click&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="原型Prototype实现观察者"><a href="#原型Prototype实现观察者" class="headerlink" title="原型Prototype实现观察者"></a>原型Prototype实现观察者</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 状态模式</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">状态模式（State）：当一个对象的内部状态发生改变时，会导致其行为的改变，这看起来像是改变了对象。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">在下载东西，通常就会有好几个状态，比如准备状态（ReadyState）、下载状态（DownloadingState）、暂停状态（DownloadPausedState）、下载完毕状态（DownloadedState）、失败状态（DownloadFailedState），也就是说在每个状态都只可以做当前状态才可以做的事情，而不能做其它状态能做的事儿。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">由于State模式描述了下载（Download）如何在每一种状态下表现出不同的行为。这一模式的关键思想就是引入了一个叫做State的抽象类（或JS里的函数）来表示下载状态，State函数（作为原型）为每个状态的子类（继承函数）声明了一些公共接口。其每个继承函数实现与特定状态相关的行为，比如DownloadingState和DownloadedState分别实现了正在下载和下载完毕的行为。这些行为可以通过Download来来维护。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="keyword">var</span> State=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">State.prototype.download=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;reload&quot;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">State.prototype.pause=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;Pause&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">State.prototype.fail=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;Fail&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">State.prototype.finish = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;Finish&quot;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h2><p>策略模式（Strategy）：将定义的一组算法封装起来，使其相互之间可以替换。封装的算法具有一定独立性，不会随客户端变化而变化。</p>
+<p>{ quoteblock }<br>本质上是将算法的使用和算法的实现分离开，也就是将不变的部分与变化的部分完全隔开</p>
+<ul>
+<li>策略类：通过策略类预先定好具体的算法</li>
+<li>环境类（Context）:用于接受客户的请求，然后根据该请求去策略类中找到合适的进行处理<br>{ endquoteblock }</li>
+</ul>
+<p>例如jQuery动画时的缓冲函数：让一个div运动起来，通过对jQuery的animate动画传入不同运动算法就可以实现两种不同的运动曲线。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　$(<span class="string">&#x27;div&#x27;</span>).animate( &#123;width：<span class="string">&#x27;200px&#x27;</span>&#125;, <span class="number">1000</span>, <span class="string">&#x27;linear&#x27;</span> )；</span><br><span class="line">　$(<span class="string">&#x27;div&#x27;</span>).animate( &#123;width：<span class="string">&#x27;200px&#x27;</span>&#125;, <span class="number">1000</span>, <span class="string">&#x27;swing&#x27;</span> )；</span><br></pre></td></tr></table></figure>
+
+<p>例如表单验证(本例有争议，参考链接一中评论较有意思，本例并不算纯正的策略模式)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> validator=&#123;</span><br><span class="line">    types:&#123;&#125;,</span><br><span class="line">    message:[],</span><br><span class="line">    config:&#123;&#125;,</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> i,msg,type,result_ok,checker;</span><br><span class="line">        <span class="built_in">this</span>.messages=[]</span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> data)&#123;</span><br><span class="line">            <span class="keyword">if</span>(data.hasOwnProperty(i))&#123;</span><br><span class="line">                type=<span class="built_in">this</span>.config[i];</span><br><span class="line">                checker=<span class="built_in">this</span>.types[type];</span><br><span class="line">                <span class="keyword">if</span>(!type)&#123;</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(!checker)&#123;</span><br><span class="line">                    <span class="keyword">throw</span> &#123;</span><br><span class="line">                        name:<span class="string">&quot;ValidationError&quot;</span>,</span><br><span class="line">                        message:<span class="string">&quot;No handler to validate type &quot;</span> +type</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                result_ok=checker.validate(data[i])</span><br><span class="line">                <span class="keyword">if</span>(!result_ok)&#123;</span><br><span class="line">                    msg=<span class="string">&quot;Invalid value for *&quot;</span>+i+<span class="string">&quot;*,&quot;</span>+checker.instructions;</span><br><span class="line">                    <span class="built_in">this</span>.messages.push(msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    hasErrors:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.messages.length!==<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 验证给定的值是否不为空</span></span><br><span class="line">validator.types.isNonEmpty=&#123;</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value !==<span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions:<span class="string">&quot;传入的数值不能为空&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 验证给定的值是否是数字</span></span><br><span class="line">validator.types.isNumber=&#123;</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !<span class="built_in">isNaN</span>(value)</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions:<span class="string">&quot;传入的值只能为数字&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 验证给定的值是否只是字母或数字</span></span><br><span class="line">validator.types.isAlphaNum=&#123;</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !<span class="regexp">/[^a-z0-9]/i</span>.test(value);</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions:<span class="string">&quot;传入值只能包括字母和数字，不能包括特殊字符&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">    first_name: <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    last_name: <span class="string">&quot;Xu&quot;</span>,</span><br><span class="line">    age: <span class="string">&quot;unknown&quot;</span>,</span><br><span class="line">    username: <span class="string">&quot;TomXu&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">validator.config = &#123;</span><br><span class="line">    first_name: <span class="string">&#x27;isNonEmpty&#x27;</span>,</span><br><span class="line">    age: <span class="string">&#x27;isNumber&#x27;</span>,</span><br><span class="line">    username: <span class="string">&#x27;isAlphaNum&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">validator.validate(data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(validator.hasErrors())&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(validator.messages.join(<span class="string">&quot;\n&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/TomXu/archive/2012/03/05/2358552.html">深入理解JavaScript系列（33）：设计模式之策略模式</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/6860018724221976584#heading-11">树酱的前端知识体系构建（下）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/design-pattern/strategy-pattern.html">菜鸟教程</a></li>
+<li><a target="_blank" rel="noopener" href="http://shichuan.github.com/javascript-patterns/">http://shichuan.github.com/javascript-patterns/</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/">http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/</a></li>
+<li>算法导论、TAOCP和The Algorithm Design Manual、设计模式——可复用面向对象软件的基础</li>
+</ul>
+<h2 id="职责链模式"><a href="#职责链模式" class="headerlink" title="职责链模式"></a>职责链模式</h2><p>职责链模式（Chain of Responsibility）：解决请求的发送者与请求的接受者之间的耦合，通过职责链上的多个对象对分解请求流程，实现请求在多个对象之间的传递，直到最后一个对象完成请求的处理。</p>
+<p>责任链模式为请求创建了一个接收者对象的链，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。<br>职责链上的处理者负责处理请求，客户只需要将请求发送到职责链上即可，无须关心请求的处理细节和请求的传递，所以职责链将请求的发送者和请求的处理者解耦了。</p>
+<p>应用实例：js事件冒泡</p>
+<p>优点： </p>
+<ul>
+<li>降低耦合度。它将请求的发送者和接收者解耦。</li>
+<li>简化了对象。使得对象不需要知道链的结构。</li>
+<li>增强给对象指派职责的灵活性。通过改变链内的成员或者调动它们的次序，允许动态地新增或者删除责任。</li>
+<li>增加新的请求处理类很方便。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>不能保证请求一定被接收。</li>
+<li>系统性能将受到一定影响，而且在进行代码调试时不太方便，可能会造成循环调用。 </li>
+<li>可能不容易观察运行时的特征，有碍于除错。</li>
+</ul>
+<p>使用场景： </p>
+<ul>
+<li>有多个对象可以处理同一个请求，具体哪个对象处理该请求由运行时刻自动确定。</li>
+<li>在不明确指定接收者的情况下，向多个对象中的一个提交一个请求。</li>
+<li>可动态指定一组对象处理请求。</li>
+</ul>
+<p>登录系统，需要检测是否配置1，配置2，配置…，配置n是否都配置完成了。如果未完成，则需要弹窗，让用户输入配置，配置过程较长，所以可以中途退出配置，直到下次登录或者配置的入口按钮，继续该次的配置。<br><img src="https://upload-images.jianshu.io/upload_images/4327841-808fd628fd26a2a8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080/format/webp" alt="attr"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChainNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(main, next, options) &#123;</span><br><span class="line">        <span class="built_in">this</span>.main = main</span><br><span class="line">        <span class="built_in">this</span>.next = next</span><br><span class="line">        <span class="built_in">this</span>.options = options</span><br><span class="line">    &#125;</span><br><span class="line">    start () &#123;</span><br><span class="line">        <span class="keyword">let</span> res = <span class="built_in">this</span>.main(...arguments)</span><br><span class="line">        res &amp;&amp; <span class="built_in">this</span>.next.start(...arguments)</span><br><span class="line">    &#125;</span><br><span class="line">    setNext (callback) &#123;</span><br><span class="line">        <span class="built_in">this</span>.next = callback</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ResponsibilityChain</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">this</span>.chainNodes = &#123;&#125; <span class="comment">// 责任节点</span></span><br><span class="line">    &#125;</span><br><span class="line">    getChainNodes(chainName) &#123; <span class="comment">// 获取责任节点</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.chainNodes[chainName]</span><br><span class="line">    &#125;</span><br><span class="line">    setChainNodes(name, chainNode) &#123; <span class="comment">// 设置责任节点</span></span><br><span class="line">        <span class="built_in">this</span>.chainNodes[name] = chainNode</span><br><span class="line">    &#125;</span><br><span class="line">    insertChainNode () &#123;&#125;</span><br><span class="line">    chainConstitute(array) &#123; <span class="comment">// 链</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> index = <span class="number">0</span>; index &lt; array.length; index++) &#123;</span><br><span class="line">            <span class="keyword">let</span> element = <span class="built_in">this</span>.chainNodes[array[index]]</span><br><span class="line">            <span class="keyword">let</span> next = <span class="built_in">this</span>.chainNodes[array[index + <span class="number">1</span>]]</span><br><span class="line">            element.next = next</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn1</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置1&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">&#x27;have配置1&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    alert(<span class="string">&#x27;输入配置1&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn2</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置2&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn3</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置3&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn4</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置4&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> responsibilityChain = <span class="keyword">new</span> ResponsibilityChain()</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_1&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn1))</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_2&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn2))</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_3&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn3))</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_4&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn4))</span><br><span class="line">responsibilityChain.chainConstitute([<span class="string">&#x27;chainNode_1&#x27;</span>, <span class="string">&#x27;chainNode_2&#x27;</span>, <span class="string">&#x27;chainNode_3&#x27;</span>, <span class="string">&#x27;chainNode_4&#x27;</span>])</span><br><span class="line"><span class="keyword">let</span> firstNode = responsibilityChain.getChainNodes(<span class="string">&#x27;chainNode_1&#x27;</span>)</span><br><span class="line">firstNode.start(<span class="string">&#x27;handleRequest&#x27;</span>)</span><br><span class="line"><span class="comment">// 配置1 handleRequest</span></span><br><span class="line"><span class="comment">// 配置2 handleRequest</span></span><br><span class="line"><span class="comment">// 配置3 handleRequest</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="参考链接：-1"><a href="#参考链接：-1" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5db3e3dadb1b">JS设计模式 - 责任链模式在前端业务中的应用</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/95817886">JavaScript设计模式之职责链模式</a></li>
+</ul>
+<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><p>命令模式（Command）：将请求与实现解耦并封装成独立对象，从而使不同的请求对客户端的实现参数化。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。</p>
+<ul>
+<li>如何解决：通过调用者调用接受者执行命令，顺序：调用者→命令→接受者。</li>
+<li>关键代码：定义三个角色：1、received 真正的命令执行对象 2、Command 3、invoker 使用命令对象的入口</li>
+<li>应用实例：认为是命令的地方都可以使用命令模式，比如： 1、GUI 中每一个按钮都是一条命令。 2、模拟 CMD。</li>
+</ul>
+<blockquote><p>优点：</p>
+<ul>
+<li>降低了系统耦合度。</li>
+<li>新的命令可以很容易添加到系统中去。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>使用命令模式可能会导致某些系统有过多的具体命令类。</li>
+</ul>
+</blockquote>
+
+<p><img src="https://img.shenyujie.cc/2019-2-9-Command-Pattern.png" alt="attr"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> carManager = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 请求信息</span></span><br><span class="line">    requestInfo: <span class="function"><span class="keyword">function</span> (<span class="params">model, id</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`The information for <span class="subst">$&#123;model&#125;</span> with ID <span class="subst">$&#123;id&#125;</span> is foobar`</span>;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 订购汽车</span></span><br><span class="line">    buyVehicle: <span class="function"><span class="keyword">function</span> (<span class="params">model, id</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`You have successfully purchased Item <span class="subst">$&#123;id&#125;</span> , a <span class="subst">$&#123;model&#125;</span>`</span>;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 组织一个 view</span></span><br><span class="line">    arrangeViewing: <span class="function"><span class="keyword">function</span> (<span class="params">model, id</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`You have successfully booked a viewing of <span class="subst">$&#123;model&#125;</span>(<span class="subst">$&#123;id&#125;</span>)`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">carManager.execute = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> carManager[name] &amp;&amp; carManager[name].apply(carManager, [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">carManager.execute(<span class="string">&quot;arrangeViewing&quot;</span>, <span class="string">&quot;Ferrari&quot;</span>, <span class="number">1234</span>);</span><br><span class="line">carManager.execute(<span class="string">&quot;requestInfo&quot;</span>, <span class="string">&quot;Alice&quot;</span>, <span class="number">321</span>);</span><br><span class="line">carManager.execute(<span class="string">&quot;buyVehicle&quot;</span>, <span class="string">&quot;Ferrari&quot;</span>, <span class="number">343</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>宏命令</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> closeDoorCommand=&#123;</span><br><span class="line">    execute:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;close door&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> openPCCommand=&#123;</span><br><span class="line">    execute:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;open pc&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> openQQCommand=&#123;</span><br><span class="line">    execute:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;qq&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MacroCommand</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="built_in">this</span>.commandsList=[]</span><br><span class="line">    &#125;</span><br><span class="line">    add(command) &#123;</span><br><span class="line">            <span class="built_in">this</span>.commandsList.push(command);</span><br><span class="line">    &#125;</span><br><span class="line">    execute()&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; <span class="built_in">this</span>.commandsList.length; i++) &#123;</span><br><span class="line">                <span class="built_in">this</span>.commandsList[i].execute();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> macroCommand = <span class="keyword">new</span> MacroCommand;</span><br><span class="line">macroCommand.add(closeDoorCommand);</span><br><span class="line">macroCommand.add(openPCCommand);</span><br><span class="line">macroCommand.add(openQQCommand);</span><br><span class="line">macroCommand.execute();</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="代理模式与命令模式"><a href="#代理模式与命令模式" class="headerlink" title="代理模式与命令模式"></a>代理模式与命令模式</h3><p>跟许多其他语言不同， JavaScript 可以用高阶函数非常方便地实现命令模式。命令模式在 JavaScript 语言中是一种隐形的模式。</p>
+<p>在代理(委托)模式中，调用者就是委托者，执行者就是被委托者，委托者和被委托者接口定义是相同的；在命令模式中，调用者不关注执行者的接口定义是否和它一致。<br>在调用时机上，代理模式的具体执行是只能在特定的调用者内部执行(接口相同)；命令模式的具体执行可以在任何调用者内部执行(接口不相同也可以)。</p>
+<h3 id="参考链接：-2"><a href="#参考链接：-2" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaohuochai/p/8034617.html">javascript设计模式——命令模式</a></li>
+<li><a target="_blank" rel="noopener" href="http://shenyujie.cc/2019/02/10/Command-Pattern/">沈宇杰的小站-Command 模式</a></li>
+</ul>
+<h2 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h2><p>中介者模式（Mediator）：通过中介者对象封装一系列对象之间的交互，使对象之间不再相互引用，降低他们之间的耦合。有时中介者对象也可改变对象之间的交互。</p>
+<p>对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理。</p>
+<p>实际上，中介模式的设计思想跟中间层很像，通过引入中介这个中间层，将一组对象之间的交互关系（或者说依赖关系）从多对多（网状关系）转换为一对多（星状关系）。原来一个对象要跟 n 个对象交互，现在只需要跟一个中介对象交互，从而最小化对象之间的交互关系，降低了代码的复杂度，提高了代码的可读性和可维护性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    setNumber(num, m) &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = num</span><br><span class="line">        <span class="keyword">if</span> (m) &#123;</span><br><span class="line">            m.setB()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    setNumber(num, m) &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = num</span><br><span class="line">        <span class="keyword">if</span> (m) &#123;</span><br><span class="line">            m.setA()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mediator</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(a, b) &#123;</span><br><span class="line">        <span class="built_in">this</span>.a = a</span><br><span class="line">        <span class="built_in">this</span>.b = b</span><br><span class="line">    &#125;</span><br><span class="line">    setA() &#123;</span><br><span class="line">        <span class="keyword">let</span> number = <span class="built_in">this</span>.b.number</span><br><span class="line">        <span class="built_in">this</span>.a.setNumber(number * <span class="number">10</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    setB() &#123;</span><br><span class="line">        <span class="keyword">let</span> number = <span class="built_in">this</span>.a.number</span><br><span class="line">        <span class="built_in">this</span>.b.setNumber(number / <span class="number">10</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> A()</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> B()</span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> Mediator(a, b)</span><br><span class="line">a.setNumber(<span class="number">10</span>, m)</span><br><span class="line"><span class="built_in">console</span>.log(a.number, b.number)</span><br><span class="line">b.setNumber(<span class="number">10</span>, m)</span><br><span class="line"><span class="built_in">console</span>.log(a.number, b.number)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="参考链接：-3"><a href="#参考链接：-3" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/6868054744557060110?utm_source=gold_browser_extension#heading-48">前端进阶之路：1.5w字整理23种前端设计模式</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/CC/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/CC/posts/d3d8527f.html" rel="prev" title="第二十三章 编程风格">
+      <i class="fa fa-chevron-left"></i> 第二十三章 编程风格
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/CC/posts/9197097e.html" rel="next" title="创建型设计模式">
+      创建型设计模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">设计者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8BPrototype%E5%AE%9E%E7%8E%B0%E8%A7%82%E5%AF%9F%E8%80%85"><span class="nav-number">1.1.</span> <span class="nav-text">原型Prototype实现观察者</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">策略模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">参考链接：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">职责链模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5%EF%BC%9A-1"><span class="nav-number">3.1.</span> <span class="nav-text">参考链接：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">命令模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">代理模式与命令模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5%EF%BC%9A-2"><span class="nav-number">4.2.</span> <span class="nav-text">参考链接：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">中介者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5%EF%BC%9A-3"><span class="nav-number">5.1.</span> <span class="nav-text">参考链接：</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">CC</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/CC/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/CC/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/CC/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CC</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/CC/lib/anime.min.js"></script>
+  <script src="/CC/lib/velocity/velocity.min.js"></script>
+  <script src="/CC/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/CC/js/utils.js"></script>
+
+<script src="/CC/js/motion.js"></script>
+
+
+<script src="/CC/js/schemes/pisces.js"></script>
+
+
+<script src="/CC/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/CC/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
