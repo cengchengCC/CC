@@ -204,6 +204,87 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
+            <a href="/CC/posts/fb999349.html" class="post-title-link" itemprop="url">手撕JS</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-03 00:25:43 / Modified: 22:20:23" itemprop="dateCreated datePublished" datetime="2021-04-03T00:25:43+08:00">2021-04-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/CC/categories/JS%E8%BF%9B%E9%98%B6/" itemprop="url" rel="index"><span itemprop="name">JS进阶</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<h2 id="数据类型判断"><a href="#数据类型判断" class="headerlink" title="数据类型判断"></a>数据类型判断</h2><hr>
+<p>typeof 可以正确识别：Undefined、Boolean、Number、String、Symbol、Function 等类型的数据，但是对于其他的都会认为是 object，比如 Null、Date 等，所以通过 typeof 来判断数据类型会不准确。但是可以使用 Object.prototype.toString 实现。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="literal">undefined</span>, <span class="literal">true</span>, <span class="number">2</span>, <span class="string">&quot;CC&quot;</span>, <span class="built_in">Symbol</span>(<span class="string">&quot;1&quot;</span>), <span class="function"><span class="params">d</span> =&gt;</span> d, <span class="literal">null</span>, <span class="keyword">new</span> <span class="built_in">Date</span>, <span class="keyword">new</span> <span class="built_in">Set</span>(), <span class="keyword">new</span> <span class="built_in">Map</span>()]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newtype</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = <span class="built_in">Object</span>.prototype.toString.call(obj).split(<span class="string">&quot; &quot;</span>)[<span class="number">1</span>]</span><br><span class="line">    res =res.substring(<span class="number">0</span>, res.length<span class="number">-1</span>).toLowerCase()</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> item <span class="keyword">of</span> arr)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span>(item))</span><br><span class="line">    <span class="comment">// undefined boolean number string symbol function object object object object</span></span><br><span class="line">    <span class="built_in">console</span>.log(newtype(item))</span><br><span class="line">    <span class="comment">// undefined boolean number string symbol function null date set map</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/toString">Object.prototype.toString() MDN</a></li>
+</ul>
+<h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/818bfe22eefd">手写Promise</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6946022649768181774?utm_source=gold_browser_extension">36道进阶题</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://cengchengcc.github.io/CC/posts/fb999349.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/CC/images/avatar.gif">
+      <meta itemprop="name" content="CC">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
             <a href="/CC/posts/fb999349.html" class="post-title-link" itemprop="url">手写 Promise</a>
         </h2>
 
@@ -221,7 +302,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-23 00:24:14" itemprop="dateModified" datetime="2021-03-23T00:24:14+08:00">2021-03-23</time>
+                <time title="Modified: 2021-03-23 00:32:38" itemprop="dateModified" datetime="2021-03-23T00:32:38+08:00">2021-03-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,6 +332,7 @@
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/818bfe22eefd">手写Promise</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5119e01a036f">手写Promise所有方法</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/144058361"></a></li>
 </ul>
 
       
@@ -294,10 +376,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-03-21 23:45:11 / Modified: 23:44:16" itemprop="dateCreated datePublished" datetime="2021-03-21T23:45:11+08:00">2021-03-21</time>
+              <time title="Created: 2021-03-21 23:45:11" itemprop="dateCreated datePublished" datetime="2021-03-21T23:45:11+08:00">2021-03-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-23 00:24:48" itemprop="dateModified" datetime="2021-03-23T00:24:48+08:00">2021-03-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -916,87 +1004,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://cengchengcc.github.io/CC/posts/5ffed448.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/CC/images/avatar.gif">
-      <meta itemprop="name" content="CC">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/CC/posts/5ffed448.html" class="post-title-link" itemprop="url">Ajax 与 Comet</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-11-23 19:49:39" itemprop="dateCreated datePublished" datetime="2020-11-23T19:49:39+08:00">2020-11-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-06 21:39:56" itemprop="dateModified" datetime="2020-12-06T21:39:56+08:00">2020-12-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/CC/categories/FE/" itemprop="url" rel="index"><span itemprop="name">FE</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Ajax 是 Asynchronous JavaScript + XML 的简写，这一技术能够向服务器请求额外的数据而无须卸载页面，会带来更好的用户体验。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/CC/posts/5ffed448.html#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1066,7 +1073,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
