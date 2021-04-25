@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://cc-1301775294.cos.ap-nanjing.myqcloud.com/JS/closure.png">
 <meta property="og:image" content="https://cc-1301775294.cos.ap-nanjing.myqcloud.com/JS/closure2.png">
 <meta property="article:published_time" content="2020-04-11T10:24:47.000Z">
-<meta property="article:modified_time" content="2021-04-05T15:59:44.162Z">
+<meta property="article:modified_time" content="2021-04-05T16:12:14.541Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-05 23:59:44" itemprop="dateModified" datetime="2021-04-05T23:59:44+08:00">2021-04-05</time>
+                <time title="Modified: 2021-04-06 00:12:14" itemprop="dateModified" datetime="2021-04-06T00:12:14+08:00">2021-04-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -288,7 +288,10 @@
 <h3 id="this-对象"><a href="#this-对象" class="headerlink" title="this 对象"></a>this 对象</h3><p>在全局函数中，<code>this</code>在非严格模式下等于<code>window</code>，window，在严格模式下等于<code>undefined</code>。而当函数被作为某个对象的方法调用时，<code>this</code>等于那个对象。不过，匿名函数的执行环境具有全局性，因此其<code>this</code>对象通常指向<code>window</code>。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;The Window&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> object = &#123;</span><br><span class="line">name : <span class="string">&quot;My Object&quot;</span>,</span><br><span class="line">getNameFunc : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>.name;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(object.getNameFunc()()); <span class="comment">//&quot;The Window&quot;（在非严格模式下）</span></span><br></pre></td></tr></table></figure>
 
-<p>每个函数在被调用时都会自动取得两个特殊变量：<code>this</code>和<code>arguments</code><br><a target="_blank" rel="noopener" href="http://localhost:4000/CC/2020/08/04/JS%E8%BF%9B%E9%98%B6/this/">this进阶</a></p>
+<p>每个函数在被调用时都会自动取得两个特殊变量：<code>this</code>和<code>arguments</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.identity = <span class="string">&#x27;The Window&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> object = &#123;</span><br><span class="line">    identity: <span class="string">&#x27;My Object&#x27;</span>,</span><br><span class="line">    getIdentityFunc() &#123;</span><br><span class="line">    <span class="keyword">let</span> that = <span class="built_in">this</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> that.identity;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(object.getIdentityFunc()()); <span class="comment">// &#x27;My Object&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h3><p><strong>待扩展</strong></p>
 <h2 id="IIFE"><a href="#IIFE" class="headerlink" title="IIFE"></a>IIFE</h2><p>立即调用的匿名函数又被称作立即调用的函数表达式（IIFE，Immediately Invoked Function Expression）。它类似于函数声明，但由于被包含在括号中，所以会被解释为函数表达式。紧跟在第一组括号后面的第二组括号会立即调用前面的函数表达式。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 块级作用域</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 
@@ -383,7 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-number">1.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85closure"><span class="nav-number">2.</span> <span class="nav-text">闭包closure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="nav-number">2.1.</span> <span class="nav-text">闭包与变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.2.</span> <span class="nav-text">this 对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IIFE"><span class="nav-number">3.</span> <span class="nav-text">IIFE</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-number">1.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85closure"><span class="nav-number">2.</span> <span class="nav-text">闭包closure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="nav-number">2.1.</span> <span class="nav-text">闭包与变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.2.</span> <span class="nav-text">this 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">内存泄漏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IIFE"><span class="nav-number">3.</span> <span class="nav-text">IIFE</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
