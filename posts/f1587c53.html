@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.1.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/CC/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/CC/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/CC/images/favicon-16x16-next.png">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://cc-1301775294.cos.ap-nanjing.myqcloud.com/JS/closure.png">
 <meta property="og:image" content="https://cc-1301775294.cos.ap-nanjing.myqcloud.com/JS/closure2.png">
 <meta property="article:published_time" content="2020-04-11T10:24:47.000Z">
-<meta property="article:modified_time" content="2021-04-05T16:12:14.541Z">
+<meta property="article:modified_time" content="2021-04-05T16:12:16.000Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-06 00:12:14" itemprop="dateModified" datetime="2021-04-06T00:12:14+08:00">2021-04-06</time>
+                <time title="Modified: 2021-04-06 00:12:16" itemprop="dateModified" datetime="2021-04-06T00:12:16+08:00">2021-04-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,7 +252,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>定义函数的方式有两种：一种是函数声明，另一种就是函数表达式。关于函数声明，它的一个重要特征就是<strong>函数声明提升</strong>（function declaration hoisting），意思是在执行代码之前会先读取函数声明。这就意味着可以把函数声明放在调用它的语句后面。<a id="more"></a><br>使用函数表达式创建一个函数并将它赋值给变量<code>functionName</code>。这种情况下创建的函数叫做匿名函数（anonymous function）（拉姆达函数），因为<code>function</code>关键字后面没有标识符。函数表达式与其他表达式一样，在使用前必须先赋值。</p>
+        <p>定义函数的方式有两种：一种是函数声明，另一种就是函数表达式。关于函数声明，它的一个重要特征就是<strong>函数声明提升</strong>（function declaration hoisting），意思是在执行代码之前会先读取函数声明。这就意味着可以把函数声明放在调用它的语句后面。<span id="more"></span><br>使用函数表达式创建一个函数并将它赋值给变量<code>functionName</code>。这种情况下创建的函数叫做匿名函数（anonymous function）（拉姆达函数），因为<code>function</code>关键字后面没有标识符。函数表达式与其他表达式一样，在使用前必须先赋值。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">name</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数表达式</span></span><br><span class="line"><span class="keyword">var</span> functionName = <span class="function"><span class="keyword">function</span>(<span class="params">arg0, arg1, arg2</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//函数体</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 会报错，因为JavaScript引擎会将function关键字当作一个函数声明的开始</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 由匿名函数构成的函数表达式</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
 
 <p>能够创建函数再赋值给变量，也就能够把函数作为其他函数的值返回。</p>
@@ -400,20 +400,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/CC/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/CC/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

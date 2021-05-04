@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.1.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/CC/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/CC/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/CC/images/favicon-16x16-next.png">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="BOM（浏览器对象模型）提供了很多对象，用于访问浏览器的功能，这些功能与任何网页内容无关，但是提供了与浏览器的互操作性。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-11T00:01:38.000Z">
-<meta property="article:modified_time" content="2021-02-19T09:08:10.520Z">
+<meta property="article:modified_time" content="2021-02-19T09:08:12.000Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-19 17:08:10" itemprop="dateModified" datetime="2021-02-19T17:08:10+08:00">2021-02-19</time>
+                <time title="Modified: 2021-02-19 17:08:12" itemprop="dateModified" datetime="2021-02-19T17:08:12+08:00">2021-02-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,7 +249,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>BOM</strong>（浏览器对象模型）提供了很多对象，用于访问浏览器的功能，这些功能与任何网页内容无关，但是提供了与浏览器的互操作性。<a id="more"></a>W3C为了把浏览器中 JavaScript最基本的部分标准化，已经将 BOM的主要方面纳入了 HTML5的规范中。</p>
+        <p><strong>BOM</strong>（浏览器对象模型）提供了很多对象，用于访问浏览器的功能，这些功能与任何网页内容无关，但是提供了与浏览器的互操作性。<span id="more"></span>W3C为了把浏览器中 JavaScript最基本的部分标准化，已经将 BOM的主要方面纳入了 HTML5的规范中。</p>
 <h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a><code>window</code>对象</h2><p>BOM的核心对象是<code>window</code>，它表示浏览器的一个实例。在浏览器中，<code>window</code>对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的<code>Global</code>对象。这意味着在网页中定义的任何一个对象、变量和函数，都以<code>window</code>作为其<code>Global</code>对象，因此有权访问<code>parseInt()</code>等方法。</p>
 <h3 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h3><p>由于<code>window</code>对象同时扮演着ECMAScript中<code>Global</code>对象的角色，因此所有在全局作用域中声明的变量、函数都会变成<code>window</code>对象的属性和方法。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">29</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayAge</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.age); <span class="comment">//29</span></span><br><span class="line">sayAge(); <span class="comment">//29</span></span><br><span class="line"><span class="built_in">window</span>.sayAge(); <span class="comment">//29</span></span><br></pre></td></tr></table></figure>
@@ -397,20 +397,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/CC/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/CC/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
