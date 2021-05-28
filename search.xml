@@ -36,26 +36,14 @@
       </categories>
   </entry>
   <entry>
-    <title>一些值得反复阅读的文章</title>
-    <url>/CC/posts/51fcb6bd.html</url>
-    <content><![CDATA[<p>疯狂安利：记录一些值得反复阅读的博客</p>
-<span id="more"></span>
-
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
-<li><a href="https://juejin.cn/post/6941206439624966152">1.5 万字 CSS 基础拾遗（核心知识、常见需求）</a></li>
-<li><a href="https://juejin.cn/post/6844903918753808398">30 道 Vue 面试题，内含详细讲解</a></li>
-<li><a href="https://juejin.cn/post/6844903840626507784">手摸手，带你用vue撸后台 系列五(v4.0新版本)</a></li>
-<li><a href="https://juejin.cn/post/6850037277675454478">史上最强vue总结</a></li>
-<li><a href="https://juejin.cn/post/6961222829979697165">最全的 Vue 面试题+详解答案</a></li>
-<li><a href="https://juejin.cn/post/6844904148899463175">前端高频面试题整理</a></li>
-<li><a href="https://juejin.cn/post/6844903976693940231">web前端面试总结</a></li>
-</ul>
+    <title>Hexo</title>
+    <url>/CC/posts/b132932.html</url>
+    <content><![CDATA[<p>在 vscode 中安装 EverMonkey，Auto-Open Markdown Preview。<br><a href="https://www.cnblogs.com/rengised/p/6985031.html">https://www.cnblogs.com/rengised/p/6985031.html</a></p>
+<p><a href="https://www.wshunli.com/posts/261b7c4.html">https://www.wshunli.com/posts/261b7c4.html</a></p>
+<p><a href="https://yashuning.github.io/2018/06/29/hexo-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">https://yashuning.github.io/2018/06/29/hexo-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</a></p>
 ]]></content>
-      <categories>
-        <category>Life</category>
-      </categories>
       <tags>
-        <tag>quote</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -85,14 +73,30 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo</title>
-    <url>/CC/posts/b132932.html</url>
-    <content><![CDATA[<p>在 vscode 中安装 EverMonkey，Auto-Open Markdown Preview。<br><a href="https://www.cnblogs.com/rengised/p/6985031.html">https://www.cnblogs.com/rengised/p/6985031.html</a></p>
-<p><a href="https://www.wshunli.com/posts/261b7c4.html">https://www.wshunli.com/posts/261b7c4.html</a></p>
-<p><a href="https://yashuning.github.io/2018/06/29/hexo-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">https://yashuning.github.io/2018/06/29/hexo-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</a></p>
+    <title>Design Patterns</title>
+    <url>/CC/posts/9426ef5a.html</url>
+    <content><![CDATA[<h2 id="面向对象的五大基本原则"><a href="#面向对象的五大基本原则" class="headerlink" title="面向对象的五大基本原则"></a>面向对象的五大基本原则</h2><p>单一职责原则（SRP）</p>
+<p>开放封闭原则（OCP）</p>
+<p>里氏替换原则（LSP）</p>
+<p>依赖倒置原则（DIP）</p>
+<p>接口隔离原则（ISP）</p>
+<p>单一职责原则（SRP）</p>
+<ul>
+<li>高层模块不依赖底层模块，即为依赖反转原则。</li>
+<li>内部修改关闭，外部扩展开放，即为开放封闭原则。</li>
+<li>聚合单一功能，即为单一功能原则。</li>
+<li>低知识要求，对外接口简单，即为迪米特法则。</li>
+<li>耦合多个接口，不如独立拆分，即为接口隔离原则。</li>
+<li>合成复用，子类继承可替换父类，即为里式替换原则。</li>
+</ul>
+<p><a href="https://juejin.im/post/6874906145463468046?utm_source=gold_browser_extension#heading-11">https://juejin.im/post/6874906145463468046?utm_source=gold_browser_extension#heading-11</a></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8f442c4675b04960b41fa63c099f8ee0~tplv-k3u1fbpfcp-zoom-1.image" alt="attr"></p>
 ]]></content>
+      <categories>
+        <category>JS设计模式</category>
+      </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -103,6 +107,33 @@
       <categories>
         <category>Browser</category>
       </categories>
+  </entry>
+  <entry>
+    <title>创建型设计模式</title>
+    <url>/CC/posts/9197097e.html</url>
+    <content><![CDATA[<p>创建型设计模式是一类处理对象创建的设计模式，通过某种方式控制对象的创建来避免基本对象创建时可能导致设计上的问题或增加设计上的复杂度<span id="more"></span></p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>单例模式（Singleton）：又被称为单体模式，是只允许实例化一次的对象类。有时我们也用一个对象来规划一个命名空间，井井有条地管理对象上的属性与方法。</p>
+<ul>
+<li>定义：只允许实例化一次的对象类，并提供一个访问它的全局访问点</li>
+<li>核心：确保只有一个实例，并提供全局访问。</li>
+<li>实现：假设要设置一个管理员，多次调用也仅设置一次，我们可以使用闭包缓存一个内部变量来实现这个单例</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SetManager</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.manager=name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SetManager.prototype.getName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.manager);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> SingleSetManager=(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> manager=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!manager)&#123;</span><br><span class="line">            manager=<span class="keyword">new</span> SetManager(name);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> manager;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">SingleSetManager(<span class="string">&#x27;a&#x27;</span>).getName();    <span class="comment">//a</span></span><br><span class="line">SingleSetManager(<span class="string">&#x27;b&#x27;</span>).getName();    <span class="comment">//a</span></span><br><span class="line">SingleSetManager(<span class="string">&#x27;c&#x27;</span>).getName();    <span class="comment">//a</span></span><br></pre></td></tr></table></figure>
+
+<p>生产实践：redux、vuex中的Store，或者我们经常使用的Storage都是单例模式。以下是Storage的实现</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="built_in">localStorage</span>=<span class="built_in">window</span>.localStorage; <span class="comment">///Bom对象只能在浏览器调试</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Storage</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> getInstance()&#123;</span><br><span class="line">        <span class="keyword">if</span>(!Storage.instance)&#123;</span><br><span class="line">            Storage.instance=<span class="keyword">new</span> Storage();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Storage.instance;</span><br><span class="line">    &#125;</span><br><span class="line">    getItem(key)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">localStorage</span>.getItem(key);</span><br><span class="line">    &#125;</span><br><span class="line">    setItem(key,value)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">localStorage</span>.setItem(key,value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> storage1=Storage.getInstance();</span><br><span class="line"><span class="keyword">const</span> storage2=Storage.getInstance();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(storage1.setItem(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;CC&#x27;</span>),storage1.getItem(<span class="string">&#x27;name&#x27;</span>),storage2.getItem(<span class="string">&#x27;name&#x27;</span>))；</span><br><span class="line"><span class="comment">// 返回true</span></span><br><span class="line">storage1 === storage2；</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://www.javascriptcn.com/read-78862.html">参考链接1</a></li>
+<li><a href="https://www.cnblogs.com/TomXu/archive/2012/02/20/2352817.html">参考链接2</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JS设计模式</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
   </entry>
   <entry>
     <title>水平垂直居中</title>
@@ -272,6 +303,36 @@
       </tags>
   </entry>
   <entry>
+    <title>three-column</title>
+    <url>/CC/posts/a8364a89.html</url>
+    <content><![CDATA[<p>常用布局的实现方案。</p>
+<span id="more"></span>
+
+<h2 id="两栏布局（边栏定宽主栏自适应）"><a href="#两栏布局（边栏定宽主栏自适应）" class="headerlink" title="两栏布局（边栏定宽主栏自适应）"></a>两栏布局（边栏定宽主栏自适应）</h2><p><a href="https://codepen.io/cengchengcc/pen/BaWQxxv">Demo</a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">aside</span>&gt;</span>aside<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span>&gt;</span>main<span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="float-overflow（BFC-原理）"><a href="#float-overflow（BFC-原理）" class="headerlink" title="float + overflow（BFC 原理）"></a>float + overflow（BFC 原理）</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.float</span> <span class="selector-tag">aside</span>&#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.float</span> <span class="selector-tag">main</span>&#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="float-margin"><a href="#float-margin" class="headerlink" title="float + margin"></a>float + margin</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.margin</span> <span class="selector-tag">aside</span>&#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.margin</span> <span class="selector-tag">main</span>&#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.flex</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex</span> <span class="selector-tag">aside</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex</span> <span class="selector-tag">main</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="grid"><a href="#grid" class="headerlink" title="grid"></a>grid</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.grid</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三栏布局（两侧栏定宽主栏自适应）"><a href="#三栏布局（两侧栏定宽主栏自适应）" class="headerlink" title="三栏布局（两侧栏定宽主栏自适应）"></a>三栏布局（两侧栏定宽主栏自适应）</h2><p><a href="https://codepen.io/cengchengcc/pen/jOBVpxx">Demo</a></p>
+<h3 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h3><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://juejin.cn/post/6941206439624966152">1.5 万字 CSS 基础拾遗（核心知识、常见需求）</a></li>
+<li><a href="https://juejin.cn/post/6844903574929932301">干货!各种常见布局实现+知名网站实例分析</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>layout</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>grid</title>
     <url>/CC/posts/2e20d937.html</url>
     <content><![CDATA[<p>网格布局（Grid）是最强大的 CSS 布局方案。它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。</p>
@@ -307,87 +368,150 @@
       </tags>
   </entry>
   <entry>
-    <title>Design Patterns</title>
-    <url>/CC/posts/9426ef5a.html</url>
-    <content><![CDATA[<h2 id="面向对象的五大基本原则"><a href="#面向对象的五大基本原则" class="headerlink" title="面向对象的五大基本原则"></a>面向对象的五大基本原则</h2><p>单一职责原则（SRP）</p>
-<p>开放封闭原则（OCP）</p>
-<p>里氏替换原则（LSP）</p>
-<p>依赖倒置原则（DIP）</p>
-<p>接口隔离原则（ISP）</p>
-<p>单一职责原则（SRP）</p>
-<ul>
-<li>高层模块不依赖底层模块，即为依赖反转原则。</li>
-<li>内部修改关闭，外部扩展开放，即为开放封闭原则。</li>
-<li>聚合单一功能，即为单一功能原则。</li>
-<li>低知识要求，对外接口简单，即为迪米特法则。</li>
-<li>耦合多个接口，不如独立拆分，即为接口隔离原则。</li>
-<li>合成复用，子类继承可替换父类，即为里式替换原则。</li>
-</ul>
-<p><a href="https://juejin.im/post/6874906145463468046?utm_source=gold_browser_extension#heading-11">https://juejin.im/post/6874906145463468046?utm_source=gold_browser_extension#heading-11</a></p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8f442c4675b04960b41fa63c099f8ee0~tplv-k3u1fbpfcp-zoom-1.image" alt="attr"></p>
-]]></content>
-      <categories>
-        <category>JS设计模式</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>three-column</title>
-    <url>/CC/posts/a8364a89.html</url>
-    <content><![CDATA[<p>常用布局的实现方案。</p>
+    <title>Git Bash</title>
+    <url>/CC/posts/36558f86.html</url>
+    <content><![CDATA[<blockquote>
+<p>git 的常用命令</p>
+</blockquote>
 <span id="more"></span>
 
-<h2 id="两栏布局（边栏定宽主栏自适应）"><a href="#两栏布局（边栏定宽主栏自适应）" class="headerlink" title="两栏布局（边栏定宽主栏自适应）"></a>两栏布局（边栏定宽主栏自适应）</h2><p><a href="https://codepen.io/cengchengcc/pen/BaWQxxv">Demo</a></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">aside</span>&gt;</span>aside<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span>&gt;</span>main<span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="float-overflow（BFC-原理）"><a href="#float-overflow（BFC-原理）" class="headerlink" title="float + overflow（BFC 原理）"></a>float + overflow（BFC 原理）</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.float</span> <span class="selector-tag">aside</span>&#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.float</span> <span class="selector-tag">main</span>&#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="float-margin"><a href="#float-margin" class="headerlink" title="float + margin"></a>float + margin</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.margin</span> <span class="selector-tag">aside</span>&#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.margin</span> <span class="selector-tag">main</span>&#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.flex</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex</span> <span class="selector-tag">aside</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex</span> <span class="selector-tag">main</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="grid"><a href="#grid" class="headerlink" title="grid"></a>grid</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.grid</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="三栏布局（两侧栏定宽主栏自适应）"><a href="#三栏布局（两侧栏定宽主栏自适应）" class="headerlink" title="三栏布局（两侧栏定宽主栏自适应）"></a>三栏布局（两侧栏定宽主栏自适应）</h2><p><a href="https://codepen.io/cengchengcc/pen/jOBVpxx">Demo</a></p>
-<h3 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h3><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://juejin.cn/post/6941206439624966152">1.5 万字 CSS 基础拾遗（核心知识、常见需求）</a></li>
-<li><a href="https://juejin.cn/post/6844903574929932301">干货!各种常见布局实现+知名网站实例分析</a></li>
+<h2 id="快速导航"><a href="#快速导航" class="headerlink" title="快速导航"></a>快速导航</h2><ul>
+<li><a href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4">基础命令</a></li>
+<li><a href="#%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C">分支操作</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80">修改远程仓库地址</a></li>
+<li><a href="#%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC%E5%88%B0%E6%9C%AC%E5%9C%B0">远程分支获取最新的版本到本地</a></li>
+<li><a href="#%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%8C%87%E5%AE%9A%E5%88%86%E6%94%AF%E5%88%B0%E6%9C%AC%E5%9C%B0">拉取远程仓库指定分支到本地</a></li>
+<li><a href="#%E5%B7%A5%E5%85%B7%E7%B1%BB">工具类</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">常见问题</a></li>
 </ul>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>layout</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>创建型设计模式</title>
-    <url>/CC/posts/9197097e.html</url>
-    <content><![CDATA[<p>创建型设计模式是一类处理对象创建的设计模式，通过某种方式控制对象的创建来避免基本对象创建时可能导致设计上的问题或增加设计上的复杂度<span id="more"></span></p>
-<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>单例模式（Singleton）：又被称为单体模式，是只允许实例化一次的对象类。有时我们也用一个对象来规划一个命名空间，井井有条地管理对象上的属性与方法。</p>
 <ul>
-<li>定义：只允许实例化一次的对象类，并提供一个访问它的全局访问点</li>
-<li>核心：确保只有一个实例，并提供全局访问。</li>
-<li>实现：假设要设置一个管理员，多次调用也仅设置一次，我们可以使用闭包缓存一个内部变量来实现这个单例</li>
+<li>git status 查看现在分支的状态</li>
+<li>git commit -m “msg” 提交本次修改</li>
+<li>git checkout -b test01 创建本地test01分支</li>
+<li>git checkout master 切换分支</li>
+<li>git push –set-upstream origin test01 把本地test01分支推送到远程</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SetManager</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.manager=name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SetManager.prototype.getName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.manager);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> SingleSetManager=(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> manager=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!manager)&#123;</span><br><span class="line">            manager=<span class="keyword">new</span> SetManager(name);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> manager;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">SingleSetManager(<span class="string">&#x27;a&#x27;</span>).getName();    <span class="comment">//a</span></span><br><span class="line">SingleSetManager(<span class="string">&#x27;b&#x27;</span>).getName();    <span class="comment">//a</span></span><br><span class="line">SingleSetManager(<span class="string">&#x27;c&#x27;</span>).getName();    <span class="comment">//a</span></span><br></pre></td></tr></table></figure>
-
-<p>生产实践：redux、vuex中的Store，或者我们经常使用的Storage都是单例模式。以下是Storage的实现</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="built_in">localStorage</span>=<span class="built_in">window</span>.localStorage; <span class="comment">///Bom对象只能在浏览器调试</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Storage</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> getInstance()&#123;</span><br><span class="line">        <span class="keyword">if</span>(!Storage.instance)&#123;</span><br><span class="line">            Storage.instance=<span class="keyword">new</span> Storage();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Storage.instance;</span><br><span class="line">    &#125;</span><br><span class="line">    getItem(key)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">localStorage</span>.getItem(key);</span><br><span class="line">    &#125;</span><br><span class="line">    setItem(key,value)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">localStorage</span>.setItem(key,value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> storage1=Storage.getInstance();</span><br><span class="line"><span class="keyword">const</span> storage2=Storage.getInstance();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(storage1.setItem(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;CC&#x27;</span>),storage1.getItem(<span class="string">&#x27;name&#x27;</span>),storage2.getItem(<span class="string">&#x27;name&#x27;</span>))；</span><br><span class="line"><span class="comment">// 返回true</span></span><br><span class="line">storage1 === storage2；</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://www.javascriptcn.com/read-78862.html">参考链接1</a></li>
-<li><a href="https://www.cnblogs.com/TomXu/archive/2012/02/20/2352817.html">参考链接2</a></li>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><ul>
+<li><code>git init</code> 初始化本地仓库</li>
+<li><code>git add -A .</code> 来一次添加所有改变的文件</li>
+<li><code>git add -A</code> 表示添加所有内容  </li>
+<li><code>git add .</code> 表示添加新文件和编辑过的文件不包括删除的文件  </li>
+<li><code>git add -u</code> 表示添加编辑或者删除的文件，不包括新添加的文件  </li>
+<li><code>git commit -m &#39;版本信息&#39;</code> 提交的版本信息描述</li>
+<li><code>git status</code> 查看状态  </li>
+<li><code>git push -u origin master</code> 推送到远程仓库看</li>
+<li><code>git pull</code> 拉取远程仓库代码到本地</li>
+<li><code>git branch -av</code> 查看每个分支的最新提交记录</li>
+<li><code>git branch -vv</code> 查看每个分支属于哪个远程仓库</li>
+<li><code>git reset --hard a3f40baadd5fea57b1b40f23f9a54a644eebd52e</code> 代码回归到某个提交记录</li>
 </ul>
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><ul>
+<li>查看所有分支 <code>git branch -a</code></li>
+<li>新建分支 <code> git branch dev</code></li>
+<li>查看当前分支 <code>git branch</code></li>
+<li>切换分支 <code>git checkout dev</code></li>
+<li>删除本地分支 <code>git branch -d dev</code></li>
+<li>同步删除远程分支 <code>git push origin :dev</code></li>
+<li>本地分支重命名 <code>git branch -m oldBranch newBranch</code></li>
+</ul>
+<h2 id="修改远程仓库地址"><a href="#修改远程仓库地址" class="headerlink" title="修改远程仓库地址"></a>修改远程仓库地址</h2><ul>
+<li><code>git remote -v</code>显示所有远程仓库</li>
+<li>方法1，先删后加:<ul>
+<li><code>git remote rm origin</code> 先删除</li>
+<li><code>git remote add origin 仓库地址</code> 链接到到远程git仓库</li>
+</ul>
+</li>
+<li>方法2，修改命令:<ul>
+<li><code>git remote set-url origin 仓库地址</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="远程分支获取最新的版本到本地"><a href="#远程分支获取最新的版本到本地" class="headerlink" title="远程分支获取最新的版本到本地"></a>远程分支获取最新的版本到本地</h2><ul>
+<li><code>git pull origin master:master</code></li>
+<li>如果以上命令还是失败尝试以下步骤：<ol>
+<li>首先从远程的origin的master主分支下载最新的版本到origin/master分支上<br> <code>git fetch origin master</code>        </li>
+<li>比较本地的master分支和origin/master分支的差别<br> <code>git log -p master..origin/master</code>        </li>
+<li>进行合并<br> <code>git merge origin/master</code></li>
+</ol>
+</li>
+<li><code>git merge --no-ff --no-commit branchX</code> 不强制合并branchX</li>
+</ul>
+<h2 id="拉取远程仓库指定分支到本地"><a href="#拉取远程仓库指定分支到本地" class="headerlink" title="拉取远程仓库指定分支到本地"></a>拉取远程仓库指定分支到本地</h2><ul>
+<li><p>首先要与origin master建立连接：<code>git remote add origin git@github.com:XXXX/nothing2.git</code>  </p>
+</li>
+<li><p>切换到其中某个子分支：<code>git checkout -b dev origin/dev</code>  </p>
+</li>
+<li><p>可能会报这种错误:</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fatal: Cannot update paths and switch to branch &#39;dev&#39; at the same time.</span><br><span class="line">Did you intend to checkout &#39;origin&#x2F;dev&#39; which can not be resolved as commit?</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>原因是你本地并没有dev这个分支，这时你可以用 <code>git branch -a</code> 命令来查看本地是否具有dev分支</p>
+</li>
+<li><p>我们需要：<code>git fetch origin dev</code> 命令来把远程分支拉到本地</p>
+</li>
+<li><p>然后使用：<code>git checkout -b dev origin/dev</code> 在本地创建分支dev并切换到该分支</p>
+</li>
+<li><p>最后使用：<code>git pull origin dev</code> 就可以把某个分支上的内容都拉取到本地了</p>
+</li>
+</ul>
+<h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><ul>
+<li><p>[参考链接][<a href="https://routinepanic.com/questions/how-to-selectively-merge-or-pick-changes-from-another-branch-in-git]">https://routinepanic.com/questions/how-to-selectively-merge-or-pick-changes-from-another-branch-in-git]</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/feeltouch/article/details/104734346?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param">参考链接</a></p>
+</li>
+<li><p><a href="http://www.scootersoftware.com/download.php">Beyond Compare (http://www.scootersoftware.com/download.php</a> 代码合并</p>
+</li>
+<li><p><a href="https://git-scm.com/book/zh/v2">官方Git文档地址 https://git-scm.com/book/zh/v2</a></p>
+</li>
+<li><p><a href="https://juejin.im/post/6867411333504040967?utm_source=gold_browser_extension#heading-16">https://juejin.im/post/6867411333504040967?utm_source=gold_browser_extension#heading-16</a></p>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200828093822382.png?imageslim" alt="attr"></p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="Question1"><a href="#Question1" class="headerlink" title="Question1"></a>Question1</h3><p><strong>执行git pull显示already up-to-date，但是本地代码并没有显示出来其他人的改动</strong></p>
+<h4 id="Question1-1"><a href="#Question1-1" class="headerlink" title="Question1"></a>Question1</h4><p>如何解决 <code>failed to push some refs to git</code></p>
+<h4 id="Answer1"><a href="#Answer1" class="headerlink" title="Answer1"></a>Answer1</h4><ul>
+<li><code>git pull --rebase origin master</code> 进行代码合并</li>
+<li><code>git push -u origin master</code> 即可完成代码上传</li>
+</ul>
+<hr>
+
+<h4 id="Question2"><a href="#Question2" class="headerlink" title="Question2"></a>Question2</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">If you wish to set tracking information for this branch you can do so with:</span><br><span class="line">git branch --set-upstream-to&#x3D;origin&#x2F;&lt;branch&gt; master</span><br></pre></td></tr></table></figure>
+
+<h4 id="Answer2"><a href="#Answer2" class="headerlink" title="Answer2"></a>Answer2</h4><p>指定当前当前工作目录工作分支，跟远程仓库分支之间的联系</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch --set-upstream master origin&#x2F;master</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+<h4 id="Question3"><a href="#Question3" class="headerlink" title="Question3"></a>Question3</h4><p>获取 <code>git pull</code> 最新代码报以下错误:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fatal: refusing to merge unrelated histories</span><br></pre></td></tr></table></figure>
+
+<h4 id="Answer3"><a href="#Answer3" class="headerlink" title="Answer3"></a>Answer3</h4><p>git pull之后加上可选参数 –allow-unrelated-histories 强制合并</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+<h4 id="Question4"><a href="#Question4" class="headerlink" title="Question4"></a>Question4</h4><p>使用钩子<code>pre-commit</code>，提交代码提示如下错误：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">&#x27;.&#x27;</span></span></span><br><span class="line">sh: eslint: command not found</span><br><span class="line">pre-commit:</span><br><span class="line">pre-commit: We&#x27;ve failed to pass the specified git pre-commit hooks as the `fix`</span><br><span class="line">pre-commit: hook returned an exit code (1). If you&#x27;re feeling adventurous you can</span><br><span class="line">pre-commit: skip the git pre-commit hooks by adding the following flags to your commit:</span><br><span class="line">pre-commit:</span><br><span class="line">pre-commit:   git commit -n (or --no-verify)</span><br><span class="line">pre-commit:</span><br><span class="line">pre-commit: This is ill-advised since the commit is broken.</span><br><span class="line">pre-commit:</span><br></pre></td></tr></table></figure>
+
+<h4 id="Answer4"><a href="#Answer4" class="headerlink" title="Answer4"></a>Answer4</h4><ul>
+<li>打开项目中的 <code>.git/hooks</code> 文件夹，找到 <code>pre-commit.sample</code> 文件，将以下代码替换到文件中，或者，<code>npm install pre-commit --save</code> 也可以，这个命令会自动执行以下操作。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">TSLINT=&quot;$(git rev-parse --show-toplevel)/node_modules/.bin/tslint&quot;</span><br><span class="line">for file in $(git diff --cached --name-only | grep -E &#x27;\.ts$&#x27;)</span><br><span class="line">do</span><br><span class="line">        git show &quot;:$file&quot; | &quot;$TSLINT&quot; &quot;$file&quot;</span><br><span class="line">        if [ $? -ne 0 ]; then</span><br><span class="line">                exit 1</span><br><span class="line">        fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将<code>pre-commit.sample</code>文件名修改为<code>pre-commit</code>。</li>
+</ul>
+<hr>
+
+<h4 id="Question5"><a href="#Question5" class="headerlink" title="Question5"></a>Question5</h4><p>.gitignore 规则不生效的解决办法</p>
+<h4 id="Answer5"><a href="#Answer5" class="headerlink" title="Answer5"></a>Answer5</h4><p>把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git rm -r --cached . 或者 git rm -r README.md</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;update .gitignore&#39;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>JS设计模式</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -756,6 +880,27 @@
       </tags>
   </entry>
   <entry>
+    <title>第二十三章 编程风格</title>
+    <url>/CC/posts/d3d8527f.html</url>
+    <content><![CDATA[<p>本章探讨如何将 ES6 的新语法，运用到编码实践之中，与传统的 JavaScript 语法结合在一起，写出合理的、易于阅读和维护的代码。</p>
+<span id="more"></span>
+
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>静态字符串一律使用单引号或反引号，不使用双引号。动态字符串使用反引号。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="string">&quot;foobar&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> b = <span class="string">&#x27;foo&#x27;</span> + a + <span class="string">&#x27;bar&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// acceptable</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="string">`foobar`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="string">&#x27;foobar&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> b = <span class="string">`foo<span class="subst">$&#123;a&#125;</span>bar`</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>使用扩展运算符（…）拷贝数组。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> len = items.length;</span><br><span class="line"><span class="keyword">const</span> itemsCopy = [];</span><br><span class="line"><span class="keyword">let</span> i;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">  itemsCopy[i] = items[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> itemsCopy = [...items];</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>Array.from</code>方法，将类似数组的对象转为数组。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.foo&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> nodes = <span class="built_in">Array</span>.from(foo);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>ECMAScript 6 入门</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第三章 字符串的扩展及其新增方法</title>
     <url>/CC/posts/f141f1f2.html</url>
     <content><![CDATA[<p>本章介绍 ES6 对字符串的改造和增强。</p>
@@ -770,27 +915,6 @@
 <h2 id="字符串的遍历器接口"><a href="#字符串的遍历器接口" class="headerlink" title="字符串的遍历器接口"></a>字符串的遍历器接口</h2><p>ES6为字符串添加了遍历器接口（详见《Iterator》一章），使得字符串可以被<code>for...of</code>循环遍历。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> codePoint <span class="keyword">of</span> <span class="string">&#x27;foo&#x27;</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(codePoint)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// &quot;f&quot;</span></span><br><span class="line"><span class="comment">// &quot;o&quot;</span></span><br><span class="line"><span class="comment">// &quot;o&quot;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>ECMAScript 6 入门</category>
-      </categories>
-      <tags>
-        <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第二十三章 编程风格</title>
-    <url>/CC/posts/d3d8527f.html</url>
-    <content><![CDATA[<p>本章探讨如何将 ES6 的新语法，运用到编码实践之中，与传统的 JavaScript 语法结合在一起，写出合理的、易于阅读和维护的代码。</p>
-<span id="more"></span>
-
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>静态字符串一律使用单引号或反引号，不使用双引号。动态字符串使用反引号。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="string">&quot;foobar&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> b = <span class="string">&#x27;foo&#x27;</span> + a + <span class="string">&#x27;bar&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// acceptable</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="string">`foobar`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="string">&#x27;foobar&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> b = <span class="string">`foo<span class="subst">$&#123;a&#125;</span>bar`</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>使用扩展运算符（…）拷贝数组。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> len = items.length;</span><br><span class="line"><span class="keyword">const</span> itemsCopy = [];</span><br><span class="line"><span class="keyword">let</span> i;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">  itemsCopy[i] = items[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> itemsCopy = [...items];</span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>Array.from</code>方法，将类似数组的对象转为数组。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.foo&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> nodes = <span class="built_in">Array</span>.from(foo);</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>ECMAScript 6 入门</category>
       </categories>
@@ -964,174 +1088,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Http 协议</title>
-    <url>/CC/posts/2ad2909e.html</url>
-    <content><![CDATA[<span id="more"></span>
-<h2 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h2><p>即在HTTP 应用程序之间发送的数据块</p>
-<p>请求状态码<br><strong>200～299——请求成功状态码</strong></p>
-<p>| 状态码 | 原因短语 | 含　　义 |<br>|:—–|:—–|<br>| 200 | OK | 服务器已成功处理了请求。 通常，这表示服务器提供了请求的资源。  |<br>| 201 | Created | 请求成功并且服务器创建了新的资源。  |<br>| 202 | Accepted | 服务器已接受请求，但尚未处理。<br>| 203 |（非授权信息） 服务器已成功处理了请求，但返回的信息可能来自另一来源。<br>| 204 |（无内容） 服务器成功处理了请求，但没有返回任何内容。<br>| 205 |（重置内容） 服务器成功处理了请求，但没有返回任何内容。<br>| 206 |（部分内容） 服务器成功处理了部分 GET 请求。</p>
-<p><strong>3|开头 （请求被重定向）表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</strong></p>
-<p>300 （多种选择） 针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。<br>301 （永久移动） 请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。<br>302 （临时移动） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。<br>303 （查看其他位置） 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。<br>304 （未修改） 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。<br>305 （使用代理） 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。<br>307 （临时重定向） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
-<p><strong>4开头 （请求错误）这些状态代码表示请求可能出错，妨碍了服务器的处理。</strong></p>
-<p>400 （错误请求） 服务器不理解请求的语法。<br>401 （未授权） 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。<br>403 （禁止） 服务器拒绝请求。<br>404 （未找到） 服务器找不到请求的网页。<br>405 （方法禁用） 禁用请求中指定的方法。<br>406 （不接受） 无法使用请求的内容特性响应请求的网页。<br>407 （需要代理授权） 此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。<br>408 （请求超时） 服务器等候请求时发生超时。<br>409 （冲突） 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。<br>410 （已删除） 如果请求的资源已永久删除，服务器就会返回此响应。<br>411 （需要有效长度） 服务器不接受不含有效内容长度标头字段的请求。<br>412 （未满足前提条件） 服务器未满足请求者在请求中设置的其中一个前提条件。<br>413 （请求实体过大） 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。<br>414 （请求的 URI 过长） 请求的 URI（通常为网址）过长，服务器无法处理。<br>415 （不支持的媒体类型） 请求的格式不受请求页面的支持。<br>416 （请求范围不符合要求） 如果页面无法提供请求的范围，则服务器会返回此状态代码。<br>417 （未满足期望值） 服务器未满足”期望”请求标头字段的要求。</p>
-<p><strong>5开头（服务器错误）这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</strong></p>
-<p>500 （服务器内部错误） 服务器遇到错误，无法完成请求。<br>501 （尚未实施） 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。<br>502 （错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。<br>503 （服务不可用） 服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态。<br>504 （网关超时） 服务器作为网关或代理，但是没有及时从上游服务器收到请求。<br>505 （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。</p>
-<ul>
-<li><a href="https://www.cnblogs.com/xflonga/p/9368993.html">状态码参考</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git Bash</title>
-    <url>/CC/posts/36558f86.html</url>
-    <content><![CDATA[<blockquote>
-<p>git 的常用命令</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="快速导航"><a href="#快速导航" class="headerlink" title="快速导航"></a>快速导航</h2><ul>
-<li><a href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4">基础命令</a></li>
-<li><a href="#%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C">分支操作</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80">修改远程仓库地址</a></li>
-<li><a href="#%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC%E5%88%B0%E6%9C%AC%E5%9C%B0">远程分支获取最新的版本到本地</a></li>
-<li><a href="#%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%8C%87%E5%AE%9A%E5%88%86%E6%94%AF%E5%88%B0%E6%9C%AC%E5%9C%B0">拉取远程仓库指定分支到本地</a></li>
-<li><a href="#%E5%B7%A5%E5%85%B7%E7%B1%BB">工具类</a></li>
-<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">常见问题</a></li>
-</ul>
-<ul>
-<li>git status 查看现在分支的状态</li>
-<li>git commit -m “msg” 提交本次修改</li>
-<li>git checkout -b test01 创建本地test01分支</li>
-<li>git checkout master 切换分支</li>
-<li>git push –set-upstream origin test01 把本地test01分支推送到远程</li>
-</ul>
-<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><ul>
-<li><code>git init</code> 初始化本地仓库</li>
-<li><code>git add -A .</code> 来一次添加所有改变的文件</li>
-<li><code>git add -A</code> 表示添加所有内容  </li>
-<li><code>git add .</code> 表示添加新文件和编辑过的文件不包括删除的文件  </li>
-<li><code>git add -u</code> 表示添加编辑或者删除的文件，不包括新添加的文件  </li>
-<li><code>git commit -m &#39;版本信息&#39;</code> 提交的版本信息描述</li>
-<li><code>git status</code> 查看状态  </li>
-<li><code>git push -u origin master</code> 推送到远程仓库看</li>
-<li><code>git pull</code> 拉取远程仓库代码到本地</li>
-<li><code>git branch -av</code> 查看每个分支的最新提交记录</li>
-<li><code>git branch -vv</code> 查看每个分支属于哪个远程仓库</li>
-<li><code>git reset --hard a3f40baadd5fea57b1b40f23f9a54a644eebd52e</code> 代码回归到某个提交记录</li>
-</ul>
-<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><ul>
-<li>查看所有分支 <code>git branch -a</code></li>
-<li>新建分支 <code> git branch dev</code></li>
-<li>查看当前分支 <code>git branch</code></li>
-<li>切换分支 <code>git checkout dev</code></li>
-<li>删除本地分支 <code>git branch -d dev</code></li>
-<li>同步删除远程分支 <code>git push origin :dev</code></li>
-<li>本地分支重命名 <code>git branch -m oldBranch newBranch</code></li>
-</ul>
-<h2 id="修改远程仓库地址"><a href="#修改远程仓库地址" class="headerlink" title="修改远程仓库地址"></a>修改远程仓库地址</h2><ul>
-<li><code>git remote -v</code>显示所有远程仓库</li>
-<li>方法1，先删后加:<ul>
-<li><code>git remote rm origin</code> 先删除</li>
-<li><code>git remote add origin 仓库地址</code> 链接到到远程git仓库</li>
-</ul>
-</li>
-<li>方法2，修改命令:<ul>
-<li><code>git remote set-url origin 仓库地址</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="远程分支获取最新的版本到本地"><a href="#远程分支获取最新的版本到本地" class="headerlink" title="远程分支获取最新的版本到本地"></a>远程分支获取最新的版本到本地</h2><ul>
-<li><code>git pull origin master:master</code></li>
-<li>如果以上命令还是失败尝试以下步骤：<ol>
-<li>首先从远程的origin的master主分支下载最新的版本到origin/master分支上<br> <code>git fetch origin master</code>        </li>
-<li>比较本地的master分支和origin/master分支的差别<br> <code>git log -p master..origin/master</code>        </li>
-<li>进行合并<br> <code>git merge origin/master</code></li>
-</ol>
-</li>
-<li><code>git merge --no-ff --no-commit branchX</code> 不强制合并branchX</li>
-</ul>
-<h2 id="拉取远程仓库指定分支到本地"><a href="#拉取远程仓库指定分支到本地" class="headerlink" title="拉取远程仓库指定分支到本地"></a>拉取远程仓库指定分支到本地</h2><ul>
-<li><p>首先要与origin master建立连接：<code>git remote add origin git@github.com:XXXX/nothing2.git</code>  </p>
-</li>
-<li><p>切换到其中某个子分支：<code>git checkout -b dev origin/dev</code>  </p>
-</li>
-<li><p>可能会报这种错误:</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fatal: Cannot update paths and switch to branch &#39;dev&#39; at the same time.</span><br><span class="line">Did you intend to checkout &#39;origin&#x2F;dev&#39; which can not be resolved as commit?</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>原因是你本地并没有dev这个分支，这时你可以用 <code>git branch -a</code> 命令来查看本地是否具有dev分支</p>
-</li>
-<li><p>我们需要：<code>git fetch origin dev</code> 命令来把远程分支拉到本地</p>
-</li>
-<li><p>然后使用：<code>git checkout -b dev origin/dev</code> 在本地创建分支dev并切换到该分支</p>
-</li>
-<li><p>最后使用：<code>git pull origin dev</code> 就可以把某个分支上的内容都拉取到本地了</p>
-</li>
-</ul>
-<h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><ul>
-<li><p>[参考链接][<a href="https://routinepanic.com/questions/how-to-selectively-merge-or-pick-changes-from-another-branch-in-git]">https://routinepanic.com/questions/how-to-selectively-merge-or-pick-changes-from-another-branch-in-git]</a></p>
-</li>
-<li><p><a href="https://blog.csdn.net/feeltouch/article/details/104734346?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param">参考链接</a></p>
-</li>
-<li><p><a href="http://www.scootersoftware.com/download.php">Beyond Compare (http://www.scootersoftware.com/download.php</a> 代码合并</p>
-</li>
-<li><p><a href="https://git-scm.com/book/zh/v2">官方Git文档地址 https://git-scm.com/book/zh/v2</a></p>
-</li>
-<li><p><a href="https://juejin.im/post/6867411333504040967?utm_source=gold_browser_extension#heading-16">https://juejin.im/post/6867411333504040967?utm_source=gold_browser_extension#heading-16</a></p>
-</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20200828093822382.png?imageslim" alt="attr"></p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="Question1"><a href="#Question1" class="headerlink" title="Question1"></a>Question1</h3><p><strong>执行git pull显示already up-to-date，但是本地代码并没有显示出来其他人的改动</strong></p>
-<h4 id="Question1-1"><a href="#Question1-1" class="headerlink" title="Question1"></a>Question1</h4><p>如何解决 <code>failed to push some refs to git</code></p>
-<h4 id="Answer1"><a href="#Answer1" class="headerlink" title="Answer1"></a>Answer1</h4><ul>
-<li><code>git pull --rebase origin master</code> 进行代码合并</li>
-<li><code>git push -u origin master</code> 即可完成代码上传</li>
-</ul>
-<hr>
-
-<h4 id="Question2"><a href="#Question2" class="headerlink" title="Question2"></a>Question2</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">If you wish to set tracking information for this branch you can do so with:</span><br><span class="line">git branch --set-upstream-to&#x3D;origin&#x2F;&lt;branch&gt; master</span><br></pre></td></tr></table></figure>
-
-<h4 id="Answer2"><a href="#Answer2" class="headerlink" title="Answer2"></a>Answer2</h4><p>指定当前当前工作目录工作分支，跟远程仓库分支之间的联系</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch --set-upstream master origin&#x2F;master</span><br></pre></td></tr></table></figure>
-
-<hr>
-
-<h4 id="Question3"><a href="#Question3" class="headerlink" title="Question3"></a>Question3</h4><p>获取 <code>git pull</code> 最新代码报以下错误:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fatal: refusing to merge unrelated histories</span><br></pre></td></tr></table></figure>
-
-<h4 id="Answer3"><a href="#Answer3" class="headerlink" title="Answer3"></a>Answer3</h4><p>git pull之后加上可选参数 –allow-unrelated-histories 强制合并</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
-
-<hr>
-
-<h4 id="Question4"><a href="#Question4" class="headerlink" title="Question4"></a>Question4</h4><p>使用钩子<code>pre-commit</code>，提交代码提示如下错误：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">&#x27;.&#x27;</span></span></span><br><span class="line">sh: eslint: command not found</span><br><span class="line">pre-commit:</span><br><span class="line">pre-commit: We&#x27;ve failed to pass the specified git pre-commit hooks as the `fix`</span><br><span class="line">pre-commit: hook returned an exit code (1). If you&#x27;re feeling adventurous you can</span><br><span class="line">pre-commit: skip the git pre-commit hooks by adding the following flags to your commit:</span><br><span class="line">pre-commit:</span><br><span class="line">pre-commit:   git commit -n (or --no-verify)</span><br><span class="line">pre-commit:</span><br><span class="line">pre-commit: This is ill-advised since the commit is broken.</span><br><span class="line">pre-commit:</span><br></pre></td></tr></table></figure>
-
-<h4 id="Answer4"><a href="#Answer4" class="headerlink" title="Answer4"></a>Answer4</h4><ul>
-<li>打开项目中的 <code>.git/hooks</code> 文件夹，找到 <code>pre-commit.sample</code> 文件，将以下代码替换到文件中，或者，<code>npm install pre-commit --save</code> 也可以，这个命令会自动执行以下操作。</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">TSLINT=&quot;$(git rev-parse --show-toplevel)/node_modules/.bin/tslint&quot;</span><br><span class="line">for file in $(git diff --cached --name-only | grep -E &#x27;\.ts$&#x27;)</span><br><span class="line">do</span><br><span class="line">        git show &quot;:$file&quot; | &quot;$TSLINT&quot; &quot;$file&quot;</span><br><span class="line">        if [ $? -ne 0 ]; then</span><br><span class="line">                exit 1</span><br><span class="line">        fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<ul>
-<li>将<code>pre-commit.sample</code>文件名修改为<code>pre-commit</code>。</li>
-</ul>
-<hr>
-
-<h4 id="Question5"><a href="#Question5" class="headerlink" title="Question5"></a>Question5</h4><p>.gitignore 规则不生效的解决办法</p>
-<h4 id="Answer5"><a href="#Answer5" class="headerlink" title="Answer5"></a>Answer5</h4><p>把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git rm -r --cached . 或者 git rm -r README.md</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;update .gitignore&#39;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iframe</title>
     <url>/CC/posts/ede334e1.html</url>
     <content><![CDATA[<p>HTML内联框架元素<code>iframe</code>表示嵌套的browsing context。它能够将另一个HTML页面嵌入到当前页面中。</p>
@@ -1182,6 +1138,72 @@
       <categories>
         <category>HTML</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Http</title>
+    <url>/CC/posts/f28e1d8e.html</url>
+    <content><![CDATA[<p>Http 的常见问题</p>
+<span id="more"></span>
+
+<h2 id="HTTPS-和-HTTP-的区别"><a href="#HTTPS-和-HTTP-的区别" class="headerlink" title="HTTPS 和 HTTP 的区别"></a>HTTPS 和 HTTP 的区别</h2><blockquote><ul>
+<li>HTTP 协议以明文方式发送内容，数据都是未加密的，安全性较差。HTTPS 数据传输过程是加密的，安全性较好。</li>
+<li>HTTP 和 HTTPS 使用的是完全不同的连接方式，用的端口也不一样，前者是 80 端口，后者是 443 端口。</li>
+<li>HTTPS 协议需要到数字认证机构（Certificate Authority, CA）申请证书，一般需要一定的费用。</li>
+<li>HTTP 页面响应比 HTTPS 快，主要因为 HTTP 使用 3 次握手建立连接，客户端和服务器需要握手 3 次，而 HTTPS 除了 TCP 的 3 次握手，还需要经历一个 SSL 协商过程。</li>
+</ul>
+</blockquote>
+
+<h2 id="GET-和-POST-的区别"><a href="#GET-和-POST-的区别" class="headerlink" title="GET 和 POST 的区别"></a>GET 和 POST 的区别</h2><blockquote><ul>
+<li>get 提交的数据会放在 URL 之后，并且请求参数会被完整的保留在浏览器的记录里，由于参数直接暴露在 URL 中，可能会存在安全问题，因此往往用于获取资源信息。而 post 参数放在请求主体中，并且参数不会被保留，相比 get 方法，post 方法更安全，主要用于修改服务器上的资源。</li>
+<li>get 请求只支持 URL 编码，post 请求支持多种编码格式。</li>
+<li>get 只支持 ASCII 字符格式的参数，而 post 方法没有限制。</li>
+<li>get 提交的数据大小有限制（这里所说的限制是针对浏览器而言的），而 post 方法提交的数据没限制</li>
+<li>get 方式需要使用 Request.QueryString 来取得变量的值，而 post 方式通过 Request.Form 来获取。</li>
+<li>get 方法产生一个 TCP 数据包，post 方法产生两个（并不是所有的浏览器中都产生两个）。</li>
+</ul>
+</blockquote>
+
+<h2 id="网页解析全过程【用户输入网址到显示对应页面的全过程】"><a href="#网页解析全过程【用户输入网址到显示对应页面的全过程】" class="headerlink" title="网页解析全过程【用户输入网址到显示对应页面的全过程】"></a>网页解析全过程【用户输入网址到显示对应页面的全过程】</h2><blockquote><ul>
+<li>DNS 解析：当用户输入一个网址并按下回车键的时候，浏览器获得一个域名，而在实际通信过程中，我们需要的是一个 IP 地址，因此我们需要先把域名转换成相应 IP 地址。</li>
+<li>TCP 连接：浏览器通过 DNS 获取到 Web 服务器真正的 IP 地址后，便向 Web 服务器发起 TCP 连接请求，通过 TCP 三次握手建立好连接后，浏览器便可以将 HTTP 请求数据发送给服务器了。</li>
+<li>发送 HTTP 请求：浏览器向 Web 服务器发起一个 HTTP 请求，HTTP 协议是建立在 TCP 协议之上的应用层协议，其本质是在建立起的TCP连接中，按照HTTP协议标准发送一个索要网页的请求。在这一过程中，会涉及到负载均衡等操作。</li>
+<li>处理请求并返回：服务器获取到客户端的 HTTP 请求后，会根据 HTTP 请求中的内容来决定如何获取相应的文件，并将文件发送给浏览器。</li>
+<li>浏览器渲染：浏览器根据响应开始显示页面，首先解析 HTML 文件构建 DOM 树，然后解析 CSS 文件构建渲染树，等到渲染树构建完成后，浏览器开始布局渲染树并将其绘制到屏幕上。</li>
+<li>断开连接：客户端和服务器通过四次挥手终止 TCP 连接。</li>
+</ul>
+</blockquote>
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><blockquote>
+<p><a href="https://leetcode-cn.com/leetbook/read/networks-interview-highlights/esegch/">计算机网络面试突击</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Computer NetWork</category>
+      </categories>
+      <tags>
+        <tag>面经</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Http 协议</title>
+    <url>/CC/posts/2ad2909e.html</url>
+    <content><![CDATA[<span id="more"></span>
+<h2 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h2><p>即在HTTP 应用程序之间发送的数据块</p>
+<p>请求状态码<br><strong>200～299——请求成功状态码</strong></p>
+<p>| 状态码 | 原因短语 | 含　　义 |<br>|:—–|:—–|<br>| 200 | OK | 服务器已成功处理了请求。 通常，这表示服务器提供了请求的资源。  |<br>| 201 | Created | 请求成功并且服务器创建了新的资源。  |<br>| 202 | Accepted | 服务器已接受请求，但尚未处理。<br>| 203 |（非授权信息） 服务器已成功处理了请求，但返回的信息可能来自另一来源。<br>| 204 |（无内容） 服务器成功处理了请求，但没有返回任何内容。<br>| 205 |（重置内容） 服务器成功处理了请求，但没有返回任何内容。<br>| 206 |（部分内容） 服务器成功处理了部分 GET 请求。</p>
+<p><strong>3|开头 （请求被重定向）表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</strong></p>
+<p>300 （多种选择） 针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。<br>301 （永久移动） 请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。<br>302 （临时移动） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。<br>303 （查看其他位置） 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。<br>304 （未修改） 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。<br>305 （使用代理） 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。<br>307 （临时重定向） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
+<p><strong>4开头 （请求错误）这些状态代码表示请求可能出错，妨碍了服务器的处理。</strong></p>
+<p>400 （错误请求） 服务器不理解请求的语法。<br>401 （未授权） 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。<br>403 （禁止） 服务器拒绝请求。<br>404 （未找到） 服务器找不到请求的网页。<br>405 （方法禁用） 禁用请求中指定的方法。<br>406 （不接受） 无法使用请求的内容特性响应请求的网页。<br>407 （需要代理授权） 此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。<br>408 （请求超时） 服务器等候请求时发生超时。<br>409 （冲突） 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。<br>410 （已删除） 如果请求的资源已永久删除，服务器就会返回此响应。<br>411 （需要有效长度） 服务器不接受不含有效内容长度标头字段的请求。<br>412 （未满足前提条件） 服务器未满足请求者在请求中设置的其中一个前提条件。<br>413 （请求实体过大） 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。<br>414 （请求的 URI 过长） 请求的 URI（通常为网址）过长，服务器无法处理。<br>415 （不支持的媒体类型） 请求的格式不受请求页面的支持。<br>416 （请求范围不符合要求） 如果页面无法提供请求的范围，则服务器会返回此状态代码。<br>417 （未满足期望值） 服务器未满足”期望”请求标头字段的要求。</p>
+<p><strong>5开头（服务器错误）这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</strong></p>
+<p>500 （服务器内部错误） 服务器遇到错误，无法完成请求。<br>501 （尚未实施） 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。<br>502 （错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。<br>503 （服务不可用） 服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态。<br>504 （网关超时） 服务器作为网关或代理，但是没有及时从上游服务器收到请求。<br>505 （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。</p>
+<ul>
+<li><a href="https://www.cnblogs.com/xflonga/p/9368993.html">状态码参考</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
   </entry>
   <entry>
     <title>第十章 DOM</title>
@@ -1433,37 +1455,6 @@
       </tags>
   </entry>
   <entry>
-    <title>第五章 引用类型</title>
-    <url>/CC/posts/71de0ab2.html</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h2 id="RegExp类型"><a href="#RegExp类型" class="headerlink" title="RegExp类型"></a>RegExp类型</h2><p>ECMAScript 通过<code>RegExp</code>类型来支持正则表达式。使用下面类似Perl的语法，就可以创建一个正则表达式。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> expression = <span class="regexp">/ pattern /</span> flags;</span><br></pre></td></tr></table></figure>
-
-<p>其中的模式（pattern）部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用。每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为。</p>
-<p>正则表达式的匹配模式支持下列 3 个标志。</p>
-<ul>
-<li><code>g</code>：表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止；</li>
-<li><code>i</code>：表示不区分大小写（case-insensitive）模式;</li>
-<li><code>m</code>：表示多行（multiline）模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配字符串中所有&quot;at&quot;的实例</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/at/g</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个&quot;bat&quot;或&quot;cat&quot;，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="regexp">/[bc]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配所有以&quot;at&quot;结尾的 3 个字符的组合，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern3 = <span class="regexp">/.at/gi</span>;</span><br></pre></td></tr></table></figure>
-
-<p>模式中使用的所有元字符都必须转义。正则表达式中的元字符包括：<code>( [ &#123; \ ^ $ | ) ? * + .]&#125;</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个&quot;bat&quot;或&quot;cat&quot;，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/[bc]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个&quot; [bc]at&quot;，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="regexp">/\[bc\]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配所有以&quot;at&quot;结尾的 3 个字符的组合，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern3 = <span class="regexp">/.at/gi</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配所有&quot;.at&quot;，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern4 = <span class="regexp">/\.at/gi</span>;</span><br></pre></td></tr></table></figure>
-
-<p>前面举的这些例子都是以字面量形式来定义的正则表达式。另一种创建正则表达式的方式是使用<code>RegExp</code>构造函数，它接收两个参数：一个是要匹配的字符串模式，另一个是可选的标志字符串。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个&quot;bat&quot;或&quot;cat&quot;，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/[bc]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 与 pattern1 相同，只不过是使用构造函数创建的</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&quot;[bc]at&quot;</span>, <span class="string">&quot;i&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>JavaScript高级程序设计</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>引用类型 Array</title>
     <url>/CC/posts/8b81097c.html</url>
     <content><![CDATA[<p>Array 和Object类型是 ECMAScript 中最常用的类型。而且，ECMAScript 中的数组与其他多数语言中的数组有着相当大的区别。虽然 ECMAScript 数组与其他语言中的数组都是数据的有序列表，但与其他语言不同的是，ECMAScript 数组的每一项可以保存任何类型的数据。ECMAScript 数组的大小是可以动态调整的，即可以随着数据的添加自动增长以容纳新增数据。</p>
@@ -1604,6 +1595,37 @@
       </tags>
   </entry>
   <entry>
+    <title>第五章 引用类型</title>
+    <url>/CC/posts/71de0ab2.html</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="RegExp类型"><a href="#RegExp类型" class="headerlink" title="RegExp类型"></a>RegExp类型</h2><p>ECMAScript 通过<code>RegExp</code>类型来支持正则表达式。使用下面类似Perl的语法，就可以创建一个正则表达式。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> expression = <span class="regexp">/ pattern /</span> flags;</span><br></pre></td></tr></table></figure>
+
+<p>其中的模式（pattern）部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用。每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为。</p>
+<p>正则表达式的匹配模式支持下列 3 个标志。</p>
+<ul>
+<li><code>g</code>：表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止；</li>
+<li><code>i</code>：表示不区分大小写（case-insensitive）模式;</li>
+<li><code>m</code>：表示多行（multiline）模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配字符串中所有&quot;at&quot;的实例</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/at/g</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个&quot;bat&quot;或&quot;cat&quot;，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="regexp">/[bc]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配所有以&quot;at&quot;结尾的 3 个字符的组合，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern3 = <span class="regexp">/.at/gi</span>;</span><br></pre></td></tr></table></figure>
+
+<p>模式中使用的所有元字符都必须转义。正则表达式中的元字符包括：<code>( [ &#123; \ ^ $ | ) ? * + .]&#125;</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个&quot;bat&quot;或&quot;cat&quot;，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/[bc]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个&quot; [bc]at&quot;，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="regexp">/\[bc\]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配所有以&quot;at&quot;结尾的 3 个字符的组合，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern3 = <span class="regexp">/.at/gi</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配所有&quot;.at&quot;，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern4 = <span class="regexp">/\.at/gi</span>;</span><br></pre></td></tr></table></figure>
+
+<p>前面举的这些例子都是以字面量形式来定义的正则表达式。另一种创建正则表达式的方式是使用<code>RegExp</code>构造函数，它接收两个参数：一个是要匹配的字符串模式，另一个是可选的标志字符串。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个&quot;bat&quot;或&quot;cat&quot;，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/[bc]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 与 pattern1 相同，只不过是使用构造函数创建的</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&quot;[bc]at&quot;</span>, <span class="string">&quot;i&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JavaScript高级程序设计</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>客户端存储</title>
     <url>/CC/posts/c8419ccf.html</url>
     <content><![CDATA[<p>把一些与特定用户相关的信息例如登录信息、个人偏好，或者其他数据应该保存在客户端上。</p>
@@ -1626,8 +1648,74 @@
       </tags>
   </entry>
   <entry>
+    <title>new Vue(options)</title>
+    <url>/CC/posts/6c57fc42.html</url>
+    <content><![CDATA[<blockquote>
+<p>每个<code>Vue</code>应用都是通过用<code>Vue</code>函数创建一个新的<code>Vue</code>实例开始的：</p>
+</blockquote>
+<span id="more"></span>
+
+<p>当创建一个 Vue 实例时，你可以传入一个选项对象。这篇教程主要描述的就是如何使用这些选项来创建你想要的行为。作为参考，你也可以在 <a href="https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E6%95%B0%E6%8D%AE">API 文档</a>中浏览完整的选项列表。</p>
+<p><a href="https://github.com/vuejs/vue">vue地址</a>,当前vue版本：v2.6.12</p>
+<h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><blockquote>
+<p>src/core/instance/index.js</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; initMixin &#125; <span class="keyword">from</span> <span class="string">&#x27;./init&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; stateMixin &#125; <span class="keyword">from</span> <span class="string">&#x27;./state&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; renderMixin &#125; <span class="keyword">from</span> <span class="string">&#x27;./render&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; eventsMixin &#125; <span class="keyword">from</span> <span class="string">&#x27;./events&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; lifecycleMixin &#125; <span class="keyword">from</span> <span class="string">&#x27;./lifecycle&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; warn &#125; <span class="keyword">from</span> <span class="string">&#x27;../util/index&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Vue</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span> &amp;&amp;</span><br><span class="line">    !(<span class="built_in">this</span> <span class="keyword">instanceof</span> Vue)</span><br><span class="line">  ) &#123;</span><br><span class="line">    warn(<span class="string">&#x27;Vue is a constructor and should be called with the `new` keyword&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 调用 Vue.prototype._init, 在initMixin中定义</span></span><br><span class="line">  <span class="built_in">this</span>._init(options)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">initMixin(Vue)  <span class="comment">// 定义 Vue.prototype._init</span></span><br><span class="line">stateMixin(Vue)</span><br><span class="line">eventsMixin(Vue)</span><br><span class="line">lifecycleMixin(Vue)</span><br><span class="line">renderMixin(Vue)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Vue</span><br></pre></td></tr></table></figure>
+
+<div class="note info">
+            <ul><li><code>new</code>实例化一个对象;</li><li><code>Vue</code> 是 function 形式实现的类，<code>new Vue(options)</code> 声明一个实例对象;</li><li>执行 <code>Vue</code> 构造函数，<code>this._init(options)</code> 初始化传参;</li></ul>
+          </div>
+
+<h2 id="Vue-prototype-init"><a href="#Vue-prototype-init" class="headerlink" title="Vue.prototype._init"></a>Vue.prototype._init</h2><blockquote>
+<p>/src/core/instance/init.js</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> </span>Vue </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">initMixin</span> (<span class="params">Vue: Class&lt;Component&gt;</span>) </span>&#123;   </span><br><span class="line">  <span class="comment">//Vue component 初始化过程</span></span><br><span class="line">  Vue.prototype._init = <span class="function"><span class="keyword">function</span> (<span class="params">options?: Object</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//current component</span></span><br><span class="line">    <span class="keyword">const</span> vm: Component = <span class="built_in">this</span></span><br><span class="line">    <span class="comment">// a uid</span></span><br><span class="line">    vm._uid = uid++</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> startTag, endTag</span><br><span class="line">    <span class="comment">/* istanbul ignore if */</span></span><br><span class="line">    <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span> &amp;&amp; config.performance &amp;&amp; mark) &#123;</span><br><span class="line">      startTag = <span class="string">`vue-perf-start:<span class="subst">$&#123;vm._uid&#125;</span>`</span></span><br><span class="line">      endTag = <span class="string">`vue-perf-end:<span class="subst">$&#123;vm._uid&#125;</span>`</span></span><br><span class="line">      mark(startTag)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// a flag to avoid this being observed</span></span><br><span class="line">    vm._isVue = <span class="literal">true</span></span><br><span class="line">    <span class="comment">// merge options</span></span><br><span class="line">    <span class="keyword">if</span> (options &amp;&amp; options._isComponent) &#123;</span><br><span class="line">      <span class="comment">// optimize internal component instantiation</span></span><br><span class="line">      <span class="comment">// since dynamic options merging is pretty slow, and none of the</span></span><br><span class="line">      <span class="comment">// internal component options needs special treatment.</span></span><br><span class="line">      initInternalComponent(vm, options)</span><br><span class="line">      <span class="comment">//init root Component</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      vm.$options = mergeOptions(</span><br><span class="line">        resolveConstructorOptions(vm.constructor),</span><br><span class="line">        options || &#123;&#125;,</span><br><span class="line">        vm</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* istanbul ignore else */</span></span><br><span class="line">    <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span>) &#123;</span><br><span class="line">      initProxy(vm)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      vm._renderProxy = vm</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// expose real self</span></span><br><span class="line">    vm._self = vm</span><br><span class="line">    initLifecycle(vm)</span><br><span class="line">    initEvents(vm)</span><br><span class="line">    initRender(vm)</span><br><span class="line">    callHook(vm, <span class="string">&#x27;beforeCreate&#x27;</span>)</span><br><span class="line">    initInjections(vm) <span class="comment">// resolve injections before data/props</span></span><br><span class="line">    initState(vm)</span><br><span class="line">    initProvide(vm) <span class="comment">// resolve provide after data/props</span></span><br><span class="line">    callHook(vm, <span class="string">&#x27;created&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* istanbul ignore if */</span></span><br><span class="line">    <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span> &amp;&amp; config.performance &amp;&amp; mark) &#123;</span><br><span class="line">      vm._name = formatComponentName(vm, <span class="literal">false</span>)</span><br><span class="line">      mark(endTag)</span><br><span class="line">      measure(<span class="string">`vue <span class="subst">$&#123;vm._name&#125;</span> init`</span>, startTag, endTag)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//  mount dom element</span></span><br><span class="line">    <span class="keyword">if</span> (vm.$options.el) &#123;</span><br><span class="line">      vm.$mount(vm.$options.el)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="resolveConstructorOptions"><a href="#resolveConstructorOptions" class="headerlink" title="resolveConstructorOptions"></a>resolveConstructorOptions</h3><blockquote>
+<p>/src/core/instance/init.js</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> </span>Ctor </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns </span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">resolveConstructorOptions</span> (<span class="params">Ctor: Class&lt;Component&gt;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> options = Ctor.options</span><br><span class="line">  <span class="keyword">if</span> (Ctor.super) &#123;</span><br><span class="line">    <span class="keyword">const</span> superOptions = resolveConstructorOptions(Ctor.super)</span><br><span class="line">    <span class="keyword">const</span> cachedSuperOptions = Ctor.superOptions</span><br><span class="line">    <span class="keyword">if</span> (superOptions !== cachedSuperOptions) &#123;</span><br><span class="line">      <span class="comment">// super option changed,</span></span><br><span class="line">      <span class="comment">// need to resolve new options.</span></span><br><span class="line">      Ctor.superOptions = superOptions</span><br><span class="line">      <span class="comment">// check if there are any late-modified/attached options (#4976)</span></span><br><span class="line">      <span class="keyword">const</span> modifiedOptions = resolveModifiedOptions(Ctor)</span><br><span class="line">      <span class="comment">// update base extend options</span></span><br><span class="line">      <span class="keyword">if</span> (modifiedOptions) &#123;</span><br><span class="line">        extend(Ctor.extendOptions, modifiedOptions)</span><br><span class="line">      &#125;</span><br><span class="line">      options = Ctor.options = mergeOptions(superOptions, Ctor.extendOptions)</span><br><span class="line">      <span class="keyword">if</span> (options.name) &#123;</span><br><span class="line">        options.components[options.name] = Ctor</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> options</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="note info">
+            <ul><li>执行构造函数;</li><li>上下文转移至vm;</li><li>如果 <code>options._isComponent</code> 为 <code>true</code>，则初始化内部组件实例；否则合并配置参数，并挂载到 <code>vm.$options</code> 上面;</li><li>初始化生命周期函数、初始化事件相关、初始化渲染相关;</li><li>执行<code>beforeCreate</code>生命周期函数;</li><li>在初始化<code>state/props</code>之前初始化注入<code>inject</code>;</li><li>初始化<code>state/props</code>的数据双向绑定;</li><li>在初始化<code>state/props</code>之后初始化<code>provide</code>;</li><li>执行<code>created</code>生命周期函数;</li><li>挂载到<strong>dom</strong>元素;</li></ul>
+          </div>
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://cn.vuejs.org/v2/guide/instance.html">Vue 实例</a></li>
+<li><a href="https://juejin.cn/post/6950084496515399717">Vue 源码解读（2）—— Vue 初始化过程</a></li>
+<li><a href="https://blog.csdn.net/afk46847/article/details/101509069">数据驱动和初始化</a></li>
+<li><a href="https://segmentfault.com/a/1190000037557675">从源码层面解读16道Vue常考面试题</a></li>
+<li><a href="https://segmentfault.com/a/1190000014587126">resolveConstructorOptions</a><!-- ## 拓展[初始化vue实例](../posts/fb999349) -->
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Source Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一部分 变化检测</title>
+    <url>/CC/posts/7465b203.html</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>JS中检测对象的变化有两种：<code>Object.defineProperty</code>和ES6的<code>proxy</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defineReactive</span> (<span class="params">data, key, val</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(data, key, &#123;</span><br><span class="line">        enumerable: <span class="literal">true</span>,</span><br><span class="line">        configurable: <span class="literal">true</span>,</span><br><span class="line">        get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> val</span><br><span class="line">        &#125;,</span><br><span class="line">        set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(val === newVal)&#123;</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            &#125;</span><br><span class="line">            val = newVal</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="收集依赖"><a href="#收集依赖" class="headerlink" title="收集依赖"></a>收集依赖</h3><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://github.com/berwin/Blog">参考链接1</a></p>
+]]></content>
+      <categories>
+        <category>Vue.js</category>
+      </categories>
+      <tags>
+        <tag>深入浅出Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>手撕JS</title>
-    <url>/CC/posts/fb999349.html</url>
+    <url>/CC/posts/fa957e3f.html</url>
     <content><![CDATA[<p>Js的一些高级运用</p>
 <span id="more"></span>
 
@@ -1880,117 +1968,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Http</title>
-    <url>/CC/posts/f28e1d8e.html</url>
-    <content><![CDATA[<p>Http 的常见问题</p>
-<span id="more"></span>
-
-<h2 id="HTTPS-和-HTTP-的区别"><a href="#HTTPS-和-HTTP-的区别" class="headerlink" title="HTTPS 和 HTTP 的区别"></a>HTTPS 和 HTTP 的区别</h2><blockquote><ul>
-<li>HTTP 协议以明文方式发送内容，数据都是未加密的，安全性较差。HTTPS 数据传输过程是加密的，安全性较好。</li>
-<li>HTTP 和 HTTPS 使用的是完全不同的连接方式，用的端口也不一样，前者是 80 端口，后者是 443 端口。</li>
-<li>HTTPS 协议需要到数字认证机构（Certificate Authority, CA）申请证书，一般需要一定的费用。</li>
-<li>HTTP 页面响应比 HTTPS 快，主要因为 HTTP 使用 3 次握手建立连接，客户端和服务器需要握手 3 次，而 HTTPS 除了 TCP 的 3 次握手，还需要经历一个 SSL 协商过程。</li>
-</ul>
-</blockquote>
-
-<h2 id="GET-和-POST-的区别"><a href="#GET-和-POST-的区别" class="headerlink" title="GET 和 POST 的区别"></a>GET 和 POST 的区别</h2><blockquote><ul>
-<li>get 提交的数据会放在 URL 之后，并且请求参数会被完整的保留在浏览器的记录里，由于参数直接暴露在 URL 中，可能会存在安全问题，因此往往用于获取资源信息。而 post 参数放在请求主体中，并且参数不会被保留，相比 get 方法，post 方法更安全，主要用于修改服务器上的资源。</li>
-<li>get 请求只支持 URL 编码，post 请求支持多种编码格式。</li>
-<li>get 只支持 ASCII 字符格式的参数，而 post 方法没有限制。</li>
-<li>get 提交的数据大小有限制（这里所说的限制是针对浏览器而言的），而 post 方法提交的数据没限制</li>
-<li>get 方式需要使用 Request.QueryString 来取得变量的值，而 post 方式通过 Request.Form 来获取。</li>
-<li>get 方法产生一个 TCP 数据包，post 方法产生两个（并不是所有的浏览器中都产生两个）。</li>
-</ul>
-</blockquote>
-
-<h2 id="网页解析全过程【用户输入网址到显示对应页面的全过程】"><a href="#网页解析全过程【用户输入网址到显示对应页面的全过程】" class="headerlink" title="网页解析全过程【用户输入网址到显示对应页面的全过程】"></a>网页解析全过程【用户输入网址到显示对应页面的全过程】</h2><blockquote><ul>
-<li>DNS 解析：当用户输入一个网址并按下回车键的时候，浏览器获得一个域名，而在实际通信过程中，我们需要的是一个 IP 地址，因此我们需要先把域名转换成相应 IP 地址。</li>
-<li>TCP 连接：浏览器通过 DNS 获取到 Web 服务器真正的 IP 地址后，便向 Web 服务器发起 TCP 连接请求，通过 TCP 三次握手建立好连接后，浏览器便可以将 HTTP 请求数据发送给服务器了。</li>
-<li>发送 HTTP 请求：浏览器向 Web 服务器发起一个 HTTP 请求，HTTP 协议是建立在 TCP 协议之上的应用层协议，其本质是在建立起的TCP连接中，按照HTTP协议标准发送一个索要网页的请求。在这一过程中，会涉及到负载均衡等操作。</li>
-<li>处理请求并返回：服务器获取到客户端的 HTTP 请求后，会根据 HTTP 请求中的内容来决定如何获取相应的文件，并将文件发送给浏览器。</li>
-<li>浏览器渲染：浏览器根据响应开始显示页面，首先解析 HTML 文件构建 DOM 树，然后解析 CSS 文件构建渲染树，等到渲染树构建完成后，浏览器开始布局渲染树并将其绘制到屏幕上。</li>
-<li>断开连接：客户端和服务器通过四次挥手终止 TCP 连接。</li>
-</ul>
-</blockquote>
-
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><blockquote>
-<p><a href="https://leetcode-cn.com/leetbook/read/networks-interview-highlights/esegch/">计算机网络面试突击</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Computer NetWork</category>
-      </categories>
-      <tags>
-        <tag>面经</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>new Vue(options)</title>
-    <url>/CC/posts/6c57fc42.html</url>
-    <content><![CDATA[<blockquote>
-<p>每个<code>Vue</code>应用都是通过用<code>Vue</code>函数创建一个新的<code>Vue</code>实例开始的：</p>
-</blockquote>
-<span id="more"></span>
-
-<p>当创建一个 Vue 实例时，你可以传入一个选项对象。这篇教程主要描述的就是如何使用这些选项来创建你想要的行为。作为参考，你也可以在 <a href="https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E6%95%B0%E6%8D%AE">API 文档</a>中浏览完整的选项列表。</p>
-<p><a href="https://github.com/vuejs/vue">vue地址</a>,当前vue版本：v2.6.12</p>
-<h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><blockquote>
-<p>src/core/instance/index.js</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; initMixin &#125; <span class="keyword">from</span> <span class="string">&#x27;./init&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; stateMixin &#125; <span class="keyword">from</span> <span class="string">&#x27;./state&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; renderMixin &#125; <span class="keyword">from</span> <span class="string">&#x27;./render&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; eventsMixin &#125; <span class="keyword">from</span> <span class="string">&#x27;./events&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; lifecycleMixin &#125; <span class="keyword">from</span> <span class="string">&#x27;./lifecycle&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; warn &#125; <span class="keyword">from</span> <span class="string">&#x27;../util/index&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Vue</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span> &amp;&amp;</span><br><span class="line">    !(<span class="built_in">this</span> <span class="keyword">instanceof</span> Vue)</span><br><span class="line">  ) &#123;</span><br><span class="line">    warn(<span class="string">&#x27;Vue is a constructor and should be called with the `new` keyword&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 调用 Vue.prototype._init, 在initMixin中定义</span></span><br><span class="line">  <span class="built_in">this</span>._init(options)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">initMixin(Vue)  <span class="comment">// 定义 Vue.prototype._init</span></span><br><span class="line">stateMixin(Vue)</span><br><span class="line">eventsMixin(Vue)</span><br><span class="line">lifecycleMixin(Vue)</span><br><span class="line">renderMixin(Vue)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Vue</span><br></pre></td></tr></table></figure>
-
-<div class="note info">
-            <ul><li><code>new</code>实例化一个对象;</li><li><code>Vue</code> 是 function 形式实现的类，<code>new Vue(options)</code> 声明一个实例对象;</li><li>执行 <code>Vue</code> 构造函数，<code>this._init(options)</code> 初始化传参;</li></ul>
-          </div>
-
-<h2 id="Vue-prototype-init"><a href="#Vue-prototype-init" class="headerlink" title="Vue.prototype._init"></a>Vue.prototype._init</h2><blockquote>
-<p>/src/core/instance/init.js</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> </span>Vue </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">initMixin</span> (<span class="params">Vue: Class&lt;Component&gt;</span>) </span>&#123;   </span><br><span class="line">  <span class="comment">//Vue component 初始化过程</span></span><br><span class="line">  Vue.prototype._init = <span class="function"><span class="keyword">function</span> (<span class="params">options?: Object</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//current component</span></span><br><span class="line">    <span class="keyword">const</span> vm: Component = <span class="built_in">this</span></span><br><span class="line">    <span class="comment">// a uid</span></span><br><span class="line">    vm._uid = uid++</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> startTag, endTag</span><br><span class="line">    <span class="comment">/* istanbul ignore if */</span></span><br><span class="line">    <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span> &amp;&amp; config.performance &amp;&amp; mark) &#123;</span><br><span class="line">      startTag = <span class="string">`vue-perf-start:<span class="subst">$&#123;vm._uid&#125;</span>`</span></span><br><span class="line">      endTag = <span class="string">`vue-perf-end:<span class="subst">$&#123;vm._uid&#125;</span>`</span></span><br><span class="line">      mark(startTag)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// a flag to avoid this being observed</span></span><br><span class="line">    vm._isVue = <span class="literal">true</span></span><br><span class="line">    <span class="comment">// merge options</span></span><br><span class="line">    <span class="keyword">if</span> (options &amp;&amp; options._isComponent) &#123;</span><br><span class="line">      <span class="comment">// optimize internal component instantiation</span></span><br><span class="line">      <span class="comment">// since dynamic options merging is pretty slow, and none of the</span></span><br><span class="line">      <span class="comment">// internal component options needs special treatment.</span></span><br><span class="line">      initInternalComponent(vm, options)</span><br><span class="line">      <span class="comment">//init root Component</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      vm.$options = mergeOptions(</span><br><span class="line">        resolveConstructorOptions(vm.constructor),</span><br><span class="line">        options || &#123;&#125;,</span><br><span class="line">        vm</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* istanbul ignore else */</span></span><br><span class="line">    <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span>) &#123;</span><br><span class="line">      initProxy(vm)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      vm._renderProxy = vm</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// expose real self</span></span><br><span class="line">    vm._self = vm</span><br><span class="line">    initLifecycle(vm)</span><br><span class="line">    initEvents(vm)</span><br><span class="line">    initRender(vm)</span><br><span class="line">    callHook(vm, <span class="string">&#x27;beforeCreate&#x27;</span>)</span><br><span class="line">    initInjections(vm) <span class="comment">// resolve injections before data/props</span></span><br><span class="line">    initState(vm)</span><br><span class="line">    initProvide(vm) <span class="comment">// resolve provide after data/props</span></span><br><span class="line">    callHook(vm, <span class="string">&#x27;created&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* istanbul ignore if */</span></span><br><span class="line">    <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span> &amp;&amp; config.performance &amp;&amp; mark) &#123;</span><br><span class="line">      vm._name = formatComponentName(vm, <span class="literal">false</span>)</span><br><span class="line">      mark(endTag)</span><br><span class="line">      measure(<span class="string">`vue <span class="subst">$&#123;vm._name&#125;</span> init`</span>, startTag, endTag)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//  mount dom element</span></span><br><span class="line">    <span class="keyword">if</span> (vm.$options.el) &#123;</span><br><span class="line">      vm.$mount(vm.$options.el)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="resolveConstructorOptions"><a href="#resolveConstructorOptions" class="headerlink" title="resolveConstructorOptions"></a>resolveConstructorOptions</h3><blockquote>
-<p>/src/core/instance/init.js</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> </span>Ctor </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns </span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">resolveConstructorOptions</span> (<span class="params">Ctor: Class&lt;Component&gt;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> options = Ctor.options</span><br><span class="line">  <span class="keyword">if</span> (Ctor.super) &#123;</span><br><span class="line">    <span class="keyword">const</span> superOptions = resolveConstructorOptions(Ctor.super)</span><br><span class="line">    <span class="keyword">const</span> cachedSuperOptions = Ctor.superOptions</span><br><span class="line">    <span class="keyword">if</span> (superOptions !== cachedSuperOptions) &#123;</span><br><span class="line">      <span class="comment">// super option changed,</span></span><br><span class="line">      <span class="comment">// need to resolve new options.</span></span><br><span class="line">      Ctor.superOptions = superOptions</span><br><span class="line">      <span class="comment">// check if there are any late-modified/attached options (#4976)</span></span><br><span class="line">      <span class="keyword">const</span> modifiedOptions = resolveModifiedOptions(Ctor)</span><br><span class="line">      <span class="comment">// update base extend options</span></span><br><span class="line">      <span class="keyword">if</span> (modifiedOptions) &#123;</span><br><span class="line">        extend(Ctor.extendOptions, modifiedOptions)</span><br><span class="line">      &#125;</span><br><span class="line">      options = Ctor.options = mergeOptions(superOptions, Ctor.extendOptions)</span><br><span class="line">      <span class="keyword">if</span> (options.name) &#123;</span><br><span class="line">        options.components[options.name] = Ctor</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> options</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="note info">
-            <ul><li>执行构造函数;</li><li>上下文转移至vm;</li><li>如果 <code>options._isComponent</code> 为 <code>true</code>，则初始化内部组件实例；否则合并配置参数，并挂载到 <code>vm.$options</code> 上面;</li><li>初始化生命周期函数、初始化事件相关、初始化渲染相关;</li><li>执行<code>beforeCreate</code>生命周期函数;</li><li>在初始化<code>state/props</code>之前初始化注入<code>inject</code>;</li><li>初始化<code>state/props</code>的数据双向绑定;</li><li>在初始化<code>state/props</code>之后初始化<code>provide</code>;</li><li>执行<code>created</code>生命周期函数;</li><li>挂载到<strong>dom</strong>元素;</li></ul>
-          </div>
-
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://cn.vuejs.org/v2/guide/instance.html">Vue 实例</a></li>
-<li><a href="https://juejin.cn/post/6950084496515399717">Vue 源码解读（2）—— Vue 初始化过程</a></li>
-<li><a href="https://blog.csdn.net/afk46847/article/details/101509069">数据驱动和初始化</a></li>
-<li><a href="https://segmentfault.com/a/1190000037557675">从源码层面解读16道Vue常考面试题</a></li>
-<li><a href="https://segmentfault.com/a/1190000014587126">resolveConstructorOptions</a><!-- ## 拓展[初始化vue实例](../posts/fb999349) -->
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>Source Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一部分 变化检测</title>
-    <url>/CC/posts/7465b203.html</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>JS中检测对象的变化有两种：<code>Object.defineProperty</code>和ES6的<code>proxy</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defineReactive</span> (<span class="params">data, key, val</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(data, key, &#123;</span><br><span class="line">        enumerable: <span class="literal">true</span>,</span><br><span class="line">        configurable: <span class="literal">true</span>,</span><br><span class="line">        get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> val</span><br><span class="line">        &#125;,</span><br><span class="line">        set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(val === newVal)&#123;</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            &#125;</span><br><span class="line">            val = newVal</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="收集依赖"><a href="#收集依赖" class="headerlink" title="收集依赖"></a>收集依赖</h3><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://github.com/berwin/Blog">参考链接1</a></p>
-]]></content>
-      <categories>
-        <category>Vue.js</category>
-      </categories>
-      <tags>
-        <tag>深入浅出Vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CORS</title>
     <url>/CC/posts/a9ccddaa.html</url>
     <content><![CDATA[<p>同源策略禁止问题<br>python -m http.server 9999</p>
@@ -2101,6 +2078,129 @@
 ]]></content>
       <tags>
         <tag>RabbitMQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>行为型设计模式</title>
+    <url>/CC/posts/3eb267f6.html</url>
+    <content><![CDATA[<p>行为型设计模式用于不同对象之间职责划分或算法抽象，行为型设计模式不仅仅涉及类和对象，还涉及类或对象之间的交流模式并加以实现<span id="more"></span></p>
+<h2 id="设计者模式"><a href="#设计者模式" class="headerlink" title="设计者模式"></a>设计者模式</h2><p>观察者模式（Observer）：又被称作发布-订阅者模式或消息机制，定义了一种对象间的一种一对多的依赖关系，解决了主体对象与观察者之间功能的耦合。以便一个对象的状态发生变化时，所有依赖于它的对象都得到通知并自动刷新；</p>
+<p>应用场景<br>当用户在网页执行一些操作（如点击）后就需要执行一些预定的事件（如表单提交、跳转页面）</p>
+<p>优点：在发布者和订阅者间耦合性降低<br>缺点：弱化了对象间的关系，不利于代码的维护和理解。</p>
+<p>简单实现</p>
+<p>观察者模式最主要的作用是解决类或对象之间的耦合，解耦两个相互依赖的对象，使其依赖于观察者的消息机制。这样对于任意一个订阅者对象来说，其他订阅者对象的改变不会影响到自身。对于每一个订阅者来说，其自身既可以是消息的发出者也可以是消息的执行者，这都依赖于调用观察者对象的三种方法（订阅消息，注销消息，发布消息）中的哪一种。观察者模式可以用于模块间通讯，订阅用户的事件、状态，触发执行相应的逻辑处理。</p>
+<blockquote><ul>
+<li>首先要指定发布者；</li>
+<li>然后给发布者添加一个缓存列表，用于存放回调函数以便通知订阅者；</li>
+<li>最后发布消息的时候，发布者会遍历这个缓存列表，依次触发里面存放的订阅者回调函数，还可以往回调函数里填入一些参数，订阅者可以接收这些参数。</li>
+</ul>
+</blockquote>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> event = &#123;&#125;;    <span class="comment">//定义发布者</span></span><br><span class="line">event.list = [];    <span class="comment">// 缓存列表，存放订阅者的回调函数</span></span><br><span class="line">event.listen = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;    <span class="comment">// 增加订阅者</span></span><br><span class="line">    event.list.push(fn);    <span class="comment">// 订阅的消息添加进缓存列表</span></span><br><span class="line">&#125;</span><br><span class="line">event.trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     <span class="comment">//发布消息</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,fn; fn = <span class="built_in">this</span>.list[i++];) &#123;</span><br><span class="line">        fn.apply(<span class="built_in">this</span>,<span class="built_in">arguments</span>);    <span class="comment">// arguments 是发布消息时带上的参数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> click = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     <span class="comment">// click订阅消息</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;event：click&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> hover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;      <span class="comment">// hover订阅消息</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;event：hover&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">event.listen(click);</span><br><span class="line">event.listen(hover);</span><br><span class="line">event.trigger();    <span class="comment">//打印：‘event：click’&#x27;event：hover&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>实际中有必要增加一个标示<code>key</code>，让订阅者只订阅自己感兴趣的消息。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> Event = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> list = &#123;&#125;,</span><br><span class="line">        listen,</span><br><span class="line">        trigger,</span><br><span class="line">        remove;</span><br><span class="line">    listen = <span class="function"><span class="keyword">function</span>(<span class="params">key,fn</span>)</span>&#123;</span><br><span class="line">        list[key] = list[key]||[];</span><br><span class="line">        list[key].push(fn);</span><br><span class="line">    &#125;;</span><br><span class="line">    trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> key = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>),</span><br><span class="line">            fns = list[key];</span><br><span class="line">        <span class="keyword">if</span>(!fns || fns.length === <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = fns[i++];) &#123;</span><br><span class="line">            fn.apply(<span class="built_in">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    remove = <span class="function"><span class="keyword">function</span>(<span class="params">key,fn</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> fns = list[key];</span><br><span class="line">        <span class="keyword">if</span>(!fns) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!fn) &#123;</span><br><span class="line">            fns &amp;&amp; (fns.length = <span class="number">0</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = fns.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">                <span class="keyword">var</span> _fn = fns[i];</span><br><span class="line">                <span class="keyword">if</span>(_fn === fn) &#123;</span><br><span class="line">                    fns.splice(i,<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        listen: listen,</span><br><span class="line">        trigger: trigger,</span><br><span class="line">        remove: remove</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">Event.listen(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">type</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;event: &#x27;</span> + type +<span class="string">&#x27; click&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Event.trigger(<span class="string">&#x27;click&#x27;</span> , <span class="string">&#x27;button&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Event)</span><br><span class="line"><span class="comment">//打印 &#x27;event: button click&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="原型Prototype实现观察者"><a href="#原型Prototype实现观察者" class="headerlink" title="原型Prototype实现观察者"></a>原型Prototype实现观察者</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 状态模式</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">状态模式（State）：当一个对象的内部状态发生改变时，会导致其行为的改变，这看起来像是改变了对象。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">在下载东西，通常就会有好几个状态，比如准备状态（ReadyState）、下载状态（DownloadingState）、暂停状态（DownloadPausedState）、下载完毕状态（DownloadedState）、失败状态（DownloadFailedState），也就是说在每个状态都只可以做当前状态才可以做的事情，而不能做其它状态能做的事儿。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">由于State模式描述了下载（Download）如何在每一种状态下表现出不同的行为。这一模式的关键思想就是引入了一个叫做State的抽象类（或JS里的函数）来表示下载状态，State函数（作为原型）为每个状态的子类（继承函数）声明了一些公共接口。其每个继承函数实现与特定状态相关的行为，比如DownloadingState和DownloadedState分别实现了正在下载和下载完毕的行为。这些行为可以通过Download来来维护。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="keyword">var</span> State=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">State.prototype.download=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;reload&quot;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">State.prototype.pause=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;Pause&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">State.prototype.fail=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;Fail&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">State.prototype.finish = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;Finish&quot;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h2><p>策略模式（Strategy）：将定义的一组算法封装起来，使其相互之间可以替换。封装的算法具有一定独立性，不会随客户端变化而变化。</p>
+<p>{ quoteblock }<br>本质上是将算法的使用和算法的实现分离开，也就是将不变的部分与变化的部分完全隔开</p>
+<ul>
+<li>策略类：通过策略类预先定好具体的算法</li>
+<li>环境类（Context）:用于接受客户的请求，然后根据该请求去策略类中找到合适的进行处理<br>{ endquoteblock }</li>
+</ul>
+<p>例如jQuery动画时的缓冲函数：让一个div运动起来，通过对jQuery的animate动画传入不同运动算法就可以实现两种不同的运动曲线。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">　$(<span class="string">&#x27;div&#x27;</span>).animate( &#123;width：<span class="string">&#x27;200px&#x27;</span>&#125;, <span class="number">1000</span>, <span class="string">&#x27;linear&#x27;</span> )；</span><br><span class="line">　$(<span class="string">&#x27;div&#x27;</span>).animate( &#123;width：<span class="string">&#x27;200px&#x27;</span>&#125;, <span class="number">1000</span>, <span class="string">&#x27;swing&#x27;</span> )；</span><br></pre></td></tr></table></figure>
+
+<p>例如表单验证(本例有争议，参考链接一中评论较有意思，本例并不算纯正的策略模式)</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> validator=&#123;</span><br><span class="line">    types:&#123;&#125;,</span><br><span class="line">    message:[],</span><br><span class="line">    config:&#123;&#125;,</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> i,msg,type,result_ok,checker;</span><br><span class="line">        <span class="built_in">this</span>.messages=[]</span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> data)&#123;</span><br><span class="line">            <span class="keyword">if</span>(data.hasOwnProperty(i))&#123;</span><br><span class="line">                type=<span class="built_in">this</span>.config[i];</span><br><span class="line">                checker=<span class="built_in">this</span>.types[type];</span><br><span class="line">                <span class="keyword">if</span>(!type)&#123;</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(!checker)&#123;</span><br><span class="line">                    <span class="keyword">throw</span> &#123;</span><br><span class="line">                        name:<span class="string">&quot;ValidationError&quot;</span>,</span><br><span class="line">                        message:<span class="string">&quot;No handler to validate type &quot;</span> +type</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                result_ok=checker.validate(data[i])</span><br><span class="line">                <span class="keyword">if</span>(!result_ok)&#123;</span><br><span class="line">                    msg=<span class="string">&quot;Invalid value for *&quot;</span>+i+<span class="string">&quot;*,&quot;</span>+checker.instructions;</span><br><span class="line">                    <span class="built_in">this</span>.messages.push(msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    hasErrors:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.messages.length!==<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 验证给定的值是否不为空</span></span><br><span class="line">validator.types.isNonEmpty=&#123;</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value !==<span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions:<span class="string">&quot;传入的数值不能为空&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 验证给定的值是否是数字</span></span><br><span class="line">validator.types.isNumber=&#123;</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !<span class="built_in">isNaN</span>(value)</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions:<span class="string">&quot;传入的值只能为数字&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 验证给定的值是否只是字母或数字</span></span><br><span class="line">validator.types.isAlphaNum=&#123;</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !<span class="regexp">/[^a-z0-9]/i</span>.test(value);</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions:<span class="string">&quot;传入值只能包括字母和数字，不能包括特殊字符&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">    first_name: <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    last_name: <span class="string">&quot;Xu&quot;</span>,</span><br><span class="line">    age: <span class="string">&quot;unknown&quot;</span>,</span><br><span class="line">    username: <span class="string">&quot;TomXu&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">validator.config = &#123;</span><br><span class="line">    first_name: <span class="string">&#x27;isNonEmpty&#x27;</span>,</span><br><span class="line">    age: <span class="string">&#x27;isNumber&#x27;</span>,</span><br><span class="line">    username: <span class="string">&#x27;isAlphaNum&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">validator.validate(data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(validator.hasErrors())&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(validator.messages.join(<span class="string">&quot;\n&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
+<li><a href="https://www.cnblogs.com/TomXu/archive/2012/03/05/2358552.html">深入理解JavaScript系列（33）：设计模式之策略模式</a></li>
+<li><a href="https://juejin.im/post/6860018724221976584#heading-11">树酱的前端知识体系构建（下）</a></li>
+<li><a href="https://www.runoob.com/design-pattern/strategy-pattern.html">菜鸟教程</a></li>
+<li><a href="http://shichuan.github.com/javascript-patterns/">http://shichuan.github.com/javascript-patterns/</a></li>
+<li><a href="http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/">http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/</a></li>
+<li>算法导论、TAOCP和The Algorithm Design Manual、设计模式——可复用面向对象软件的基础</li>
+</ul>
+<h2 id="职责链模式"><a href="#职责链模式" class="headerlink" title="职责链模式"></a>职责链模式</h2><p>职责链模式（Chain of Responsibility）：解决请求的发送者与请求的接受者之间的耦合，通过职责链上的多个对象对分解请求流程，实现请求在多个对象之间的传递，直到最后一个对象完成请求的处理。</p>
+<p>责任链模式为请求创建了一个接收者对象的链，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。<br>职责链上的处理者负责处理请求，客户只需要将请求发送到职责链上即可，无须关心请求的处理细节和请求的传递，所以职责链将请求的发送者和请求的处理者解耦了。</p>
+<p>应用实例：js事件冒泡</p>
+<p>优点： </p>
+<ul>
+<li>降低耦合度。它将请求的发送者和接收者解耦。</li>
+<li>简化了对象。使得对象不需要知道链的结构。</li>
+<li>增强给对象指派职责的灵活性。通过改变链内的成员或者调动它们的次序，允许动态地新增或者删除责任。</li>
+<li>增加新的请求处理类很方便。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>不能保证请求一定被接收。</li>
+<li>系统性能将受到一定影响，而且在进行代码调试时不太方便，可能会造成循环调用。 </li>
+<li>可能不容易观察运行时的特征，有碍于除错。</li>
+</ul>
+<p>使用场景： </p>
+<ul>
+<li>有多个对象可以处理同一个请求，具体哪个对象处理该请求由运行时刻自动确定。</li>
+<li>在不明确指定接收者的情况下，向多个对象中的一个提交一个请求。</li>
+<li>可动态指定一组对象处理请求。</li>
+</ul>
+<p>登录系统，需要检测是否配置1，配置2，配置…，配置n是否都配置完成了。如果未完成，则需要弹窗，让用户输入配置，配置过程较长，所以可以中途退出配置，直到下次登录或者配置的入口按钮，继续该次的配置。<br><img src="https://upload-images.jianshu.io/upload_images/4327841-808fd628fd26a2a8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080/format/webp" alt="attr"></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChainNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(main, next, options) &#123;</span><br><span class="line">        <span class="built_in">this</span>.main = main</span><br><span class="line">        <span class="built_in">this</span>.next = next</span><br><span class="line">        <span class="built_in">this</span>.options = options</span><br><span class="line">    &#125;</span><br><span class="line">    start () &#123;</span><br><span class="line">        <span class="keyword">let</span> res = <span class="built_in">this</span>.main(...arguments)</span><br><span class="line">        res &amp;&amp; <span class="built_in">this</span>.next.start(...arguments)</span><br><span class="line">    &#125;</span><br><span class="line">    setNext (callback) &#123;</span><br><span class="line">        <span class="built_in">this</span>.next = callback</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ResponsibilityChain</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">this</span>.chainNodes = &#123;&#125; <span class="comment">// 责任节点</span></span><br><span class="line">    &#125;</span><br><span class="line">    getChainNodes(chainName) &#123; <span class="comment">// 获取责任节点</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.chainNodes[chainName]</span><br><span class="line">    &#125;</span><br><span class="line">    setChainNodes(name, chainNode) &#123; <span class="comment">// 设置责任节点</span></span><br><span class="line">        <span class="built_in">this</span>.chainNodes[name] = chainNode</span><br><span class="line">    &#125;</span><br><span class="line">    insertChainNode () &#123;&#125;</span><br><span class="line">    chainConstitute(array) &#123; <span class="comment">// 链</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> index = <span class="number">0</span>; index &lt; array.length; index++) &#123;</span><br><span class="line">            <span class="keyword">let</span> element = <span class="built_in">this</span>.chainNodes[array[index]]</span><br><span class="line">            <span class="keyword">let</span> next = <span class="built_in">this</span>.chainNodes[array[index + <span class="number">1</span>]]</span><br><span class="line">            element.next = next</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn1</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置1&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">&#x27;have配置1&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    alert(<span class="string">&#x27;输入配置1&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn2</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置2&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn3</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置3&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn4</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置4&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> responsibilityChain = <span class="keyword">new</span> ResponsibilityChain()</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_1&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn1))</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_2&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn2))</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_3&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn3))</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_4&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn4))</span><br><span class="line">responsibilityChain.chainConstitute([<span class="string">&#x27;chainNode_1&#x27;</span>, <span class="string">&#x27;chainNode_2&#x27;</span>, <span class="string">&#x27;chainNode_3&#x27;</span>, <span class="string">&#x27;chainNode_4&#x27;</span>])</span><br><span class="line"><span class="keyword">let</span> firstNode = responsibilityChain.getChainNodes(<span class="string">&#x27;chainNode_1&#x27;</span>)</span><br><span class="line">firstNode.start(<span class="string">&#x27;handleRequest&#x27;</span>)</span><br><span class="line"><span class="comment">// 配置1 handleRequest</span></span><br><span class="line"><span class="comment">// 配置2 handleRequest</span></span><br><span class="line"><span class="comment">// 配置3 handleRequest</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="参考链接：-1"><a href="#参考链接：-1" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
+<li><a href="https://www.jianshu.com/p/5db3e3dadb1b">JS设计模式 - 责任链模式在前端业务中的应用</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/95817886">JavaScript设计模式之职责链模式</a></li>
+</ul>
+<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><p>命令模式（Command）：将请求与实现解耦并封装成独立对象，从而使不同的请求对客户端的实现参数化。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。</p>
+<ul>
+<li>如何解决：通过调用者调用接受者执行命令，顺序：调用者→命令→接受者。</li>
+<li>关键代码：定义三个角色：1、received 真正的命令执行对象 2、Command 3、invoker 使用命令对象的入口</li>
+<li>应用实例：认为是命令的地方都可以使用命令模式，比如： 1、GUI 中每一个按钮都是一条命令。 2、模拟 CMD。</li>
+</ul>
+<blockquote><p>优点：</p>
+<ul>
+<li>降低了系统耦合度。</li>
+<li>新的命令可以很容易添加到系统中去。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>使用命令模式可能会导致某些系统有过多的具体命令类。</li>
+</ul>
+</blockquote>
+
+<p><img src="https://img.shenyujie.cc/2019-2-9-Command-Pattern.png" alt="attr"></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> carManager = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 请求信息</span></span><br><span class="line">    requestInfo: <span class="function"><span class="keyword">function</span> (<span class="params">model, id</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`The information for <span class="subst">$&#123;model&#125;</span> with ID <span class="subst">$&#123;id&#125;</span> is foobar`</span>;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 订购汽车</span></span><br><span class="line">    buyVehicle: <span class="function"><span class="keyword">function</span> (<span class="params">model, id</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`You have successfully purchased Item <span class="subst">$&#123;id&#125;</span> , a <span class="subst">$&#123;model&#125;</span>`</span>;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 组织一个 view</span></span><br><span class="line">    arrangeViewing: <span class="function"><span class="keyword">function</span> (<span class="params">model, id</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`You have successfully booked a viewing of <span class="subst">$&#123;model&#125;</span>(<span class="subst">$&#123;id&#125;</span>)`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">carManager.execute = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> carManager[name] &amp;&amp; carManager[name].apply(carManager, [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">carManager.execute(<span class="string">&quot;arrangeViewing&quot;</span>, <span class="string">&quot;Ferrari&quot;</span>, <span class="number">1234</span>);</span><br><span class="line">carManager.execute(<span class="string">&quot;requestInfo&quot;</span>, <span class="string">&quot;Alice&quot;</span>, <span class="number">321</span>);</span><br><span class="line">carManager.execute(<span class="string">&quot;buyVehicle&quot;</span>, <span class="string">&quot;Ferrari&quot;</span>, <span class="number">343</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>宏命令</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> closeDoorCommand=&#123;</span><br><span class="line">    execute:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;close door&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> openPCCommand=&#123;</span><br><span class="line">    execute:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;open pc&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> openQQCommand=&#123;</span><br><span class="line">    execute:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;qq&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MacroCommand</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="built_in">this</span>.commandsList=[]</span><br><span class="line">    &#125;</span><br><span class="line">    add(command) &#123;</span><br><span class="line">            <span class="built_in">this</span>.commandsList.push(command);</span><br><span class="line">    &#125;</span><br><span class="line">    execute()&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; <span class="built_in">this</span>.commandsList.length; i++) &#123;</span><br><span class="line">                <span class="built_in">this</span>.commandsList[i].execute();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> macroCommand = <span class="keyword">new</span> MacroCommand;</span><br><span class="line">macroCommand.add(closeDoorCommand);</span><br><span class="line">macroCommand.add(openPCCommand);</span><br><span class="line">macroCommand.add(openQQCommand);</span><br><span class="line">macroCommand.execute();</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="代理模式与命令模式"><a href="#代理模式与命令模式" class="headerlink" title="代理模式与命令模式"></a>代理模式与命令模式</h3><p>跟许多其他语言不同， JavaScript 可以用高阶函数非常方便地实现命令模式。命令模式在 JavaScript 语言中是一种隐形的模式。</p>
+<p>在代理(委托)模式中，调用者就是委托者，执行者就是被委托者，委托者和被委托者接口定义是相同的；在命令模式中，调用者不关注执行者的接口定义是否和它一致。<br>在调用时机上，代理模式的具体执行是只能在特定的调用者内部执行(接口相同)；命令模式的具体执行可以在任何调用者内部执行(接口不相同也可以)。</p>
+<h3 id="参考链接：-2"><a href="#参考链接：-2" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
+<li><a href="https://www.cnblogs.com/xiaohuochai/p/8034617.html">javascript设计模式——命令模式</a></li>
+<li><a href="http://shenyujie.cc/2019/02/10/Command-Pattern/">沈宇杰的小站-Command 模式</a></li>
+</ul>
+<h2 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h2><p>中介者模式（Mediator）：通过中介者对象封装一系列对象之间的交互，使对象之间不再相互引用，降低他们之间的耦合。有时中介者对象也可改变对象之间的交互。</p>
+<p>对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理。</p>
+<p>实际上，中介模式的设计思想跟中间层很像，通过引入中介这个中间层，将一组对象之间的交互关系（或者说依赖关系）从多对多（网状关系）转换为一对多（星状关系）。原来一个对象要跟 n 个对象交互，现在只需要跟一个中介对象交互，从而最小化对象之间的交互关系，降低了代码的复杂度，提高了代码的可读性和可维护性。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    setNumber(num, m) &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = num</span><br><span class="line">        <span class="keyword">if</span> (m) &#123;</span><br><span class="line">            m.setB()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    setNumber(num, m) &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = num</span><br><span class="line">        <span class="keyword">if</span> (m) &#123;</span><br><span class="line">            m.setA()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mediator</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(a, b) &#123;</span><br><span class="line">        <span class="built_in">this</span>.a = a</span><br><span class="line">        <span class="built_in">this</span>.b = b</span><br><span class="line">    &#125;</span><br><span class="line">    setA() &#123;</span><br><span class="line">        <span class="keyword">let</span> number = <span class="built_in">this</span>.b.number</span><br><span class="line">        <span class="built_in">this</span>.a.setNumber(number * <span class="number">10</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    setB() &#123;</span><br><span class="line">        <span class="keyword">let</span> number = <span class="built_in">this</span>.a.number</span><br><span class="line">        <span class="built_in">this</span>.b.setNumber(number / <span class="number">10</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> A()</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> B()</span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> Mediator(a, b)</span><br><span class="line">a.setNumber(<span class="number">10</span>, m)</span><br><span class="line"><span class="built_in">console</span>.log(a.number, b.number)</span><br><span class="line">b.setNumber(<span class="number">10</span>, m)</span><br><span class="line"><span class="built_in">console</span>.log(a.number, b.number)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="参考链接：-3"><a href="#参考链接：-3" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
+<li><a href="https://juejin.im/post/6868054744557060110?utm_source=gold_browser_extension#heading-48">前端进阶之路：1.5w字整理23种前端设计模式</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JS设计模式</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -2296,129 +2396,6 @@
       </categories>
       <tags>
         <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>行为型设计模式</title>
-    <url>/CC/posts/3eb267f6.html</url>
-    <content><![CDATA[<p>行为型设计模式用于不同对象之间职责划分或算法抽象，行为型设计模式不仅仅涉及类和对象，还涉及类或对象之间的交流模式并加以实现<span id="more"></span></p>
-<h2 id="设计者模式"><a href="#设计者模式" class="headerlink" title="设计者模式"></a>设计者模式</h2><p>观察者模式（Observer）：又被称作发布-订阅者模式或消息机制，定义了一种对象间的一种一对多的依赖关系，解决了主体对象与观察者之间功能的耦合。以便一个对象的状态发生变化时，所有依赖于它的对象都得到通知并自动刷新；</p>
-<p>应用场景<br>当用户在网页执行一些操作（如点击）后就需要执行一些预定的事件（如表单提交、跳转页面）</p>
-<p>优点：在发布者和订阅者间耦合性降低<br>缺点：弱化了对象间的关系，不利于代码的维护和理解。</p>
-<p>简单实现</p>
-<p>观察者模式最主要的作用是解决类或对象之间的耦合，解耦两个相互依赖的对象，使其依赖于观察者的消息机制。这样对于任意一个订阅者对象来说，其他订阅者对象的改变不会影响到自身。对于每一个订阅者来说，其自身既可以是消息的发出者也可以是消息的执行者，这都依赖于调用观察者对象的三种方法（订阅消息，注销消息，发布消息）中的哪一种。观察者模式可以用于模块间通讯，订阅用户的事件、状态，触发执行相应的逻辑处理。</p>
-<blockquote><ul>
-<li>首先要指定发布者；</li>
-<li>然后给发布者添加一个缓存列表，用于存放回调函数以便通知订阅者；</li>
-<li>最后发布消息的时候，发布者会遍历这个缓存列表，依次触发里面存放的订阅者回调函数，还可以往回调函数里填入一些参数，订阅者可以接收这些参数。</li>
-</ul>
-</blockquote>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> event = &#123;&#125;;    <span class="comment">//定义发布者</span></span><br><span class="line">event.list = [];    <span class="comment">// 缓存列表，存放订阅者的回调函数</span></span><br><span class="line">event.listen = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;    <span class="comment">// 增加订阅者</span></span><br><span class="line">    event.list.push(fn);    <span class="comment">// 订阅的消息添加进缓存列表</span></span><br><span class="line">&#125;</span><br><span class="line">event.trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     <span class="comment">//发布消息</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,fn; fn = <span class="built_in">this</span>.list[i++];) &#123;</span><br><span class="line">        fn.apply(<span class="built_in">this</span>,<span class="built_in">arguments</span>);    <span class="comment">// arguments 是发布消息时带上的参数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> click = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     <span class="comment">// click订阅消息</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;event：click&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> hover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;      <span class="comment">// hover订阅消息</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;event：hover&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">event.listen(click);</span><br><span class="line">event.listen(hover);</span><br><span class="line">event.trigger();    <span class="comment">//打印：‘event：click’&#x27;event：hover&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>实际中有必要增加一个标示<code>key</code>，让订阅者只订阅自己感兴趣的消息。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> Event = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> list = &#123;&#125;,</span><br><span class="line">        listen,</span><br><span class="line">        trigger,</span><br><span class="line">        remove;</span><br><span class="line">    listen = <span class="function"><span class="keyword">function</span>(<span class="params">key,fn</span>)</span>&#123;</span><br><span class="line">        list[key] = list[key]||[];</span><br><span class="line">        list[key].push(fn);</span><br><span class="line">    &#125;;</span><br><span class="line">    trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> key = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>),</span><br><span class="line">            fns = list[key];</span><br><span class="line">        <span class="keyword">if</span>(!fns || fns.length === <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = fns[i++];) &#123;</span><br><span class="line">            fn.apply(<span class="built_in">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    remove = <span class="function"><span class="keyword">function</span>(<span class="params">key,fn</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> fns = list[key];</span><br><span class="line">        <span class="keyword">if</span>(!fns) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!fn) &#123;</span><br><span class="line">            fns &amp;&amp; (fns.length = <span class="number">0</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = fns.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">                <span class="keyword">var</span> _fn = fns[i];</span><br><span class="line">                <span class="keyword">if</span>(_fn === fn) &#123;</span><br><span class="line">                    fns.splice(i,<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        listen: listen,</span><br><span class="line">        trigger: trigger,</span><br><span class="line">        remove: remove</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">Event.listen(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">type</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;event: &#x27;</span> + type +<span class="string">&#x27; click&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Event.trigger(<span class="string">&#x27;click&#x27;</span> , <span class="string">&#x27;button&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Event)</span><br><span class="line"><span class="comment">//打印 &#x27;event: button click&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="原型Prototype实现观察者"><a href="#原型Prototype实现观察者" class="headerlink" title="原型Prototype实现观察者"></a>原型Prototype实现观察者</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 状态模式</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">状态模式（State）：当一个对象的内部状态发生改变时，会导致其行为的改变，这看起来像是改变了对象。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">在下载东西，通常就会有好几个状态，比如准备状态（ReadyState）、下载状态（DownloadingState）、暂停状态（DownloadPausedState）、下载完毕状态（DownloadedState）、失败状态（DownloadFailedState），也就是说在每个状态都只可以做当前状态才可以做的事情，而不能做其它状态能做的事儿。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">由于State模式描述了下载（Download）如何在每一种状态下表现出不同的行为。这一模式的关键思想就是引入了一个叫做State的抽象类（或JS里的函数）来表示下载状态，State函数（作为原型）为每个状态的子类（继承函数）声明了一些公共接口。其每个继承函数实现与特定状态相关的行为，比如DownloadingState和DownloadedState分别实现了正在下载和下载完毕的行为。这些行为可以通过Download来来维护。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="keyword">var</span> State=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">State.prototype.download=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;reload&quot;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">State.prototype.pause=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;Pause&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">State.prototype.fail=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;Fail&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">State.prototype.finish = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;Finish&quot;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h2><p>策略模式（Strategy）：将定义的一组算法封装起来，使其相互之间可以替换。封装的算法具有一定独立性，不会随客户端变化而变化。</p>
-<p>{ quoteblock }<br>本质上是将算法的使用和算法的实现分离开，也就是将不变的部分与变化的部分完全隔开</p>
-<ul>
-<li>策略类：通过策略类预先定好具体的算法</li>
-<li>环境类（Context）:用于接受客户的请求，然后根据该请求去策略类中找到合适的进行处理<br>{ endquoteblock }</li>
-</ul>
-<p>例如jQuery动画时的缓冲函数：让一个div运动起来，通过对jQuery的animate动画传入不同运动算法就可以实现两种不同的运动曲线。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">　$(<span class="string">&#x27;div&#x27;</span>).animate( &#123;width：<span class="string">&#x27;200px&#x27;</span>&#125;, <span class="number">1000</span>, <span class="string">&#x27;linear&#x27;</span> )；</span><br><span class="line">　$(<span class="string">&#x27;div&#x27;</span>).animate( &#123;width：<span class="string">&#x27;200px&#x27;</span>&#125;, <span class="number">1000</span>, <span class="string">&#x27;swing&#x27;</span> )；</span><br></pre></td></tr></table></figure>
-
-<p>例如表单验证(本例有争议，参考链接一中评论较有意思，本例并不算纯正的策略模式)</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> validator=&#123;</span><br><span class="line">    types:&#123;&#125;,</span><br><span class="line">    message:[],</span><br><span class="line">    config:&#123;&#125;,</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> i,msg,type,result_ok,checker;</span><br><span class="line">        <span class="built_in">this</span>.messages=[]</span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> data)&#123;</span><br><span class="line">            <span class="keyword">if</span>(data.hasOwnProperty(i))&#123;</span><br><span class="line">                type=<span class="built_in">this</span>.config[i];</span><br><span class="line">                checker=<span class="built_in">this</span>.types[type];</span><br><span class="line">                <span class="keyword">if</span>(!type)&#123;</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(!checker)&#123;</span><br><span class="line">                    <span class="keyword">throw</span> &#123;</span><br><span class="line">                        name:<span class="string">&quot;ValidationError&quot;</span>,</span><br><span class="line">                        message:<span class="string">&quot;No handler to validate type &quot;</span> +type</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                result_ok=checker.validate(data[i])</span><br><span class="line">                <span class="keyword">if</span>(!result_ok)&#123;</span><br><span class="line">                    msg=<span class="string">&quot;Invalid value for *&quot;</span>+i+<span class="string">&quot;*,&quot;</span>+checker.instructions;</span><br><span class="line">                    <span class="built_in">this</span>.messages.push(msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    hasErrors:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.messages.length!==<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 验证给定的值是否不为空</span></span><br><span class="line">validator.types.isNonEmpty=&#123;</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value !==<span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions:<span class="string">&quot;传入的数值不能为空&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 验证给定的值是否是数字</span></span><br><span class="line">validator.types.isNumber=&#123;</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !<span class="built_in">isNaN</span>(value)</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions:<span class="string">&quot;传入的值只能为数字&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 验证给定的值是否只是字母或数字</span></span><br><span class="line">validator.types.isAlphaNum=&#123;</span><br><span class="line">    validate:<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !<span class="regexp">/[^a-z0-9]/i</span>.test(value);</span><br><span class="line">    &#125;,</span><br><span class="line">    instructions:<span class="string">&quot;传入值只能包括字母和数字，不能包括特殊字符&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">    first_name: <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    last_name: <span class="string">&quot;Xu&quot;</span>,</span><br><span class="line">    age: <span class="string">&quot;unknown&quot;</span>,</span><br><span class="line">    username: <span class="string">&quot;TomXu&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">validator.config = &#123;</span><br><span class="line">    first_name: <span class="string">&#x27;isNonEmpty&#x27;</span>,</span><br><span class="line">    age: <span class="string">&#x27;isNumber&#x27;</span>,</span><br><span class="line">    username: <span class="string">&#x27;isAlphaNum&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">validator.validate(data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(validator.hasErrors())&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(validator.messages.join(<span class="string">&quot;\n&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
-<li><a href="https://www.cnblogs.com/TomXu/archive/2012/03/05/2358552.html">深入理解JavaScript系列（33）：设计模式之策略模式</a></li>
-<li><a href="https://juejin.im/post/6860018724221976584#heading-11">树酱的前端知识体系构建（下）</a></li>
-<li><a href="https://www.runoob.com/design-pattern/strategy-pattern.html">菜鸟教程</a></li>
-<li><a href="http://shichuan.github.com/javascript-patterns/">http://shichuan.github.com/javascript-patterns/</a></li>
-<li><a href="http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/">http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/</a></li>
-<li>算法导论、TAOCP和The Algorithm Design Manual、设计模式——可复用面向对象软件的基础</li>
-</ul>
-<h2 id="职责链模式"><a href="#职责链模式" class="headerlink" title="职责链模式"></a>职责链模式</h2><p>职责链模式（Chain of Responsibility）：解决请求的发送者与请求的接受者之间的耦合，通过职责链上的多个对象对分解请求流程，实现请求在多个对象之间的传递，直到最后一个对象完成请求的处理。</p>
-<p>责任链模式为请求创建了一个接收者对象的链，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。<br>职责链上的处理者负责处理请求，客户只需要将请求发送到职责链上即可，无须关心请求的处理细节和请求的传递，所以职责链将请求的发送者和请求的处理者解耦了。</p>
-<p>应用实例：js事件冒泡</p>
-<p>优点： </p>
-<ul>
-<li>降低耦合度。它将请求的发送者和接收者解耦。</li>
-<li>简化了对象。使得对象不需要知道链的结构。</li>
-<li>增强给对象指派职责的灵活性。通过改变链内的成员或者调动它们的次序，允许动态地新增或者删除责任。</li>
-<li>增加新的请求处理类很方便。</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>不能保证请求一定被接收。</li>
-<li>系统性能将受到一定影响，而且在进行代码调试时不太方便，可能会造成循环调用。 </li>
-<li>可能不容易观察运行时的特征，有碍于除错。</li>
-</ul>
-<p>使用场景： </p>
-<ul>
-<li>有多个对象可以处理同一个请求，具体哪个对象处理该请求由运行时刻自动确定。</li>
-<li>在不明确指定接收者的情况下，向多个对象中的一个提交一个请求。</li>
-<li>可动态指定一组对象处理请求。</li>
-</ul>
-<p>登录系统，需要检测是否配置1，配置2，配置…，配置n是否都配置完成了。如果未完成，则需要弹窗，让用户输入配置，配置过程较长，所以可以中途退出配置，直到下次登录或者配置的入口按钮，继续该次的配置。<br><img src="https://upload-images.jianshu.io/upload_images/4327841-808fd628fd26a2a8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080/format/webp" alt="attr"></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChainNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(main, next, options) &#123;</span><br><span class="line">        <span class="built_in">this</span>.main = main</span><br><span class="line">        <span class="built_in">this</span>.next = next</span><br><span class="line">        <span class="built_in">this</span>.options = options</span><br><span class="line">    &#125;</span><br><span class="line">    start () &#123;</span><br><span class="line">        <span class="keyword">let</span> res = <span class="built_in">this</span>.main(...arguments)</span><br><span class="line">        res &amp;&amp; <span class="built_in">this</span>.next.start(...arguments)</span><br><span class="line">    &#125;</span><br><span class="line">    setNext (callback) &#123;</span><br><span class="line">        <span class="built_in">this</span>.next = callback</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ResponsibilityChain</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">this</span>.chainNodes = &#123;&#125; <span class="comment">// 责任节点</span></span><br><span class="line">    &#125;</span><br><span class="line">    getChainNodes(chainName) &#123; <span class="comment">// 获取责任节点</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.chainNodes[chainName]</span><br><span class="line">    &#125;</span><br><span class="line">    setChainNodes(name, chainNode) &#123; <span class="comment">// 设置责任节点</span></span><br><span class="line">        <span class="built_in">this</span>.chainNodes[name] = chainNode</span><br><span class="line">    &#125;</span><br><span class="line">    insertChainNode () &#123;&#125;</span><br><span class="line">    chainConstitute(array) &#123; <span class="comment">// 链</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> index = <span class="number">0</span>; index &lt; array.length; index++) &#123;</span><br><span class="line">            <span class="keyword">let</span> element = <span class="built_in">this</span>.chainNodes[array[index]]</span><br><span class="line">            <span class="keyword">let</span> next = <span class="built_in">this</span>.chainNodes[array[index + <span class="number">1</span>]]</span><br><span class="line">            element.next = next</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn1</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置1&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">&#x27;have配置1&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    alert(<span class="string">&#x27;输入配置1&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn2</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置2&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn3</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置3&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">template_fn4</span> (<span class="params">tmp</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;配置4&#x27;</span>, tmp)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> responsibilityChain = <span class="keyword">new</span> ResponsibilityChain()</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_1&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn1))</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_2&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn2))</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_3&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn3))</span><br><span class="line">responsibilityChain.setChainNodes(<span class="string">&#x27;chainNode_4&#x27;</span>, <span class="keyword">new</span> ChainNode(template_fn4))</span><br><span class="line">responsibilityChain.chainConstitute([<span class="string">&#x27;chainNode_1&#x27;</span>, <span class="string">&#x27;chainNode_2&#x27;</span>, <span class="string">&#x27;chainNode_3&#x27;</span>, <span class="string">&#x27;chainNode_4&#x27;</span>])</span><br><span class="line"><span class="keyword">let</span> firstNode = responsibilityChain.getChainNodes(<span class="string">&#x27;chainNode_1&#x27;</span>)</span><br><span class="line">firstNode.start(<span class="string">&#x27;handleRequest&#x27;</span>)</span><br><span class="line"><span class="comment">// 配置1 handleRequest</span></span><br><span class="line"><span class="comment">// 配置2 handleRequest</span></span><br><span class="line"><span class="comment">// 配置3 handleRequest</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="参考链接：-1"><a href="#参考链接：-1" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
-<li><a href="https://www.jianshu.com/p/5db3e3dadb1b">JS设计模式 - 责任链模式在前端业务中的应用</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/95817886">JavaScript设计模式之职责链模式</a></li>
-</ul>
-<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><p>命令模式（Command）：将请求与实现解耦并封装成独立对象，从而使不同的请求对客户端的实现参数化。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。</p>
-<ul>
-<li>如何解决：通过调用者调用接受者执行命令，顺序：调用者→命令→接受者。</li>
-<li>关键代码：定义三个角色：1、received 真正的命令执行对象 2、Command 3、invoker 使用命令对象的入口</li>
-<li>应用实例：认为是命令的地方都可以使用命令模式，比如： 1、GUI 中每一个按钮都是一条命令。 2、模拟 CMD。</li>
-</ul>
-<blockquote><p>优点：</p>
-<ul>
-<li>降低了系统耦合度。</li>
-<li>新的命令可以很容易添加到系统中去。</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>使用命令模式可能会导致某些系统有过多的具体命令类。</li>
-</ul>
-</blockquote>
-
-<p><img src="https://img.shenyujie.cc/2019-2-9-Command-Pattern.png" alt="attr"></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> carManager = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 请求信息</span></span><br><span class="line">    requestInfo: <span class="function"><span class="keyword">function</span> (<span class="params">model, id</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`The information for <span class="subst">$&#123;model&#125;</span> with ID <span class="subst">$&#123;id&#125;</span> is foobar`</span>;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 订购汽车</span></span><br><span class="line">    buyVehicle: <span class="function"><span class="keyword">function</span> (<span class="params">model, id</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`You have successfully purchased Item <span class="subst">$&#123;id&#125;</span> , a <span class="subst">$&#123;model&#125;</span>`</span>;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 组织一个 view</span></span><br><span class="line">    arrangeViewing: <span class="function"><span class="keyword">function</span> (<span class="params">model, id</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`You have successfully booked a viewing of <span class="subst">$&#123;model&#125;</span>(<span class="subst">$&#123;id&#125;</span>)`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">carManager.execute = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> carManager[name] &amp;&amp; carManager[name].apply(carManager, [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">carManager.execute(<span class="string">&quot;arrangeViewing&quot;</span>, <span class="string">&quot;Ferrari&quot;</span>, <span class="number">1234</span>);</span><br><span class="line">carManager.execute(<span class="string">&quot;requestInfo&quot;</span>, <span class="string">&quot;Alice&quot;</span>, <span class="number">321</span>);</span><br><span class="line">carManager.execute(<span class="string">&quot;buyVehicle&quot;</span>, <span class="string">&quot;Ferrari&quot;</span>, <span class="number">343</span>);</span><br></pre></td></tr></table></figure>
-
-<p><strong>宏命令</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> closeDoorCommand=&#123;</span><br><span class="line">    execute:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;close door&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> openPCCommand=&#123;</span><br><span class="line">    execute:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;open pc&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> openQQCommand=&#123;</span><br><span class="line">    execute:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;qq&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MacroCommand</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="built_in">this</span>.commandsList=[]</span><br><span class="line">    &#125;</span><br><span class="line">    add(command) &#123;</span><br><span class="line">            <span class="built_in">this</span>.commandsList.push(command);</span><br><span class="line">    &#125;</span><br><span class="line">    execute()&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; <span class="built_in">this</span>.commandsList.length; i++) &#123;</span><br><span class="line">                <span class="built_in">this</span>.commandsList[i].execute();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> macroCommand = <span class="keyword">new</span> MacroCommand;</span><br><span class="line">macroCommand.add(closeDoorCommand);</span><br><span class="line">macroCommand.add(openPCCommand);</span><br><span class="line">macroCommand.add(openQQCommand);</span><br><span class="line">macroCommand.execute();</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="代理模式与命令模式"><a href="#代理模式与命令模式" class="headerlink" title="代理模式与命令模式"></a>代理模式与命令模式</h3><p>跟许多其他语言不同， JavaScript 可以用高阶函数非常方便地实现命令模式。命令模式在 JavaScript 语言中是一种隐形的模式。</p>
-<p>在代理(委托)模式中，调用者就是委托者，执行者就是被委托者，委托者和被委托者接口定义是相同的；在命令模式中，调用者不关注执行者的接口定义是否和它一致。<br>在调用时机上，代理模式的具体执行是只能在特定的调用者内部执行(接口相同)；命令模式的具体执行可以在任何调用者内部执行(接口不相同也可以)。</p>
-<h3 id="参考链接：-2"><a href="#参考链接：-2" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
-<li><a href="https://www.cnblogs.com/xiaohuochai/p/8034617.html">javascript设计模式——命令模式</a></li>
-<li><a href="http://shenyujie.cc/2019/02/10/Command-Pattern/">沈宇杰的小站-Command 模式</a></li>
-</ul>
-<h2 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h2><p>中介者模式（Mediator）：通过中介者对象封装一系列对象之间的交互，使对象之间不再相互引用，降低他们之间的耦合。有时中介者对象也可改变对象之间的交互。</p>
-<p>对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理。</p>
-<p>实际上，中介模式的设计思想跟中间层很像，通过引入中介这个中间层，将一组对象之间的交互关系（或者说依赖关系）从多对多（网状关系）转换为一对多（星状关系）。原来一个对象要跟 n 个对象交互，现在只需要跟一个中介对象交互，从而最小化对象之间的交互关系，降低了代码的复杂度，提高了代码的可读性和可维护性。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    setNumber(num, m) &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = num</span><br><span class="line">        <span class="keyword">if</span> (m) &#123;</span><br><span class="line">            m.setB()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    setNumber(num, m) &#123;</span><br><span class="line">        <span class="built_in">this</span>.number = num</span><br><span class="line">        <span class="keyword">if</span> (m) &#123;</span><br><span class="line">            m.setA()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mediator</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(a, b) &#123;</span><br><span class="line">        <span class="built_in">this</span>.a = a</span><br><span class="line">        <span class="built_in">this</span>.b = b</span><br><span class="line">    &#125;</span><br><span class="line">    setA() &#123;</span><br><span class="line">        <span class="keyword">let</span> number = <span class="built_in">this</span>.b.number</span><br><span class="line">        <span class="built_in">this</span>.a.setNumber(number * <span class="number">10</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    setB() &#123;</span><br><span class="line">        <span class="keyword">let</span> number = <span class="built_in">this</span>.a.number</span><br><span class="line">        <span class="built_in">this</span>.b.setNumber(number / <span class="number">10</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> A()</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> B()</span><br><span class="line"><span class="keyword">let</span> m = <span class="keyword">new</span> Mediator(a, b)</span><br><span class="line">a.setNumber(<span class="number">10</span>, m)</span><br><span class="line"><span class="built_in">console</span>.log(a.number, b.number)</span><br><span class="line">b.setNumber(<span class="number">10</span>, m)</span><br><span class="line"><span class="built_in">console</span>.log(a.number, b.number)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="参考链接：-3"><a href="#参考链接：-3" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
-<li><a href="https://juejin.im/post/6868054744557060110?utm_source=gold_browser_extension#heading-48">前端进阶之路：1.5w字整理23种前端设计模式</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>JS设计模式</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -6393,6 +6370,29 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一些值得反复阅读的文章</title>
+    <url>/CC/posts/51fcb6bd.html</url>
+    <content><![CDATA[<p>疯狂安利：记录一些值得反复阅读的博客</p>
+<span id="more"></span>
+
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
+<li><a href="https://juejin.cn/post/6941206439624966152">1.5 万字 CSS 基础拾遗（核心知识、常见需求）</a></li>
+<li><a href="https://juejin.cn/post/6844903918753808398">30 道 Vue 面试题，内含详细讲解</a></li>
+<li><a href="https://juejin.cn/post/6844903840626507784">手摸手，带你用vue撸后台 系列五(v4.0新版本)</a></li>
+<li><a href="https://juejin.cn/post/6850037277675454478">史上最强vue总结</a></li>
+<li><a href="https://juejin.cn/post/6961222829979697165">最全的 Vue 面试题+详解答案</a></li>
+<li><a href="https://juejin.cn/post/6844904148899463175">前端高频面试题整理</a></li>
+<li><a href="https://juejin.cn/post/6844903976693940231">web前端面试总结</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>quote</tag>
       </tags>
   </entry>
 </search>
