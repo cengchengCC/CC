@@ -22,13 +22,13 @@
 
   <meta name="description" content="把一些与特定用户相关的信息例如登录信息、个人偏好，或者其他数据应该保存在客户端上。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="客户端存储">
+<meta property="og:title" content="Client-Side Storage">
 <meta property="og:url" content="https://cengchengcc.github.io/CC/posts/c8419ccf.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="把一些与特定用户相关的信息例如登录信息、个人偏好，或者其他数据应该保存在客户端上。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-28T15:11:43.000Z">
-<meta property="article:modified_time" content="2021-05-28T16:52:53.765Z">
+<meta property="article:modified_time" content="2021-05-29T12:58:18.021Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>客户端存储 | Hexo</title>
+  <title>Client-Side Storage | Hexo</title>
   
 
 
@@ -209,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          客户端存储
+          Client-Side Storage
         </h1>
 
         <div class="post-meta">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-29 00:52:53" itemprop="dateModified" datetime="2021-05-29T00:52:53+08:00">2021-05-29</time>
+                <time title="Modified: 2021-05-29 20:58:18" itemprop="dateModified" datetime="2021-05-29T20:58:18+08:00">2021-05-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,13 +252,62 @@
         <p>把一些与特定用户相关的信息例如登录信息、个人偏好，或者其他数据应该保存在客户端上。</p>
 <span id="more"></span>
 
-<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><h3 id="cookie的构成"><a href="#cookie的构成" class="headerlink" title="cookie的构成"></a>cookie的构成</h3><div class="note info">
-            
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>HTTP cookie最初用于在客户端存储会话信息。这个规范要求服务器在响应HTTP 请求时，通过发送Set-Cookie HTTP 头部包含会话信息。</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Content-type</span>: text/html</span><br><span class="line"><span class="attribute">Set-Cookie</span>: name=value</span><br><span class="line"><span class="attribute">Other-header</span>: other-header-value</span><br></pre></td></tr></table></figure>
+
+<p>这个HTTP 响应会设置一个名为”name”，值为”value”的cookie。名和值在发送时都会经过URL<br>编码。浏览器会存储这些会话信息，并在之后的每个请求中都会通过HTTP 头部cookie 再将它们发回服<br>务器:</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/index.jsl</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Cookie</span>: name=value</span><br><span class="line"><span class="attribute">Other-header</span>: other-header-value</span><br></pre></td></tr></table></figure>
+
+<h3 id="cookie-限制"><a href="#cookie-限制" class="headerlink" title="cookie 限制"></a>cookie 限制</h3><p>大致规则如下：(不同浏览器的限制不同)</p>
+<blockquote><ul>
+<li>不超过300 个cookie；</li>
+<li>每个cookie 不超过4096 字节；</li>
+<li>每个域不超过20 个cookie；</li>
+<li>每个域不超过81 920 字节。</li>
+</ul>
+</blockquote>
+
+<p>如果创建的cookie 超过最大限制，则该cookie 会被静默删除。</p>
+<h3 id="cookie的构成"><a href="#cookie的构成" class="headerlink" title="cookie的构成"></a>cookie的构成</h3><h2 id="web-Storage"><a href="#web-Storage" class="headerlink" title="web Storage"></a>web Storage</h2><blockquote>
+<p>解决通过客户端存储不需要频繁发送回服务器的数据时使用cookie 的问题(空间限制为每个资源5MB左右)</p>
+</blockquote>
+<div class="note info">
+            <ul><li>提供在cookie 之外的存储会话数据的途径；</li><li>提供跨会话持久化存储大量数据的机制。</li></ul>
           </div>
+
+<p>Web Storage 的第2 版定义了两个对象：localStorage 和sessionStorage。localStorage 是永久存储机制，sessionStorage 是跨会话的存储机制。这两种浏览器存储API 提供了在浏览器中不受页面刷新影响而存储数据的两种方式。</p>
+<h3 id="storage-类型"><a href="#storage-类型" class="headerlink" title="storage 类型"></a>storage 类型</h3><p>Storage 类型用于保存名/值对数据，直至存储空间上限（由浏览器决定）。Storage 的实例与其他对象一样，但增加了以下方法。</p>
+<div class="note info">
+            <ul><li>clear()：删除所有值；不在Firefox 中实现。</li><li>getItem(name)：取得给定name 的值。</li><li>key(index)：取得给定数值位置的名称。</li><li>removeItem(name)：删除给定name 的名/值对。</li><li>setItem(name, value)：设置给定name 的值。</li></ul>
+          </div>
+
+<h3 id="sessionStorage-对象"><a href="#sessionStorage-对象" class="headerlink" title="sessionStorage 对象"></a>sessionStorage 对象</h3><p><code>sessionStorage</code>对象只存储会话数据，这意味着数据只会存储到浏览器关闭。这跟浏览器关闭时会消失的会话<code>cookie</code> 类似。存储在<code>sessionStorage</code> 中的数据不受页面刷新影响，可以在浏览器崩溃并重启后恢复。</p>
+<p><code>sessionStorage</code> 对象应该主要用于存储只在会话期间有效的小块数据。如果需要跨会话持久存储数据，可以使用<code>globalStorage</code> 或<code>localStorage</code>。</p>
+<h3 id="localStorage-对象"><a href="#localStorage-对象" class="headerlink" title="localStorage 对象"></a>localStorage 对象</h3><div class="note info">
+            <p>在修订的HTML5 规范里，localStorage 对象取代了globalStorage，作为在客户端持久存储数据的机制。要访问同一个localStorage 对象，页面必须来自同一个域（子域不可以）、在相同的端口上使用相同的协议。</p>
+          </div>
+
+<p>两种存储方法的区别在于，存储在localStorage 中的数据会保留到通过JavaScript 删除或者用户<br>清除浏览器缓存。localStorage 数据不受页面刷新影响，也不会因关闭窗口、标签页或重新启动浏览<br>器而丢失。</p>
+<h3 id="储存事件"><a href="#储存事件" class="headerlink" title="储存事件"></a>储存事件</h3><p>每当Storage 对象发生变化时，都会在文档上触发storage 事件。使用属性或setItem()设置<br>值、使用delete 或removeItem()删除值，以及每次调用clear()时都会触发这个事件;</p>
+<div class="note info">
+            <ul><li>domain：存储变化对应的域。</li><li>key：被设置或删除的键。</li><li>newValue：键被设置的新值，若键被删除则为null。</li><li>oldValue：键变化之前的值。</li></ul>
+          </div>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&quot;storage&quot;</span>,</span><br><span class="line">    (event) =&gt; alert(<span class="string">&#x27;Storage changed for $&#123;event.domain&#125;&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>对于sessionStorage 和localStorage 上的任何更改都会触发storage 事件，但storage 事<br>件不会区分这两者。</p>
+<h2 id="indexedDB"><a href="#indexedDB" class="headerlink" title="indexedDB"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/IndexedDB_API">indexedDB</a></h2><blockquote>
+<p>Indexed Database API 简称IndexedDB，是浏览器中存储结构化数据的一个方案。IndexedDB 背后的思想是创造一套API，方便JavaScript 对象的存储和获取，同时也支持查询和搜索。<br>IndexedDB 的设计几乎完全是异步的。为此，大多数操作以请求的形式执行，这些请求会异步执行，产生成功的结果或错误。绝大多数IndexedDB 操作要求添加onerror 和onsuccess 事件处理程序来确定输出。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db,</span><br><span class="line">    request,</span><br><span class="line">    version = <span class="number">1</span>;</span><br><span class="line">request = indexedDB.open(<span class="string">&quot;admin&quot;</span>, version);</span><br><span class="line">request.onerror = <span class="function">(<span class="params">event</span>) =&gt;</span></span><br><span class="line">    alert(<span class="string">`Failed to open: <span class="subst">$&#123;event.target.errorCode&#125;</span>`</span>);</span><br><span class="line">request.onsuccess = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    db = event.target.result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><blockquote><p>sessionStorage用于严格保存浏览器一次会话期间的数据，因为数据会在浏览器关闭时被删除。localStorage用于会话之外持久保存数据。<br>IndexedDB 是类似于SQL 数据库的结构化数据存储机制。不同的是，IndexedDB 存储的是对象，而不是数据表。对象存储是通过定义键然后添加数据来创建的。游标用于查询对象存储中的特定数据，而索引可以针对特定属性实现更快的查询。<br>这些数据都没有加密，因此不能使用它们存储敏感信息。</p>
+</blockquote>
 
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://aadonkeyz.com/posts/59cc01ec/">aadonkeyz的博客 - cookie</a></li>
 <li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904034181070861">傻傻分不清之 Cookie、Session、Token、JWT</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">indexedDB MDN</a></li>
 </ul>
 
     </div>
@@ -340,7 +389,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie"><span class="nav-number">1.</span> <span class="nav-text">cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie%E7%9A%84%E6%9E%84%E6%88%90"><span class="nav-number">1.1.</span> <span class="nav-text">cookie的构成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie"><span class="nav-number">1.</span> <span class="nav-text">cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie-%E9%99%90%E5%88%B6"><span class="nav-number">1.1.</span> <span class="nav-text">cookie 限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie%E7%9A%84%E6%9E%84%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">cookie的构成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-Storage"><span class="nav-number">2.</span> <span class="nav-text">web Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#storage-%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">storage 类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.2.</span> <span class="nav-text">sessionStorage 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.3.</span> <span class="nav-text">localStorage 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%82%A8%E5%AD%98%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.4.</span> <span class="nav-text">储存事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexedDB"><span class="nav-number">3.</span> <span class="nav-text">indexedDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
