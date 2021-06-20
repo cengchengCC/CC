@@ -20,15 +20,19 @@
     var CONFIG = {"hostname":"cengchengcc.github.io","root":"/CC/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="渲染页面：浏览器的工作原理">
+<meta property="og:type" content="article">
 <meta property="og:title" content="浏览器的重绘与重排 (Repaint &amp; Reflow)">
 <meta property="og:url" content="https://cengchengcc.github.io/CC/posts/3d62f822.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="渲染页面：浏览器的工作原理">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cc-1301775294.cos.ap-nanjing.myqcloud.com/Browser/render.jpg">
 <meta property="article:published_time" content="2021-05-27T13:33:11.000Z">
-<meta property="article:modified_time" content="2021-05-27T13:37:13.548Z">
+<meta property="article:modified_time" content="2021-06-17T16:14:42.520Z">
 <meta property="article:author" content="CC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cc-1301775294.cos.ap-nanjing.myqcloud.com/Browser/render.jpg">
 
 <link rel="canonical" href="https://cengchengcc.github.io/CC/posts/3d62f822.html">
 
@@ -215,10 +219,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-05-27 21:33:11 / Modified: 21:37:13" itemprop="dateCreated datePublished" datetime="2021-05-27T21:33:11+08:00">2021-05-27</time>
+              <time title="Created: 2021-05-27 21:33:11" itemprop="dateCreated datePublished" datetime="2021-05-27T21:33:11+08:00">2021-05-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-18 00:14:42" itemprop="dateModified" datetime="2021-06-18T00:14:42+08:00">2021-06-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -240,7 +250,59 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
+        <p>渲染页面：浏览器的工作原理</p>
+<span id="more"></span>
+
+<h2 id="浏览器渲染UI"><a href="#浏览器渲染UI" class="headerlink" title="浏览器渲染UI"></a>浏览器渲染UI</h2><p><img src="https://cc-1301775294.cos.ap-nanjing.myqcloud.com/Browser/render.jpg" alt="attr"></p>
+<blockquote><ul>
+<li>构建 DOM 树：浏览器将 HTML 解析成树形结构的 DOM 树，一般来说，这个过程发生在页面初次加载，或页面 JavaScript 修改了节点结构的时候。</li>
+<li>构建渲染树：浏览器将 CSS 解析成树形结构的 CSSOM 树，再和 DOM 树合并成渲染树。</li>
+<li>布局（Layout）：浏览器根据渲染树所体现的节点、各个节点的CSS定义以及它们的从属关系，计算出每个节点在屏幕中的位置。Web 页面中元素的布局是相对的，在页面元素位置、大小发生变化，往往会导致其他节点联动，需要重新计算布局，这时候的布局过程一般被称为回流（Reflow）。</li>
+<li>绘制（Paint）：遍历渲染树，调用渲染器的 paint() 方法在屏幕上绘制出节点内容，本质上是一个像素填充的过程。这个过程也出现于回流或一些不影响布局的 CSS 修改引起的屏幕局部重画，这时候它被称为重绘（Repaint）。实际上，绘制过程是在多个层上完成的，这些层我们称为渲染层（RenderLayer）。</li>
+<li>渲染层合成（Composite）：多个绘制后的渲染层按照恰当的重叠顺序进行合并，而后生成位图，最终通过显卡展示到屏幕上。</li>
+</ul>
+</blockquote>
+
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li>重排: 部分渲染树（或者整个渲染树）需要重新分析并且节点尺寸需要重新计算，表现为重新生成布局，重新排列元素</li>
+<li>重绘: 由于节点的几何属性发生改变或者由于样式发生改变，例如改变元素背景色时，屏幕上的部分内容需要更新，表现为某些元素的外观被改变</li>
+</ul>
+<p>单单改变元素的外观，肯定不会引起网页重新生成布局，但当浏览器完成重排之后，将会重新绘制受到此次重排影响的部分</p>
+<p>重排一定重绘， 重绘不一定重排；重排性能影响更大，尽量选择代价更小的重绘</p>
+<h2 id="触发方式"><a href="#触发方式" class="headerlink" title="触发方式"></a>触发方式</h2><p>任何改变用来构建渲染树(Render Tree)的信息都会导致一次重排或重绘：</p>
+<ul>
+<li>添加、删除、更新DOM节点</li>
+<li>通过display: none隐藏一个DOM节点-触发重排和重绘</li>
+<li>通过visibility: hidden隐藏一个DOM节点-只触发重绘，因为没有几何变化</li>
+<li>移动或者给页面中的DOM节点添加动画</li>
+<li>添加一个样式表，调整样式属性</li>
+<li>用户行为，例如调整窗口大小，改变字号，或者滚动。</li>
+</ul>
+<h2 id="如何避免"><a href="#如何避免" class="headerlink" title="如何避免"></a>如何避免</h2><h3 id="集中改变样式"><a href="#集中改变样式" class="headerlink" title="集中改变样式"></a>集中改变样式</h3><p>切换<code>Class</code>的方法来改变样式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> theme = isTrue ? <span class="string">&#x27;theme1&#x27;</span> : <span class="string">&#x27;theme2&#x27;</span></span><br><span class="line"></span><br><span class="line">ele.setAttribute(<span class="string">&#x27;className&#x27;</span>, theme)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="DocumetFragment"><a href="#DocumetFragment" class="headerlink" title="DocumetFragment"></a>DocumetFragment</h3><div class="note info">
+            <p>DocumentFragment，文档片段接口，一个没有父对象的最小文档对象。它被作为一个轻量版的 Document 使用，就像标准的document一样，存储由节点（nodes）组成的文档结构。与document相比，最大的区别是DocumentFragment 不是真实 DOM 树的一部分，它的变化不会触发 DOM 树的重新渲染，且不会导致性能等问题。</p>
+          </div>
+
+<p>增加元素或者<code>clone</code>元素，可以先把元素通过<code>documentFragment</code>放入内存中，等操作完毕后，再<code>appendChild</code>到DOM元素中。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;list&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#list&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Orange&#x27;</span>, <span class="string">&#x27;Banana&#x27;</span>, <span class="string">&#x27;Melon&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fragment = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line"></span><br><span class="line">fruits.forEach(<span class="function"><span class="params">fruit</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> li = <span class="built_in">document</span>.createElement(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line">  li.innerHTML = fruit;</span><br><span class="line">  fragment.appendChild(li);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">list.appendChild(fragment);</span><br></pre></td></tr></table></figure>
+
+<h3 id="提升合成层"><a href="#提升合成层" class="headerlink" title="提升合成层"></a>提升合成层</h3><p>提升至合成层：</p>
+<ul>
+<li>合成层的位图，会交由 GPU 合成，比 CPU 处理要快</li>
+<li>当需要 repaint 时，只需要 repaint 本身，不会影响到其他的层</li>
+<li>对于 transform 和 opacity 效果，不会触发 layout 和 paint</li>
+</ul>
+<p>不要经常获取同一个元素，可以第一次获取元素后，用变量保存下来，减少遍历时间。<br>尽量少使用dispaly:none，可以使用visibility:hidden代替，dispaly:none会造成重排，visibility:hidden会造成重绘。<br>不要使用Table布局，因为一个小小的操作，可能就会造成整个表格的重排或重绘。<br>使用resize事件时，做防抖和节流处理。<br>对动画元素使用absolute / fixed属性。<br>批量修改元素时，可以先让元素脱离文档流，等修改完毕后，再放入文档流。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work#%E8%A7%A3%E6%9E%90">MDN 解析步骤</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path">Critical rendering path</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/DocumentFragment">DocumentFragment</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903966573068301#heading-2">浏览器层合成与页面渲染优化</a></li>
+</ul>
 
     </div>
 
@@ -321,6 +383,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93UI"><span class="nav-number">1.</span> <span class="nav-text">浏览器渲染UI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">触发方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D"><span class="nav-number">4.</span> <span class="nav-text">如何避免</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E4%B8%AD%E6%94%B9%E5%8F%98%E6%A0%B7%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">集中改变样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DocumetFragment"><span class="nav-number">4.2.</span> <span class="nav-text">DocumetFragment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%8D%87%E5%90%88%E6%88%90%E5%B1%82"><span class="nav-number">4.3.</span> <span class="nav-text">提升合成层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -334,7 +397,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
