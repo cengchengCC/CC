@@ -28,7 +28,7 @@
 <meta property="og:description" content="模拟call, apply, bind">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-01T13:22:43.000Z">
-<meta property="article:modified_time" content="2021-06-01T16:00:45.215Z">
+<meta property="article:modified_time" content="2021-06-27T14:52:45.095Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-02 00:00:45" itemprop="dateModified" datetime="2021-06-02T00:00:45+08:00">2021-06-02</time>
+                <time title="Modified: 2021-06-27 22:52:45" itemprop="dateModified" datetime="2021-06-27T22:52:45+08:00">2021-06-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,6 +266,27 @@
 <li>第二个参数可以不传，但类型必须为数组或者类数组</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myApply = <span class="function"><span class="keyword">function</span>(<span class="params">context, args = []</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> cxt = context || <span class="built_in">window</span>;</span><br><span class="line">    <span class="keyword">let</span> func = <span class="built_in">Symbol</span>();</span><br><span class="line">    cxt[func] = <span class="built_in">this</span>;</span><br><span class="line"></span><br><span class="line">    args = args ? args : [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> res = args.length &gt; <span class="number">0</span> ? cxt[func](...args) :cxt[func]();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> cxt[func];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h2><p>需要考虑：</p>
+<ul>
+<li>bind() 除了改变this指向外，还可传入多个参数；</li>
+<li>bind 创建的新函数可能传入多个参数；</li>
+<li>新函数可能被当做构造函数调用；</li>
+<li>函数可能有返回值；</li>
+</ul>
+<p>实现方法：</p>
+<ul>
+<li>bind 方法不会立即执行，需要返回一个待执行的函数；（闭包）</li>
+<li>实现作用域绑定（apply）</li>
+<li>参数传递（apply 的数组传参）</li>
+<li>当作为构造函数的时候，进行原型继承</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myBind = <span class="function"><span class="keyword">function</span>(<span class="params">context, ...args</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> fn = <span class="built_in">this</span>;</span><br><span class="line"></span><br><span class="line">    args = args ? args : [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">newFn</span>(<span class="params">...newFnArgs</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">this</span> <span class="keyword">instanceof</span> newFn)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> fn(...args, ...newFnArgs)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fn.apply(context, [...args, ...newFnArgs])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6977563249650696206">call、apply、bind实现原理</a></li>
+<li><a href="../posts/feee8227">this</a></li>
+</ul>
 
     </div>
 
@@ -349,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#call"><span class="nav-number">1.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply"><span class="nav-number">2.</span> <span class="nav-text">apply</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#call"><span class="nav-number">1.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply"><span class="nav-number">2.</span> <span class="nav-text">apply</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bind"><span class="nav-number">3.</span> <span class="nav-text">bind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -363,7 +384,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"cengchengcc.github.io","root":"/CC/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="浏览器中的事件循环">
+  <meta name="description" content="单线程的浏览器实现异步的方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件循环 (Event Loop)">
 <meta property="og:url" content="https://cengchengcc.github.io/CC/posts/9977bcd5.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="浏览器中的事件循环">
+<meta property="og:description" content="单线程的浏览器实现异步的方法">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-31T11:46:11.000Z">
-<meta property="article:modified_time" content="2021-06-20T07:28:53.109Z">
+<meta property="article:modified_time" content="2021-06-22T15:33:48.295Z">
 <meta property="article:author" content="CC">
 <meta name="twitter:card" content="summary">
 
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-20 15:28:53" itemprop="dateModified" datetime="2021-06-20T15:28:53+08:00">2021-06-20</time>
+                <time title="Modified: 2021-06-22 23:33:48" itemprop="dateModified" datetime="2021-06-22T23:33:48+08:00">2021-06-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,21 +248,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>浏览器中的事件循环</p>
+        <p>单线程的浏览器实现异步的方法</p>
 <span id="more"></span>
 
-<h2 id="浏览器内核（渲染进程）"><a href="#浏览器内核（渲染进程）" class="headerlink" title="浏览器内核（渲染进程）"></a>浏览器内核（渲染进程）</h2><blockquote>
-<p>GUI渲染线程</p>
-<blockquote>
-<p>负责渲染页面，布局和绘制<br>页面需要重绘和回流时，该线程就会执行<br>与js引擎线程互斥，防止渲染结果不可预期<br>JS引擎线程<br>负责处理解析和执行javascript脚本程序<br>只有一个JS引擎线程（单线程）<br>与GUI渲染线程互斥，防止渲染结果不可预期<br>事件触发线程<br>用来控制事件循环（鼠标点击、setTimeout、ajax等）<br>当事件满足触发条件时，将事件放入到JS引擎所在的执行队列中<br>定时触发器线程<br>setInterval与setTimeout所在的线程<br>定时任务并不是由JS引擎计时的，是由定时触发线程来计时的<br>计时完毕后，通知事件触发线程<br>异步http请求线程<br>浏览器有一个单独的线程用于处理AJAX请求<br>当请求完成时，若有回调函数，通知事件触发线程</p>
-</blockquote>
-</blockquote>
-<h2 id="宏任务、微任务-MacroTask、MicroTask"><a href="#宏任务、微任务-MacroTask、MicroTask" class="headerlink" title="宏任务、微任务(MacroTask、MicroTask)"></a>宏任务、微任务(MacroTask、MicroTask)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">script全部代码、<span class="built_in">setTimeout</span>、<span class="built_in">setInterval</span>、setImmediate（浏览器暂时不支持，只有IE10支持，具体可见MDN）、I/O、UI Rendering</span><br><span class="line"></span><br><span class="line">Process.nextTick（Node独有）、<span class="built_in">Promise</span>、<span class="built_in">Object</span>.observe(废弃)、MutationObserver</span><br></pre></td></tr></table></figure>
+<h2 id="浏览器内核（渲染进程）"><a href="#浏览器内核（渲染进程）" class="headerlink" title="浏览器内核（渲染进程）"></a>浏览器内核（渲染进程）</h2><div class="note info">
+            <ul><li>GUI渲染线程<ul><li>负责渲染页面，布局和绘制</li><li>页面需要重绘和回流时，该线程就会执行</li><li>与js引擎线程互斥，防止渲染结果不可预期</li></ul></li><li>JS引擎线程<ul><li>负责处理解析和执行javascript脚本程序</li><li>只有一个JS引擎线程（单线程）</li><li>与GUI渲染线程互斥，防止渲染结果不可预期</li></ul></li><li>事件触发线程<ul><li>用来控制事件循环（鼠标点击、setTimeout、ajax等）</li><li>当事件满足触发条件时，将事件放入到JS引擎所在的执行队列中</li></ul></li><li>定时触发器线程<ul><li>setInterval与setTimeout所在的线程</li><li>定时任务并不是由JS引擎计时的，是由定时触发线程来计时的</li><li>计时完毕后，通知事件触发线程</li></ul></li><li>异步http请求线程<ul><li>浏览器有一个单独的线程用于处理AJAX请求</li><li>当请求完成时，若有回调函数，通知事件触发线程</li></ul></li></ul>
+          </div>
 
-<h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><p>Javascript 有一个 main thread 主线程和 call-stack 调用栈(执行栈)，所有的任务都会被放到调用栈等待主线程执行。</p>
+<h3 id="GUI-渲染线程与-JS-引擎线程互斥"><a href="#GUI-渲染线程与-JS-引擎线程互斥" class="headerlink" title="GUI 渲染线程与 JS 引擎线程互斥"></a>GUI 渲染线程与 JS 引擎线程互斥</h3><p>JS 是可以操作 DOM 的，如果同时修改元素属性并同时渲染界面(即 JS线程和UI线程同时运行)， 那么渲染线程前后获得的元素就可能冲突了。</p>
+<p>为防止渲染冲突，浏览器规定<em>GUI渲染线程</em>和<em>JS引擎线程</em>为互斥关系， 当<em>JS引擎线程</em>执行时GUI渲染线程会被挂起，<em>GUI更新</em>则会被保存在一个队列中等待<em>JS引擎线程</em>空闲时立即被执行。</p>
+<h3 id="JS阻塞页面加载"><a href="#JS阻塞页面加载" class="headerlink" title="JS阻塞页面加载"></a>JS阻塞页面加载</h3><p>从上述的互斥关系，可以推导出，JS如果执行时间过长就会阻塞页面。假设JS引擎正在进行巨量的计算，此时就算GUI有更新，也会被保存到队列中，等待JS引擎空闲后执行。所以，要尽量避免JS执行时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞。</p>
+<h2 id="从-Event-Loop-看-JS-的运行机制"><a href="#从-Event-Loop-看-JS-的运行机制" class="headerlink" title="从 Event Loop 看 JS 的运行机制"></a>从 Event Loop 看 JS 的运行机制</h2><div class="note info">
+            <ul><li>JS 分为同步任务和异步任务</li><li>同步任务都在JS引擎线程上执行，形成一个执行栈</li><li>事件触发线程管理一个任务队列，异步任务触发条件达成，将回调事件放到任务队列中</li><li>执行栈中所有同步任务执行完毕，此时JS引擎线程空闲，系统会读取任务队列，将可运行的异步任务回调事件添加到执行栈中，开始执行</li></ul>
+          </div>
+
+<p>当代码执行到<code>setTimeout/setInterval</code>时，实际上是<strong>JS引擎线程</strong>通知<strong>定时触发器线程</strong>，间隔一个时间后，会触发一个回调事件，<br>而<strong>定时触发器线程</strong>在接收到这个消息后，会在等待的时间后，将回调事件放入到由<strong>事件触发线程</strong>所管理的事件队列中。<br>当代码执行到XHR/fetch时，实际上是<strong>JS引擎线程</strong>通知<strong>异步http请求线程</strong>，发送一个网络请求，并制定请求完成后的回调事件，<br>而<strong>异步http请求线程</strong>在接收到这个消息后，会在请求成功后，将回调事件放入到由<strong>事件触发线程</strong>所管理的事件队列中。<br>当我们的同步任务执行完，<strong>JS引擎线程</strong>会询问<strong>事件触发线程</strong>，在事件队列中是否有待执行的回调函数，如果有就会加入到执行栈中交给<strong>JS引擎线程</strong>执行</p>
+<p>JS引擎线程只执行执行栈中的事件,执行栈中的代码执行完毕，就会读取事件队列中的事件，而事件队列中的回调事件，是由各自线程插入到事件队列中的<br>如此循环</p>
+<h2 id="宏任务、微任务-MacroTask、MicroTask"><a href="#宏任务、微任务-MacroTask、MicroTask" class="headerlink" title="宏任务、微任务(MacroTask、MicroTask)"></a>宏任务、微任务(MacroTask、MicroTask)</h2><p>之后就可以将执行栈这个循环调用的各种代码分为宏任务和微任务</p>
+<p>js引擎线程和GUI渲染线程互斥，为了能够使宏任务和DOM任务有序的进行，GUI渲染线程在宏任务之间执行<br>宏任务-&gt;渲染-&gt;宏任务-&gt;渲染-&gt;渲染</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">script全部代码、<span class="built_in">setTimeout</span>、<span class="built_in">setInterval</span>、setImmediate（浏览器暂时不支持，只有IE10支持，具体可见MDN）、I/O、UI Rendering</span><br><span class="line"></span><br><span class="line">Process.nextTick（Node独有）、<span class="built_in">Promise</span>、<span class="built_in">Object</span>.observe(废弃)、MutationObserver</span><br><span class="line"><span class="comment">//特别注意Promise的executor是一个立即执行的同步函数</span></span><br></pre></td></tr></table></figure>
+
+<div class="note info">
+            <ul><li>执行一个宏任务（栈中没有就从事件队列中获取）</li><li>执行过程中如果遇到微任务，就将它添加到微任务的任务队列中</li><li>宏任务执行完毕后，立即执行当前微任务队列中的所有微任务（依次执行）</li><li>当前宏任务执行完毕，开始检查渲染，然后GUI线程接管渲染</li><li>渲染完毕后，JS线程继续接管，开始下一个宏任务（从事件队列中获取）</li></ul>
+          </div>
+
+<h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><p>主线程从任务队列中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为Event Loop，Event Loop是一个执行模型，在不同的地方有不同的实现，浏览器和NodeJS基于不同的技术实现了各自的Event Loop。浏览器的Event Loop是在HTML5的规范中明确定义，NodeJS的Event Loop是基于libuv实现的。<br>在浏览器中的Event Loop由执行栈Execution Stack、后台线程Background Threads、宏队列Macrotask Queue、微队列Microtask Queue组成。</p>
+<!-- Javascript 有一个 main thread 主线程和 call-stack 调用栈(执行栈)，所有的任务都会被放到调用栈等待主线程执行。 -->
+
+<!-- 执行栈就是在主线程执行同步任务的数据结构，函数调用形成了一个由若干帧组成的栈。
+后台线程就是浏览器实现对于setTimeout、setInterval、XMLHttpRequest等等的执行线程。
+宏队列，一些异步任务的回调会依次进入宏队列，等待后续被调用，包括setTimeout、setInterval、setImmediate(Node)、requestAnimationFrame、UI rendering、I/O等操作
+微队列，另一些异步任务的回调会依次进入微队列，等待后续调用，包括Promise、process.nextTick(Node)、Object.observe、MutationObserver等操作
+
+首先将执行栈中代码同步执行，将这些代码中异步任务加入后台线程中
+执行栈中的同步代码执行完毕后，执行栈清空，并开始扫描微队列
+取出微队列队首任务，放入执行栈中执行，此时微队列是进行了出队操作
+当执行栈执行完成后，继续出队微队列任务并执行，直到微队列任务全部执行完毕
+最后一个微队列任务出队并进入执行栈后微队列中任务为空，当执行栈任务完成后，开始扫面微队列为空，继续扫描宏队列任务，宏队列出队，放入执行栈中执行，执行完毕后继续扫描微队列为空则扫描宏队列，出队执行
+不断往复... -->
+
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903951377104903">浏览器原理面试题</a></li>
 <li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903919789801486">从多线程到Event Loop</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903808200343559">Eventloop里的promise解析</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904165462769678">深入解析你不知道的 EventLoop 和浏览器渲染、帧动画、空闲回调（动图演示）</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6961349015346610184">Event Loop 和 JS 引擎、渲染引擎的关系</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903657264136200">微任务、宏任务与Event-Loop</a></li>
 </ul>
 
     </div>
@@ -344,7 +375,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%EF%BC%88%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">浏览器内核（渲染进程）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%E3%80%81%E5%BE%AE%E4%BB%BB%E5%8A%A1-MacroTask%E3%80%81MicroTask"><span class="nav-number">2.</span> <span class="nav-text">宏任务、微任务(MacroTask、MicroTask)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-Loop"><span class="nav-number">3.</span> <span class="nav-text">Event Loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%EF%BC%88%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">浏览器内核（渲染进程）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GUI-%E6%B8%B2%E6%9F%93%E7%BA%BF%E7%A8%8B%E4%B8%8E-JS-%E5%BC%95%E6%93%8E%E7%BA%BF%E7%A8%8B%E4%BA%92%E6%96%A5"><span class="nav-number">1.1.</span> <span class="nav-text">GUI 渲染线程与 JS 引擎线程互斥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS%E9%98%BB%E5%A1%9E%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD"><span class="nav-number">1.2.</span> <span class="nav-text">JS阻塞页面加载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E-Event-Loop-%E7%9C%8B-JS-%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">从 Event Loop 看 JS 的运行机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%E3%80%81%E5%BE%AE%E4%BB%BB%E5%8A%A1-MacroTask%E3%80%81MicroTask"><span class="nav-number">3.</span> <span class="nav-text">宏任务、微任务(MacroTask、MicroTask)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-Loop"><span class="nav-number">4.</span> <span class="nav-text">Event Loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -358,7 +389,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -22,13 +22,13 @@
 
   <meta name="description" content="允许把主线程的工作转嫁给独立的实体，而不会改变现有的单线程模型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Worker Thread">
+<meta property="og:title" content="工作者线程(Worker Thread)">
 <meta property="og:url" content="https://cengchengcc.github.io/CC/posts/981eba54.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="允许把主线程的工作转嫁给独立的实体，而不会改变现有的单线程模型">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-26T15:25:27.000Z">
-<meta property="article:modified_time" content="2021-02-26T15:37:10.000Z">
+<meta property="article:modified_time" content="2021-06-21T14:09:30.279Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>Worker Thread | Hexo</title>
+  <title>工作者线程(Worker Thread) | Hexo</title>
   
 
 
@@ -209,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Worker Thread
+          工作者线程(Worker Thread)
         </h1>
 
         <div class="post-meta">
@@ -218,10 +218,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-02-26 23:25:27 / Modified: 23:37:10" itemprop="dateCreated datePublished" datetime="2021-02-26T23:25:27+08:00">2021-02-26</time>
+              <time title="Created: 2021-02-26 23:25:27" itemprop="dateCreated datePublished" datetime="2021-02-26T23:25:27+08:00">2021-02-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-21 22:09:30" itemprop="dateModified" datetime="2021-06-21T22:09:30+08:00">2021-06-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -248,6 +254,29 @@
 
 <p>JavaScript 环境实际上是运行在托管操作系统中的虚拟环境。在浏览器中每打开一个页面，就会分配一个它自己的环境。这样，每个页面都有自己的内存、事件循环、DOM，等等。每个页面就相当于一个沙盒，不会干扰其他页面。对于浏览器来说，同时管理多个环境是非常简单的，因为所有这些环境都是并行执行的。</p>
 <p>使用工作者线程，浏览器可以在原始页面环境之外再分配一个完全独立的二级子环境。这个子环境不能与依赖单线程交互的API（如DOM）互操作，但可以与父环境并行执行代码。</p>
+<h2 id="工作者线程与线程"><a href="#工作者线程与线程" class="headerlink" title="工作者线程与线程"></a>工作者线程与线程</h2><div class="note info">
+            <ul><li>工作者线程是以实际线程实现的。</li><li>工作者线程并行执行。</li><li>工作者线程可以共享某些内存。工作者线程能够使用SharedArrayBuffer 在多个环境间共享内容。虽然线程会使用锁实现并发控制，但JavaScript 使用Atomics 接口实现并发控制。工作者线程与线程有很多类似之处，但也有重要的区别。</li><li>工作者线程不共享全部内存。在传统线程模型中，多线程有能力读写共享内存空间。除了Shared-ArrayBuffer 外，从工作者线程进出的数据需要复制或转移。</li><li>工作者线程不一定在同一个进程里。通常，一个进程可以在内部产生多个线程。如，Chrome 的Blink 引擎对共享工作者线程和服务工作者线程使用独立的进程。</li><li>创建工作者线程的开销更大。工作者线程有自己独立的事件循环、全局对象、事件处理程序和其他JavaScript 环境必需的特性。通常，工作者线程应该是长期运行的，启动成本比较高，每个实例占用的内存也比较大。</li></ul>
+          </div>
+
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>专用工作者线程、共享工作者线程和服务工作者线程</p>
+<ol>
+<li>专用工作者线程<br>简称为工作者线程、Web Worker 或Worker，是一种实用的工具，可以让脚本单独创建一个JavaScript 线程，以执行委托的任务。专用工作者线程，顾名思义，只能被创建它的页面使用。</li>
+<li>共享工作者线程<br>共享工作者线程与专用工作者线程非常相似。主要区别是共享工作者线程可以被多个不同的上下文使用，包括不同的页面。任何与创建共享工作者线程的脚本同源的脚本，都可以向共享工作者线程发送消息或从中接收消息。</li>
+<li>服务工作者线程<br>主要用途是拦截、重定向和修改页面发出的请求，充当网络请求的仲裁者的角色。</li>
+</ol>
+<h2 id="WorkerGlobalScope"><a href="#WorkerGlobalScope" class="headerlink" title="WorkerGlobalScope"></a>WorkerGlobalScope</h2><p>在工作者线程内部，没有<code>window</code>的概念。这里的全局对象是WorkerGlobalScope 的实例，通过self 关键字暴露出来。</p>
+<h3 id="WorkerGlobalScope-属性和方法"><a href="#WorkerGlobalScope-属性和方法" class="headerlink" title="WorkerGlobalScope 属性和方法"></a>WorkerGlobalScope 属性和方法</h3><p>self上可用的属性是window对象上属性的严格子集。其中有些属性会返回特定于工作者线程的版本。</p>
+<div class="note info">
+            <ul><li><p>navigator：返回与工作者线程关联的WorkerNavigator。</p></li><li><p>self：返回WorkerGlobalScope 对象。</p></li><li><p>location：返回与工作者线程关联的WorkerLocation。</p></li><li><p>performance：返回（只包含特定属性和方法的）Performance 对象。</p></li><li><p>console：返回与工作者线程关联的Console 对象；对API 没有限制。</p></li><li><p>caches：返回与工作者线程关联的CacheStorage 对象；对API 没有限制。</p></li><li><p>indexedDB：返回IDBFactory 对象。</p></li><li><p>isSecureContext：返回布尔值，表示工作者线程上下文是否安全。</p></li><li><p>origin：返回WorkerGlobalScope 的源。</p></li><li><p>atob()</p></li><li><p>btoa()</p></li><li><p>clearInterval()</p></li><li><p>clearTimeout()</p></li><li><p>createImageBitmap()</p></li><li><p>fetch()</p></li><li><p>setInterval()</p></li><li><p>setTimeout()</p></li></ul>
+          </div>
+
+<p>WorkerGlobalScope 还增加了新的全局方法importScripts()，只在工作者线程内可用。</p>
+<ul>
+<li>专用工作者线程使用DedicatedWorkerGlobalScope。</li>
+<li>共享工作者线程使用SharedWorkerGlobalScope。</li>
+<li>服务工作者线程使用ServiceWorkerGlobalScope。</li>
+</ul>
+<h2 id="专用工作者线程"><a href="#专用工作者线程" class="headerlink" title="专用工作者线程"></a>专用工作者线程</h2><p>网页中的脚本可以创建专用工作者线程来执行在页面线程之外的其他任务。这样的线程可以与父页面交换信息、发送网络请求、执行文件输入/输出、进行密集计算、处理大量数据，以及实现其他不适合在页面执行线程里做的任务（否则会导致页面响应迟钝）。</p>
 
     </div>
 
@@ -331,6 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E8%80%85%E7%BA%BF%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">工作者线程与线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WorkerGlobalScope"><span class="nav-number">3.</span> <span class="nav-text">WorkerGlobalScope</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WorkerGlobalScope-%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">WorkerGlobalScope 属性和方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%93%E7%94%A8%E5%B7%A5%E4%BD%9C%E8%80%85%E7%BA%BF%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">专用工作者线程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -344,7 +374,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

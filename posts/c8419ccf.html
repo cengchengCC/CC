@@ -22,13 +22,13 @@
 
   <meta name="description" content="把一些与特定用户相关的信息例如登录信息、个人偏好，或者其他数据应该保存在客户端上。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Client-Side Storage">
+<meta property="og:title" content="客户端存储(Client-Side Storage)">
 <meta property="og:url" content="https://cengchengcc.github.io/CC/posts/c8419ccf.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="把一些与特定用户相关的信息例如登录信息、个人偏好，或者其他数据应该保存在客户端上。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-28T15:11:43.000Z">
-<meta property="article:modified_time" content="2021-05-29T12:58:18.021Z">
+<meta property="article:modified_time" content="2021-06-22T15:42:56.683Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>Client-Side Storage | Hexo</title>
+  <title>客户端存储(Client-Side Storage) | Hexo</title>
   
 
 
@@ -209,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Client-Side Storage
+          客户端存储(Client-Side Storage)
         </h1>
 
         <div class="post-meta">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-29 20:58:18" itemprop="dateModified" datetime="2021-05-29T20:58:18+08:00">2021-05-29</time>
+                <time title="Modified: 2021-06-22 23:42:56" itemprop="dateModified" datetime="2021-06-22T23:42:56+08:00">2021-06-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +255,7 @@
 <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>HTTP cookie最初用于在客户端存储会话信息。这个规范要求服务器在响应HTTP 请求时，通过发送Set-Cookie HTTP 头部包含会话信息。</p>
 <figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Content-type</span>: text/html</span><br><span class="line"><span class="attribute">Set-Cookie</span>: name=value</span><br><span class="line"><span class="attribute">Other-header</span>: other-header-value</span><br></pre></td></tr></table></figure>
 
-<p>这个HTTP 响应会设置一个名为”name”，值为”value”的cookie。名和值在发送时都会经过URL<br>编码。浏览器会存储这些会话信息，并在之后的每个请求中都会通过HTTP 头部cookie 再将它们发回服<br>务器:</p>
+<p>这个HTTP 响应会设置一个名为”name”，值为”value”的cookie。名和值在发送时都会经过URL编码。浏览器会存储这些会话信息，并在之后的每个请求中都会通过HTTP 头部cookie 再将它们发回服务器:</p>
 <figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/index.jsl</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Cookie</span>: name=value</span><br><span class="line"><span class="attribute">Other-header</span>: other-header-value</span><br></pre></td></tr></table></figure>
 
 <h3 id="cookie-限制"><a href="#cookie-限制" class="headerlink" title="cookie 限制"></a>cookie 限制</h3><p>大致规则如下：(不同浏览器的限制不同)</p>
@@ -268,7 +268,24 @@
 </blockquote>
 
 <p>如果创建的cookie 超过最大限制，则该cookie 会被静默删除。</p>
-<h3 id="cookie的构成"><a href="#cookie的构成" class="headerlink" title="cookie的构成"></a>cookie的构成</h3><h2 id="web-Storage"><a href="#web-Storage" class="headerlink" title="web Storage"></a>web Storage</h2><blockquote>
+<h3 id="cookie的构成"><a href="#cookie的构成" class="headerlink" title="cookie的构成"></a>cookie的构成</h3><div class="note info">
+            <ul><li>名称：唯一标识cookie 的名称。cookie 名不区分大小写。cookie 名必须经过URL 编码。</li><li>值：存储在cookie 里的字符串值。这个值必须经过URL 编码。</li><li>域：cookie 有效的域。发送到这个域的所有请求都会包含对应的cookie。这个值可能包含子域（如<a target="_blank" rel="noopener" href="http://www.wrox.com),也可以不包含(如.wrox.com/">www.wrox.com），也可以不包含（如.wrox.com</a> 表示对wrox.com 的所有子域都有效）。如果不明确设置，则默认为设置cookie 的域。</li><li>路径：请求URL 中包含这个路径才会把cookie 发送到服务器。例如，可以指定cookie 只能由<code>http://www.wrox.com/books/</code>访问，因此访问<code>http://www.wrox.com/</code>下的页面就不会发送cookie，即使请求的是同一个域。</li><li>过期时间：表示何时删除cookie 的时间戳（即什么时间之后就不发送到服务器了）。默认情况下，浏览器会话结束后会删除所有cookie。不过，也可以设置删除cookie 的时间。这个值是GMT 格式（<code>Wdy, DD-Mon-YYYY HH:MM:SS GMT</code>），用于指定删除cookie 的具体时间。这样即使关闭浏览器cookie 也会保留在用户机器上。把过期时间设置为过去的时间会立即删除cookie。</li><li>安全标志：设置之后，只在使用SSL 安全连接的情况下才会把cookie 发送到服务器。例如，请求<code>https://www.wrox.com</code> 会发送cookie，而请求<code>http://www.wrox.com</code>则不会。</li></ul>
+          </div>
+
+<p>这些参数在Set-Cookie 头部中使用分号加空格隔开:</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Content-type</span>: text/html</span><br><span class="line"><span class="attribute">Set-Cookie</span>: name=value; expires=Mon, 22-Jan-07 07:10:24 GMT; domain=.wrox.com</span><br><span class="line"><span class="attribute">Other-header</span>: other-header-value</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Content-type</span>: text/html</span><br><span class="line"><span class="attribute">Set-Cookie</span>: name=value; domain=.wrox.com; path=/; secure</span><br><span class="line"><span class="attribute">Other-header</span>: other-header-value</span><br></pre></td></tr></table></figure>
+
+<p>安全标志secure 是cookie 中唯一的非名/值对，只需一个secure 就可以</p>
+<p>域、路径、过期时间和secure 标志用于告诉浏览器什么情况下应该在请求中包含cookie。这些参数并不会随请求发送给服务器，实际发送的只有cookie 的名/值对。</p>
+<h3 id="JavaScript-中的cookie"><a href="#JavaScript-中的cookie" class="headerlink" title="JavaScript 中的cookie"></a>JavaScript 中的cookie</h3><p>所有名和值都是URL 编码的，因此必须使用decodeURIComponent()解码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie = <span class="string">&quot;name=Nicholas&quot;</span>;</span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="built_in">encodeURIComponent</span>(<span class="string">&quot;name&quot;</span>) + <span class="string">&quot;=&quot;</span> + <span class="built_in">encodeURIComponent</span>(<span class="string">&quot;Nicholas&quot;</span>);</span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="built_in">encodeURIComponent</span>(<span class="string">&quot;name&quot;</span>) + <span class="string">&quot;=&quot;</span> + <span class="built_in">encodeURIComponent</span>(<span class="string">&quot;Nicholas&quot;</span>) + <span class="string">&quot;; domain=.wrox.com; path=/&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在JavaScript 中读写cookie 不是很直观，所以可以通过辅助函数来CookieUtil 对象来操作。相关的基本操作有读、写和删除。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CookieUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> get(name) &#123;</span><br><span class="line">        <span class="keyword">let</span> cookieName = <span class="string">`<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(name)&#125;</span>=`</span>,</span><br><span class="line">        cookieStart = <span class="built_in">document</span>.cookie.indexOf(cookieName),</span><br><span class="line">        cookieValue = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (cookieStart &gt; <span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="keyword">let</span> cookieEnd = <span class="built_in">document</span>.cookie.indexOf(<span class="string">&quot;;&quot;</span>, cookieStart);</span><br><span class="line">            <span class="keyword">if</span> (cookieEnd == <span class="number">-1</span>)&#123;</span><br><span class="line">                cookieEnd = <span class="built_in">document</span>.cookie.length;</span><br><span class="line">            &#125;</span><br><span class="line">            cookieValue = <span class="built_in">decodeURIComponent</span>(<span class="built_in">document</span>.cookie.substring(cookieStart</span><br><span class="line">            + cookieName.length, cookieEnd));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cookieValue;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> set(name, value, expires, path, domain, secure) &#123;</span><br><span class="line">        <span class="keyword">let</span> cookieText =</span><br><span class="line">        <span class="string">`<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(name)&#125;</span>=<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(value)&#125;</span>`</span></span><br><span class="line">        <span class="keyword">if</span> (expires <span class="keyword">instanceof</span> <span class="built_in">Date</span>) &#123;</span><br><span class="line">            cookieText += <span class="string">`; expires=<span class="subst">$&#123;expires.toGMTString()&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (path) &#123;</span><br><span class="line">            cookieText += <span class="string">`; path=<span class="subst">$&#123;path&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (domain) &#123;</span><br><span class="line">            cookieText += <span class="string">`; domain=<span class="subst">$&#123;domain&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (secure) &#123;</span><br><span class="line">            cookieText += <span class="string">&quot;; secure&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.cookie = cookieText;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> unset(name, path, domain, secure) &#123;</span><br><span class="line">        CookieUtil.set(name, <span class="string">&quot;&quot;</span>, <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">0</span>), path, domain, secure);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置cookie</span></span><br><span class="line">CookieUtil.set(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;Nicholas&quot;</span>);</span><br><span class="line">CookieUtil.set(<span class="string">&quot;book&quot;</span>, <span class="string">&quot;Professional JavaScript&quot;</span>);</span><br><span class="line"><span class="comment">// 读取cookie</span></span><br><span class="line">alert(CookieUtil.get(<span class="string">&quot;name&quot;</span>)); <span class="comment">// &quot;Nicholas&quot;</span></span><br><span class="line">alert(CookieUtil.get(<span class="string">&quot;book&quot;</span>)); <span class="comment">// &quot;Professional JavaScript&quot;</span></span><br><span class="line"><span class="comment">// 删除cookie</span></span><br><span class="line">CookieUtil.unset(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">CookieUtil.unset(<span class="string">&quot;book&quot;</span>);</span><br><span class="line"><span class="comment">// 设置有路径、域和过期时间的cookie</span></span><br><span class="line">CookieUtil.set(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;Nicholas&quot;</span>, <span class="string">&quot;/books/projs/&quot;</span>, <span class="string">&quot;www.wrox.com&quot;</span>,</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;January 1, 2010&quot;</span>));</span><br><span class="line"><span class="comment">// 删除刚刚设置的cookie</span></span><br><span class="line">CookieUtil.unset(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;/books/projs/&quot;</span>, <span class="string">&quot;www.wrox.com&quot;</span>);</span><br><span class="line"><span class="comment">// 设置安全cookie</span></span><br><span class="line">CookieUtil.set(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;Nicholas&quot;</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="子域cookie"><a href="#子域cookie" class="headerlink" title="子域cookie"></a>子域cookie</h3><h2 id="web-Storage"><a href="#web-Storage" class="headerlink" title="web Storage"></a>web Storage</h2><blockquote>
 <p>解决通过客户端存储不需要频繁发送回服务器的数据时使用cookie 的问题(空间限制为每个资源5MB左右)</p>
 </blockquote>
 <div class="note info">
@@ -287,20 +304,37 @@
             <p>在修订的HTML5 规范里，localStorage 对象取代了globalStorage，作为在客户端持久存储数据的机制。要访问同一个localStorage 对象，页面必须来自同一个域（子域不可以）、在相同的端口上使用相同的协议。</p>
           </div>
 
-<p>两种存储方法的区别在于，存储在localStorage 中的数据会保留到通过JavaScript 删除或者用户<br>清除浏览器缓存。localStorage 数据不受页面刷新影响，也不会因关闭窗口、标签页或重新启动浏览<br>器而丢失。</p>
-<h3 id="储存事件"><a href="#储存事件" class="headerlink" title="储存事件"></a>储存事件</h3><p>每当Storage 对象发生变化时，都会在文档上触发storage 事件。使用属性或setItem()设置<br>值、使用delete 或removeItem()删除值，以及每次调用clear()时都会触发这个事件;</p>
+<p>两种存储方法的区别在于，存储在localStorage 中的数据会保留到通过JavaScript 删除或者用户清除浏览器缓存。localStorage 数据不受页面刷新影响，也不会因关闭窗口、标签页或重新启动浏览器而丢失。</p>
+<h3 id="储存事件"><a href="#储存事件" class="headerlink" title="储存事件"></a>储存事件</h3><p>每当Storage 对象发生变化时，都会在文档上触发storage 事件。使用属性或setItem()设置值、使用delete 或removeItem()删除值，以及每次调用clear()时都会触发这个事件;</p>
 <div class="note info">
             <ul><li>domain：存储变化对应的域。</li><li>key：被设置或删除的键。</li><li>newValue：键被设置的新值，若键被删除则为null。</li><li>oldValue：键变化之前的值。</li></ul>
           </div>
 
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&quot;storage&quot;</span>,</span><br><span class="line">    (event) =&gt; alert(<span class="string">&#x27;Storage changed for $&#123;event.domain&#125;&#x27;</span>));</span><br></pre></td></tr></table></figure>
 
-<p>对于sessionStorage 和localStorage 上的任何更改都会触发storage 事件，但storage 事<br>件不会区分这两者。</p>
+<p>对于<code>sessionStorage</code> 和<code>localStorage</code> 上的任何更改都会触发<code>storage</code> 事件，但<code>storage</code>事件不会区分这两者。</p>
 <h2 id="indexedDB"><a href="#indexedDB" class="headerlink" title="indexedDB"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/IndexedDB_API">indexedDB</a></h2><blockquote>
 <p>Indexed Database API 简称IndexedDB，是浏览器中存储结构化数据的一个方案。IndexedDB 背后的思想是创造一套API，方便JavaScript 对象的存储和获取，同时也支持查询和搜索。<br>IndexedDB 的设计几乎完全是异步的。为此，大多数操作以请求的形式执行，这些请求会异步执行，产生成功的结果或错误。绝大多数IndexedDB 操作要求添加onerror 和onsuccess 事件处理程序来确定输出。</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> db,</span><br><span class="line">    request,</span><br><span class="line">    version = <span class="number">1</span>;</span><br><span class="line">request = indexedDB.open(<span class="string">&quot;admin&quot;</span>, version);</span><br><span class="line">request.onerror = <span class="function">(<span class="params">event</span>) =&gt;</span></span><br><span class="line">    alert(<span class="string">`Failed to open: <span class="subst">$&#123;event.target.errorCode&#125;</span>`</span>);</span><br><span class="line">request.onsuccess = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    db = event.target.result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<h2 id="优缺点对比"><a href="#优缺点对比" class="headerlink" title="优缺点对比"></a>优缺点对比</h2><ul>
+<li>cookie<ul>
+<li>操作Cookie的API很早就已经定义和实现了，因此Cookie的兼容性非常的好</li>
+<li>存储量小。影响性能。只能储存字符串。安全问题。用户会禁用Cookie</li>
+</ul>
+</li>
+<li>webStorage<ul>
+<li>提供了简单明了的API来进行操作、更加安全、可储存的数据量更大</li>
+<li>不适合存储敏感数据</li>
+</ul>
+</li>
+<li>IndexedDB<ul>
+<li>拥有更大的储存空间;能够处理更为复杂和结构化的数据;拥有更多的交互控制;每个’database’中可以拥有多个’database’和’table’</li>
+<li>存储空间必须限制;兼容性问题;indexedDB受同源策略的限制;相较于web存储机制的操作更加复杂</li>
+</ul>
+</li>
+</ul>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><blockquote><p>sessionStorage用于严格保存浏览器一次会话期间的数据，因为数据会在浏览器关闭时被删除。localStorage用于会话之外持久保存数据。<br>IndexedDB 是类似于SQL 数据库的结构化数据存储机制。不同的是，IndexedDB 存储的是对象，而不是数据表。对象存储是通过定义键然后添加数据来创建的。游标用于查询对象存储中的特定数据，而索引可以针对特定属性实现更快的查询。<br>这些数据都没有加密，因此不能使用它们存储敏感信息。</p>
 </blockquote>
 
@@ -392,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie"><span class="nav-number">1.</span> <span class="nav-text">cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie-%E9%99%90%E5%88%B6"><span class="nav-number">1.1.</span> <span class="nav-text">cookie 限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie%E7%9A%84%E6%9E%84%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">cookie的构成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-Storage"><span class="nav-number">2.</span> <span class="nav-text">web Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#storage-%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">storage 类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.2.</span> <span class="nav-text">sessionStorage 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.3.</span> <span class="nav-text">localStorage 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%82%A8%E5%AD%98%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.4.</span> <span class="nav-text">储存事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexedDB"><span class="nav-number">3.</span> <span class="nav-text">indexedDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie"><span class="nav-number">1.</span> <span class="nav-text">cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie-%E9%99%90%E5%88%B6"><span class="nav-number">1.1.</span> <span class="nav-text">cookie 限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie%E7%9A%84%E6%9E%84%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">cookie的构成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-%E4%B8%AD%E7%9A%84cookie"><span class="nav-number">1.3.</span> <span class="nav-text">JavaScript 中的cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E5%9F%9Fcookie"><span class="nav-number">1.4.</span> <span class="nav-text">子域cookie</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-Storage"><span class="nav-number">2.</span> <span class="nav-text">web Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#storage-%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">storage 类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.2.</span> <span class="nav-text">sessionStorage 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.3.</span> <span class="nav-text">localStorage 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%82%A8%E5%AD%98%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.4.</span> <span class="nav-text">储存事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexedDB"><span class="nav-number">3.</span> <span class="nav-text">indexedDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9%E5%AF%B9%E6%AF%94"><span class="nav-number">4.</span> <span class="nav-text">优缺点对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -406,7 +440,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
