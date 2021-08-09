@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cc-1301775294.cos.ap-nanjing.myqcloud.com/Browser/render.jpg">
 <meta property="article:published_time" content="2021-05-27T13:33:11.000Z">
-<meta property="article:modified_time" content="2021-06-22T15:22:50.776Z">
+<meta property="article:modified_time" content="2021-08-09T07:59:46.108Z">
 <meta property="article:author" content="CC">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cc-1301775294.cos.ap-nanjing.myqcloud.com/Browser/render.jpg">
@@ -227,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-22 23:22:50" itemprop="dateModified" datetime="2021-06-22T23:22:50+08:00">2021-06-22</time>
+                <time title="Modified: 2021-08-09 15:59:46" itemprop="dateModified" datetime="2021-08-09T15:59:46+08:00">2021-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -270,13 +270,32 @@
 <p>单单改变元素的外观，肯定不会引起网页重新生成布局，但当浏览器完成重排之后，将会重新绘制受到此次重排影响的部分</p>
 <p>重排一定重绘， 重绘不一定重排；重排性能影响更大，尽量选择代价更小的重绘</p>
 <h2 id="触发方式"><a href="#触发方式" class="headerlink" title="触发方式"></a>触发方式</h2><p>任何改变用来构建渲染树(Render Tree)的信息都会导致一次重排或重绘：</p>
-<ul>
-<li>添加、删除、更新DOM节点</li>
-<li>通过display: none隐藏一个DOM节点-触发重排和重绘</li>
-<li>通过visibility: hidden隐藏一个DOM节点-只触发重绘，因为没有几何变化</li>
+<p>仅触发重绘：</p>
+<ol>
+<li>改变背景色；</li>
+<li>改变文字颜色；</li>
+<li>改变边框颜色；</li>
+<li>通过visibility:hidden隐藏元素；</li>
+</ol>
+<p>触发回流：</p>
+<ol>
+<li>页面初次渲染；</li>
+<li>浏览器窗口大小改变；</li>
+<li>元素尺寸、位置、内容发生改变；</li>
+<li>元素字体大小变化；</li>
+<li>添加、删除、更新DOM节点;通过display: none隐藏一个DOM节点</li>
+<li>激活 CSS 伪类（例如：:hover）；</li>
+<li>查询某些属性或调用某些方法（整窗口大小，改变字号，或者滚动）</li>
 <li>移动或者给页面中的DOM节点添加动画</li>
 <li>添加一个样式表，调整样式属性</li>
-<li>用户行为，例如调整窗口大小，改变字号，或者滚动。</li>
+</ol>
+<ul>
+<li>clientWidth、clientHeight、clientTop、clientLeft</li>
+<li>offsetWidth、offsetHeight、offsetTop、offsetLeft</li>
+<li>scrollWidth、scrollHeight、scrollTop、scrollLeft</li>
+<li>getComputedStyle() ：Window.getComputedStyle()方法返回一个对象，该对象在应用活动样式表并解析这些值可能包含的任何基本计算后报告元素的所有CSS属性的值。</li>
+<li>getBoundingClientRect()</li>
+<li>scrollTo()：scrollTo() 方法可把内容滚动到指定的坐标。</li>
 </ul>
 <h2 id="如何避免"><a href="#如何避免" class="headerlink" title="如何避免"></a>如何避免</h2><h3 id="集中改变样式"><a href="#集中改变样式" class="headerlink" title="集中改变样式"></a>集中改变样式</h3><p>切换<code>Class</code>的方法来改变样式</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> theme = isTrue ? <span class="string">&#x27;theme1&#x27;</span> : <span class="string">&#x27;theme2&#x27;</span></span><br><span class="line"></span><br><span class="line">ele.setAttribute(<span class="string">&#x27;className&#x27;</span>, theme)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -398,14 +417,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">83</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/CC/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">

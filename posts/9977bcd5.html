@@ -27,10 +27,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="单线程的浏览器实现异步的方法">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25681734818441f7a16ea6cdc0e0bbc3~tplv-k3u1fbpfcp-watermark.awebp">
 <meta property="article:published_time" content="2021-05-31T11:46:11.000Z">
-<meta property="article:modified_time" content="2021-06-22T15:33:48.295Z">
+<meta property="article:modified_time" content="2021-08-09T07:53:45.231Z">
 <meta property="article:author" content="CC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25681734818441f7a16ea6cdc0e0bbc3~tplv-k3u1fbpfcp-watermark.awebp">
 
 <link rel="canonical" href="https://cengchengcc.github.io/CC/posts/9977bcd5.html">
 
@@ -225,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-22 23:33:48" itemprop="dateModified" datetime="2021-06-22T23:33:48+08:00">2021-06-22</time>
+                <time title="Modified: 2021-08-09 15:53:45" itemprop="dateModified" datetime="2021-08-09T15:53:45+08:00">2021-08-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,6 +257,7 @@
             <ul><li>GUI渲染线程<ul><li>负责渲染页面，布局和绘制</li><li>页面需要重绘和回流时，该线程就会执行</li><li>与js引擎线程互斥，防止渲染结果不可预期</li></ul></li><li>JS引擎线程<ul><li>负责处理解析和执行javascript脚本程序</li><li>只有一个JS引擎线程（单线程）</li><li>与GUI渲染线程互斥，防止渲染结果不可预期</li></ul></li><li>事件触发线程<ul><li>用来控制事件循环（鼠标点击、setTimeout、ajax等）</li><li>当事件满足触发条件时，将事件放入到JS引擎所在的执行队列中</li></ul></li><li>定时触发器线程<ul><li>setInterval与setTimeout所在的线程</li><li>定时任务并不是由JS引擎计时的，是由定时触发线程来计时的</li><li>计时完毕后，通知事件触发线程</li></ul></li><li>异步http请求线程<ul><li>浏览器有一个单独的线程用于处理AJAX请求</li><li>当请求完成时，若有回调函数，通知事件触发线程</li></ul></li></ul>
           </div>
 
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25681734818441f7a16ea6cdc0e0bbc3~tplv-k3u1fbpfcp-watermark.awebp" alt="attr"></p>
 <h3 id="GUI-渲染线程与-JS-引擎线程互斥"><a href="#GUI-渲染线程与-JS-引擎线程互斥" class="headerlink" title="GUI 渲染线程与 JS 引擎线程互斥"></a>GUI 渲染线程与 JS 引擎线程互斥</h3><p>JS 是可以操作 DOM 的，如果同时修改元素属性并同时渲染界面(即 JS线程和UI线程同时运行)， 那么渲染线程前后获得的元素就可能冲突了。</p>
 <p>为防止渲染冲突，浏览器规定<em>GUI渲染线程</em>和<em>JS引擎线程</em>为互斥关系， 当<em>JS引擎线程</em>执行时GUI渲染线程会被挂起，<em>GUI更新</em>则会被保存在一个队列中等待<em>JS引擎线程</em>空闲时立即被执行。</p>
 <h3 id="JS阻塞页面加载"><a href="#JS阻塞页面加载" class="headerlink" title="JS阻塞页面加载"></a>JS阻塞页面加载</h3><p>从上述的互斥关系，可以推导出，JS如果执行时间过长就会阻塞页面。假设JS引擎正在进行巨量的计算，此时就算GUI有更新，也会被保存到队列中，等待JS引擎空闲后执行。所以，要尽量避免JS执行时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞。</p>
@@ -266,7 +269,9 @@
 <p>JS引擎线程只执行执行栈中的事件,执行栈中的代码执行完毕，就会读取事件队列中的事件，而事件队列中的回调事件，是由各自线程插入到事件队列中的<br>如此循环</p>
 <h2 id="宏任务、微任务-MacroTask、MicroTask"><a href="#宏任务、微任务-MacroTask、MicroTask" class="headerlink" title="宏任务、微任务(MacroTask、MicroTask)"></a>宏任务、微任务(MacroTask、MicroTask)</h2><p>之后就可以将执行栈这个循环调用的各种代码分为宏任务和微任务</p>
 <p>js引擎线程和GUI渲染线程互斥，为了能够使宏任务和DOM任务有序的进行，GUI渲染线程在宏任务之间执行<br>宏任务-&gt;渲染-&gt;宏任务-&gt;渲染-&gt;渲染</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">script全部代码、<span class="built_in">setTimeout</span>、<span class="built_in">setInterval</span>、setImmediate（浏览器暂时不支持，只有IE10支持，具体可见MDN）、I/O、UI Rendering</span><br><span class="line"></span><br><span class="line">Process.nextTick（Node独有）、<span class="built_in">Promise</span>、<span class="built_in">Object</span>.observe(废弃)、MutationObserver</span><br><span class="line"><span class="comment">//特别注意Promise的executor是一个立即执行的同步函数</span></span><br></pre></td></tr></table></figure>
+<div class="note info">
+            <p>script全部代码、setTimeout、setInterval、setImmediate（浏览器暂时不支持，只有IE10支持，具体可见MDN）、I/O、UI Rendering、(请求)</p><p>Process.nextTick（Node独有）、Promise、Object.observe(废弃)、MutationObserver、(proxy)<br>//特别注意Promise的executor是一个立即执行的同步函数</p><ul><li>process.nextTick(Node独有)将callback添加到下一个时间点的队列；</li><li>使用MutationObserver监控某个DOM节点，当DOM节点发生变化时，就会产生DOM变化记录的微任<br>务。</li><li>优先级： process.nextTick &gt; Promise = MutationObserver</li></ul>
+          </div>
 
 <div class="note info">
             <ul><li>执行一个宏任务（栈中没有就从事件队列中获取）</li><li>执行过程中如果遇到微任务，就将它添加到微任务的任务队列中</li><li>宏任务执行完毕后，立即执行当前微任务队列中的所有微任务（依次执行）</li><li>当前宏任务执行完毕，开始检查渲染，然后GUI线程接管渲染</li><li>渲染完毕后，JS线程继续接管，开始下一个宏任务（从事件队列中获取）</li></ul>
@@ -389,14 +394,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">83</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/CC/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
