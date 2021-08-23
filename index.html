@@ -221,7 +221,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-09 16:08:51" itemprop="dateModified" datetime="2021-08-09T16:08:51+08:00">2021-08-09</time>
+                <time title="Modified: 2021-08-23 23:29:06" itemprop="dateModified" datetime="2021-08-23T23:29:06+08:00">2021-08-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,9 +244,68 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>不要相信用户的输入，在用户输入提交到后台之前，过滤&lt;,&gt;,&amp;,”替换成Unicode编码就可以了</p>
-<p>对重要的cookie设置httpOnly，防止客户端通过document.cookie读取cookie</p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903685122703367#heading-7">https://juejin.cn/post/6844903685122703367#heading-7</a> | 前端安全系列（一）：如何防止XSS攻击？<br><a target="_blank" rel="noopener" href="https://juejin.cn/search?utm_source=gold_browser_extension&amp;query=cookie%20%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83XSS">https://juejin.cn/search?utm_source=gold_browser_extension&amp;query=cookie%20%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83XSS</a> | cookie 如何防范XSS - 搜索<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6961228237380796429#heading-4">https://juejin.cn/post/6961228237380796429#heading-4</a> | XSS 攻击和 CSRF 攻击各自的原理是什么？两者又有什么区别？以及如何防范？</p>
+          <span id="more"></span>
+<h2 id="Cookie是什么"><a href="#Cookie是什么" class="headerlink" title="Cookie是什么"></a>Cookie是什么</h2><p>Cookie是服务端发送到用户浏览器并且保存到本地的一小块数据，它会在浏览器下次向同一服务器发起请求时，被携带到服务器上。</p>
+<p>它的作用：</p>
+<p>经常用来做一些用户会话状态管理、个性化设置等等。<br>前端可以通过document.cookie来访问cookie。<br>cookie是跨域的，也就是在不同的域名中，访问的cookie的时候，只能访问对应的域名的cookie。</p>
+<p>关于cookie，前端面试中，问的东西比较多，总结了一下，会有这么一些问题。</p>
+<h2 id="Cookie-和-CSRF-的关系是什么"><a href="#Cookie-和-CSRF-的关系是什么" class="headerlink" title="Cookie 和 CSRF 的关系是什么"></a>Cookie 和 CSRF 的关系是什么</h2><p>搞明白这个问题，首先要明白什么CSRF？和它相关的Cookie特性是什么？</p>
+<h4 id="1、CSRF是什么？"><a href="#1、CSRF是什么？" class="headerlink" title="1、CSRF是什么？"></a>1、CSRF是什么？</h4><p>CSRF，中文名叫跨站请求伪造，发生的场景就是，用户登陆了a网站，然后跳转到b网站，b网站直接发送一个a网站的请求，进行一些危险操作，就发生了CSRF攻击！</p>
+<p>这时候，懂得这个CSRF了吗？我认为一部分同学依然不懂，因为我看过太多这样的描述了！</p>
+<p>因为有这么一些疑惑，为什么在b网站可以仿造a网站的请求？Cookie不是跨域的吗？什么条件下，什么场景下，会发生这样的事情？</p>
+<p>这时候，我们要注意上面我对cookie的定义，在发送一个http请求的时候，携带的cookie是这个http请求域的地址的cookie。也就是我在b网站，发送a网站的一个请求，携带的是a网站域名下的cookie！很多同学的误解，就是觉得cookie是跨域的，b网站发送任何一个请求，我只能携带b网站域名下的cookie。</p>
+<p>当然，我们在b网站下，读取cookie的时候，只能读取b网站域名下的cookie，这是cookie的跨域限制。所以要记住，不要把http请求携带的cookie，和当前域名的访问权限的cookie混淆在一起。</p>
+<p>还要理解一个点：CSRF攻击，仅仅是利用了http携带cookie的特性进行攻击的，但是攻击站点还是无法得到被攻击站点的cookie。这个和XSS不同，XSS是直接通过拿到Cookie等信息进行攻击的。</p>
+<h4 id="2、Cookie相关特性？"><a href="#2、Cookie相关特性？" class="headerlink" title="2、Cookie相关特性？"></a>2、Cookie相关特性？</h4><p>在CSRF攻击中，就Cookie相关的特性：</p>
+<p>1、http请求，会自动携带Cookie。</p>
+<p>2、携带的cookie，还是http请求所在域名的cookie。</p>
+<h4 id="3、Cookie如何应对的-CSRF攻击？"><a href="#3、Cookie如何应对的-CSRF攻击？" class="headerlink" title="3、Cookie如何应对的 CSRF攻击？"></a>3、Cookie如何应对的 CSRF攻击？</h4><p>明白了CSRF的本质，就能理解如何防御CSRF的攻击。</p>
+<p>方案一：放弃Cookie、使用Token！</p>
+<p>由于CSRF是通过Cookie伪造请求的方式，欺骗服务器，来达到自己的目的。那么我们采取的策略就是，不使用Cookie的方式来验证用户身份，我们使用Token！</p>
+<p>Token的策略，一般就是登陆的时候，服务端在response中，返回一个token字段，然后以后所有的通信，前端就把这个token添加到http请求的头部。</p>
+<p>这是当前，最常用的防御CSRF攻击的策略。</p>
+<p>方案二：SameSite Cookies</p>
+<p>前端在发展，Cookie也在进化，Cookie有一个新的属性——SateSite。能够解决CSRF攻击的问题。</p>
+<p>它表示，只能当前域名的网站发出的http请求，携带这个Cookie。</p>
+<p>当然，由于这是新的cookie属性，在兼容性上肯定会有问题。</p>
+<p>方案三：服务端Referer验证</p>
+<p>我们发送的http请求中，header中会带有Referer字段，这个字段代表的是当前域的域名，服务端可以通过这个字段来判断，是不是“真正”的用户请求。</p>
+<p>也就是说，如果b网站伪造a网站的请求，Referer字段还是表明，这个请求是b网站的。也就能辨认这个请求的真伪了。</p>
+<p>不过，目前这种方案，使用的人比较少。可能存在的问题就是，如果连Referer字段都能伪造，怎么办？</p>
+<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><p>Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害数据安全。</p>
+<h3 id="XSS的危害"><a href="#XSS的危害" class="headerlink" title="XSS的危害"></a>XSS的危害</h3><ol>
+<li>获取页面数据——Dom、cookie、localStorage</li>
+<li>劫持前端逻辑</li>
+<li>发送请求</li>
+</ol>
+<h3 id="预防XSS"><a href="#预防XSS" class="headerlink" title="预防XSS"></a>预防XSS</h3><ol>
+<li>输入过滤<br>不要相信用户的输入，在用户输入提交到后台之前，过滤&lt;,&gt;,&amp;,”替换成Unicode编码就可以了</li>
+<li>HTTP-only Cookie: 禁止 JavaScript 读取某些敏感 Cookie，攻击者完成 XSS 注入后也无法窃取此 Cookie</li>
+<li>验证码：防止脚本冒充用户提交危险操作</li>
+<li>输入内容长度控制：对于不受信任的输入，都应该限定一个合理的长度。虽然无法完全防止 XSS 发生，但可以增加 XSS 攻击的难度</li>
+</ol>
+<h3 id="Content-Security-Policy"><a href="#Content-Security-Policy" class="headerlink" title="Content Security Policy"></a>Content Security Policy</h3><blockquote><ol>
+<li>禁止加载外域代码，防止复杂的攻击逻辑</li>
+<li>禁止外域提交，网站被攻击后，用户的数据不会泄露到外域</li>
+<li>禁止内联脚本执行（规则较严格，目前发现 GitHub 使用）</li>
+<li>禁止未授权的脚本执行（新特性，Google Map 移动版在使用）</li>
+<li>合理使用上报可以及时发现 XSS，利于尽快修复问题</li>
+</ol>
+</blockquote>
+
+<h2 id="Cookie-和-Token-对比"><a href="#Cookie-和-Token-对比" class="headerlink" title="Cookie 和 Token 对比"></a>Cookie 和 Token 对比</h2><p>1、cookie可以引起csrf攻击，token在保持用户会话的时候好一点。</p>
+<p>2、由于http请求携带cookie，当cookie过大的时候，会增大http请求的带宽。</p>
+<p>3、cookie的特性，导致了cookie面对CSRF攻击的时候，很不安全。</p>
+<h2 id="Cookie如何做优化"><a href="#Cookie如何做优化" class="headerlink" title="Cookie如何做优化"></a>Cookie如何做优化</h2><p>从安全方面，尽量的使用token，进行会话保持。</p>
+<p>从http请求的角度，尽可能让cookie的信息少一点，从而使得http请求的体积更小。</p>
+<p>由于cookie的一个常用的作用，是保持用户会话的，所以仅仅在接口请求的时候，使用cookie。</p>
+<p>加载其他资源，比如图片、js、css文件等等，可以托管到CDN上，这样就不会携带cookie，CDN的策略也使得资源加载更快。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903685122703367">前端安全系列（一）：如何防止XSS攻击？</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903689702866952">前端安全系列之二：如何防止CSRF攻击？</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6961228237380796429">XSS 攻击和 CSRF 攻击各自的原理是什么？两者又有什么区别？以及如何防范？</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904102544031757">面试：彻底理解Cookie以及Cookie安全</a></li>
+</ul>
 
       
     </div>

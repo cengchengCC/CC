@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"cengchengcc.github.io","root":"/CC/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="参考链接 前端性能优化 24 条建议（2020） 知道的前端优化手段 Front-End Performance Checklist 2021 Front-End Performance Checklist">
+  <meta name="description" content="前端性能优化手段从以下几个方面入手：加载优化、执行优化、渲染优化、样式优化、脚本优化  加载优化:减少HTTP请求、缓存资源、压缩代码、无阻塞、首屏加载、按需加载、预加载、压缩图像、减少Cookie、避免重定向、异步加载第三方资源 执行优化：CSS写在头部，JS写在尾部并异步、避免img、iframe等的src为空、尽量避免重置图像大小、图像尽量避免使用DataURL 渲染优化：设置viewp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="性能优化">
 <meta property="og:url" content="https://cengchengcc.github.io/CC/posts/fc854d4d.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="参考链接 前端性能优化 24 条建议（2020） 知道的前端优化手段 Front-End Performance Checklist 2021 Front-End Performance Checklist">
+<meta property="og:description" content="前端性能优化手段从以下几个方面入手：加载优化、执行优化、渲染优化、样式优化、脚本优化  加载优化:减少HTTP请求、缓存资源、压缩代码、无阻塞、首屏加载、按需加载、预加载、压缩图像、减少Cookie、避免重定向、异步加载第三方资源 执行优化：CSS写在头部，JS写在尾部并异步、避免img、iframe等的src为空、尽量避免重置图像大小、图像尽量避免使用DataURL 渲染优化：设置viewp">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-30T15:53:00.000Z">
-<meta property="article:modified_time" content="2021-08-17T13:15:02.669Z">
+<meta property="article:modified_time" content="2021-08-23T15:38:12.313Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="前端性能优化">
 <meta name="twitter:card" content="summary">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-17 21:15:02" itemprop="dateModified" datetime="2021-08-17T21:15:02+08:00">2021-08-17</time>
+                <time title="Modified: 2021-08-23 23:38:12" itemprop="dateModified" datetime="2021-08-23T23:38:12+08:00">2021-08-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,6 +251,47 @@
       
         <span id="more"></span>
 
+<p>前端性能优化手段从以下几个方面入手：加载优化、执行优化、渲染优化、样式优化、脚本优化</p>
+<ul>
+<li>加载优化:减少HTTP请求、缓存资源、压缩代码、无阻塞、首屏加载、按需加载、预加载、压缩图像、减少Cookie、避免重定向、异步加载第三方资源</li>
+<li>执行优化：CSS写在头部，JS写在尾部并异步、避免img、iframe等的src为空、尽量避免重置图像大小、图像尽量避免使用DataURL</li>
+<li>渲染优化：设置viewport、减少DOM节点、优化动画、优化高频事件、GPU加速</li>
+<li>样式优化：避免在HTML中书写style、避免CSS表达式、移除CSS空规则、正确使用display：display、不滥用float等</li>
+<li>脚本优化：减少重绘和回流、缓存DOM选择与计算、缓存.length的值、尽量使用事件代理、尽量使用id选择器、touch事件优化</li>
+</ul>
+<h2 id="加载优化"><a href="#加载优化" class="headerlink" title="加载优化"></a>加载优化</h2><p>减少HTTP请求：尽量减少页面的请求数(首次加载同时请求数不能超过4个)，移动设备浏览器同时响应请求为4个请求(Android支持4个，iOS5+支持6个)</p>
+<p>合并CSS和JS<br>使用CSS精灵图<br>缓存资源：使用缓存可减少向服务器的请求数，节省加载时间，所有静态资源都要在服务器端设置缓存，并且尽量使用长缓存(使用时间戳更新缓存)</p>
+<p>缓存一切可缓存的资源<br>使用长缓存<br>使用外联的样式和脚本<br>压缩代码：减少资源大小可加快网页显示速度，对代码进行压缩，并在服务器端设置GZip</p>
+<p>压缩代码(多余的缩进、空格和换行符)<br>启用Gzip<br>无阻塞：头部内联的样式和脚本会阻塞页面的渲染，样式放在头部并使用link方式引入，脚本放在尾部并使用异步方式加载</p>
+<p>首屏加载：首屏快速显示可大大提升用户对页面速度的感知，应尽量针对首屏的快速显示做优化</p>
+<p>按需加载：将不影响首屏的资源和当前屏幕不用的资源放到用户需要时才加载，可大大提升显示速度和降低总体流量(按需加载会导致大量重绘，影响渲染性能)</p>
+<p>懒加载<br>滚屏加载<br>Media Query加载<br>预加载：大型资源页面可使用Loading，资源加载完成后再显示页面，但加载时间过长，会造成用户流失</p>
+<p>可感知Loading：进入页面时Loading<br>不可感知Loading：提前加载下一页<br>压缩图像：使用图像时选择最合适的格式和大小，然后使用工具压缩，同时在代码中用srcset来按需显示(</p>
+<p>过度压缩图像大小影响图像显示效果)</p>
+<p>使用TinyJpg和TinyPng压缩图像<br>使用CSS3、SVG、IconFont代替图像<br>使用img的srcset按需加载图像<br>选择合适的图像：webp优于jpg，png8优于gif<br>选择合适的大小：首次加载不大于1014kb、不宽于640px<br>PS切图时D端图像保存质量为80，M端图像保存质量为60<br>减少Cookie：Cookie会影响加载速度，静态资源域名不使用Cookie</p>
+<p>避免重定向：重定向会影响加载速度，在服务器正确设置避免重定向</p>
+<p>异步加载第三方资源：第三方资源不可控会影响页面的加载和显示，要异步加载第三方资源</p>
+<h2 id="执行优化"><a href="#执行优化" class="headerlink" title="执行优化"></a>执行优化</h2><ul>
+<li>CSS写在头部，JS写在尾部并异步</li>
+<li>避免img、iframe等的src为空：空src会重新加载当前页面，影响速度和效率</li>
+<li>尽量避免重置图像大小：多次重置图像大小会引发图像的多次重绘，影响性能</li>
+<li>图像尽量避免使用DataURL：DataURL图像没有使用图像的压缩算法，文件会变大，并且要解码后再渲染，加载慢耗时长</li>
+</ul>
+<h2 id="渲染优化"><a href="#渲染优化" class="headerlink" title="渲染优化"></a>渲染优化</h2><p>设置viewport：HTML的viewport可加速页面的渲染</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>减少DOM节点：DOM节点太多影响页面的渲染，尽量减少DOM节点<br>优化动画<br>    尽量使用CSS3动画<br>    合理使用requestAnimationFrame动画代替setTimeout<br>    适当使用Canvas动画：5个元素以内使用CSS动画，5个元素以上使用Canvas动画，iOS8+可使用WebGL动画<br>优化高频事件：scroll、touchmove等事件可导致多次渲染<br>    函数节流<br>    函数防抖<br>    使用requestAnimationFrame监听帧变化：使得在正确的时间进行渲染<br>    增加响应变化的时间间隔：减少重绘次数<br>GPU加速：使用某些HTML5标签和CSS3属性会触发GPU渲染，请合理使用(过渡使用会引发手机耗电量增加)<br>    HTML标签：video、canvas、webgl<br>    CSS属性：opacity、transform、transition</p>
+<h2 id="样式优化"><a href="#样式优化" class="headerlink" title="样式优化"></a>样式优化</h2><p>避免在HTML中书写style<br>避免CSS表达式：CSS表达式的执行需跳出CSS树的渲染<br>移除CSS空规则：CSS空规则增加了css文件的大小，影响CSS树的执行<br>正确使用display：display会影响页面的渲染<br>display:inline后不应该再使用float、margin、padding、width和height<br>display:inline-block后不应该再使用float<br>display:block后不应该再使用vertical-align<br>display:table-*后不应该再使用float和margin<br>不滥用float：float在渲染时计算量比较大，尽量减少使用<br>不滥用Web字体：Web字体需要下载、解析、重绘当前页面，尽量减少使用<br>不声明过多的font-size：过多的font-size影响CSS树的效率<br>值为0时不需要任何单位：为了浏览器的兼容性和性能，值为0时不要带单位<br>标准化各种浏览器前缀<br>无前缀属性应放在最后<br>CSS动画属性只用-webkit-、无前缀两种<br>其它前缀为-webkit-、-moz-、-ms-、无前缀四种：Opera改用blink内核，-o-已淘汰<br>避免让选择符看起来像正则表达式：高级选择符执行耗时长且不易读懂，避免使用</p>
+<h2 id="脚本优化"><a href="#脚本优化" class="headerlink" title="脚本优化"></a>脚本优化</h2><p>减少重绘和回流<br>    避免不必要的DOM操作<br>    避免使用document.write<br>    减少drawImage<br>    尽量改变class而不是style，使用classList代替className<br>缓存DOM选择与计算：每次DOM选择都要计算和缓存<br>缓存.length的值：每次.length计算用一个变量保存值<br>尽量使用事件代理：避免批量绑定事件<br>尽量使用id选择器：id选择器选择元素是最快的<br>touch事件优化：使用tap(touchstart和touchend)代替click(注意touch响应过快，易引发误操作)</p>
+<h2 id="雅虎军规"><a href="#雅虎军规" class="headerlink" title="雅虎军规"></a>雅虎军规</h2><h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p>Make Fewer HTTP Requests：减少HTTP请求数<br>Reduce DNS Lookups：减少DNS查询<br>Avoid Redirects：避免重定向<br>Make Ajax Cacheable：缓存AJAX请求<br>Postload Components：延迟加载资源<br>Preload Components：预加载资源<br>Reduce The Number Of DOM Elements：减少DOM元素数量<br>Split Components Across Domains：跨域拆分资源<br>Minimize The Number Of Iframes：减少iframe数量<br>No 404s：消除404错误</p>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>Put Stylesheets At The Top：置顶样式<br>Avoid CSS Expressions：避免CSS表达式<br>Choose Over @import：选择``代替@import<br>Avoid Filters：避免滤镜</p>
+<h3 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h3><p>Put Scripts At The Bottom：置底脚本<br>Make JavaScript And CSS External：使用外部JS和CSS<br>Minify JavaScript And CSS：压缩JS和CSS<br>Remove Duplicate Scripts：删除重复脚本<br>Minimize DOM Access：减少DOM操作<br>Develop Smart Event Handlers：开发高效的事件处理</p>
+<h3 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h3><p>Optimize images：优化图片<br>Optimize CSS Sprites：优化CSS精灵图<br>Don’t Scale images In HTML：不在HTML中缩放图片<br>Make Favicon.ico Small And Cacheable：使用小体积可缓存的favicon</p>
+<h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><p>Reduce Cookie Size：减少Cookie大小<br>Use Cookie-Free Domains For Components：使用无Cookie域名的资源</p>
+<h3 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h3><p>Keep Components Under 25kb：保持资源小于25kb<br>Pack Components Into A Multipart Document：打包资源到多部分文档中</p>
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><p>Use A Content Delivery Network：使用CDN<br>Add An Expires Or A Cache-Control Header：响应头添加Expires或Cache-Control<br>Gzip Components：Gzip资源<br>Configure ETags：配置ETags<br>Flush The Buffer Early：尽早输出缓冲<br>Use Get For AJAX Requests：AJAX请求时使用get<br>Avoid Empty Image Src：避免图片空链接</p>
+<h2 id="2-5-8原则"><a href="#2-5-8原则" class="headerlink" title="2-5-8原则"></a>2-5-8原则</h2><p>在前端开发中，此规则作为一种开发指导思路，针对浏览器页面的性能优化。</p>
+<p>用户在2秒内得到响应，会感觉页面的响应速度很快 Fast<br>用户在2<del>5秒间得到响应，会感觉页面的响应速度还行 Medium<br>用户在5</del>8秒间得到响应，会感觉页面的响应速度很慢，但还可以接受 Slow<br>用户在8秒后仍然无法得到响应，会感觉页面的响应速度垃圾死了</p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000022205291">前端性能优化 24 条建议（2020）</a></li>
 <li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6966857691381645325">知道的前端优化手段</a></li>
@@ -340,7 +381,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">1.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">加载优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E4%BC%98%E5%8C%96"><span class="nav-number">2.</span> <span class="nav-text">执行优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">渲染优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E5%BC%8F%E4%BC%98%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">样式优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E4%BC%98%E5%8C%96"><span class="nav-number">5.</span> <span class="nav-text">脚本优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%85%E8%99%8E%E5%86%9B%E8%A7%84"><span class="nav-number">6.</span> <span class="nav-text">雅虎军规</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">6.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E5%BC%8F"><span class="nav-number">6.2.</span> <span class="nav-text">样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC"><span class="nav-number">6.3.</span> <span class="nav-text">脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F"><span class="nav-number">6.4.</span> <span class="nav-text">图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%93%E5%AD%98"><span class="nav-number">6.5.</span> <span class="nav-text">缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF"><span class="nav-number">6.6.</span> <span class="nav-text">移动端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">6.7.</span> <span class="nav-text">服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-8%E5%8E%9F%E5%88%99"><span class="nav-number">7.</span> <span class="nav-text">2-5-8原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">8.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
