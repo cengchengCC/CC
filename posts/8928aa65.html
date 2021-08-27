@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"cengchengcc.github.io","root":"/CC/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Cookie是什么Cookie是服务端发送到用户浏览器并且保存到本地的一小块数据，它会在浏览器下次向同一服务器发起请求时，被携带到服务器上。 它的作用： 经常用来做一些用户会话状态管理、个性化设置等等。前端可以通过document.cookie来访问cookie。cookie是跨域的，也就是在不同的域名中，访问的cookie的时候，只能访问对应的域名的cookie。 关于cookie，前端面试中">
+  <meta name="description" content="主要介绍两种前端安全攻击：XSS和CSRF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XSS、CSRF">
 <meta property="og:url" content="https://cengchengcc.github.io/CC/posts/8928aa65.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Cookie是什么Cookie是服务端发送到用户浏览器并且保存到本地的一小块数据，它会在浏览器下次向同一服务器发起请求时，被携带到服务器上。 它的作用： 经常用来做一些用户会话状态管理、个性化设置等等。前端可以通过document.cookie来访问cookie。cookie是跨域的，也就是在不同的域名中，访问的cookie的时候，只能访问对应的域名的cookie。 关于cookie，前端面试中">
+<meta property="og:description" content="主要介绍两种前端安全攻击：XSS和CSRF">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-08T15:46:11.000Z">
-<meta property="article:modified_time" content="2021-08-23T15:29:06.739Z">
+<meta property="article:modified_time" content="2021-08-24T14:08:38.106Z">
 <meta property="article:author" content="CC">
 <meta name="twitter:card" content="summary">
 
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-23 23:29:06" itemprop="dateModified" datetime="2021-08-23T23:29:06+08:00">2021-08-23</time>
+                <time title="Modified: 2021-08-24 22:08:38" itemprop="dateModified" datetime="2021-08-24T22:08:38+08:00">2021-08-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,22 +248,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
+        <p>主要介绍两种前端安全攻击：XSS和CSRF</p>
+<span id="more"></span>
 <h2 id="Cookie是什么"><a href="#Cookie是什么" class="headerlink" title="Cookie是什么"></a>Cookie是什么</h2><p>Cookie是服务端发送到用户浏览器并且保存到本地的一小块数据，它会在浏览器下次向同一服务器发起请求时，被携带到服务器上。</p>
 <p>它的作用：</p>
 <p>经常用来做一些用户会话状态管理、个性化设置等等。<br>前端可以通过document.cookie来访问cookie。<br>cookie是跨域的，也就是在不同的域名中，访问的cookie的时候，只能访问对应的域名的cookie。</p>
 <p>关于cookie，前端面试中，问的东西比较多，总结了一下，会有这么一些问题。</p>
 <h2 id="Cookie-和-CSRF-的关系是什么"><a href="#Cookie-和-CSRF-的关系是什么" class="headerlink" title="Cookie 和 CSRF 的关系是什么"></a>Cookie 和 CSRF 的关系是什么</h2><p>搞明白这个问题，首先要明白什么CSRF？和它相关的Cookie特性是什么？</p>
-<h4 id="1、CSRF是什么？"><a href="#1、CSRF是什么？" class="headerlink" title="1、CSRF是什么？"></a>1、CSRF是什么？</h4><p>CSRF，中文名叫跨站请求伪造，发生的场景就是，用户登陆了a网站，然后跳转到b网站，b网站直接发送一个a网站的请求，进行一些危险操作，就发生了CSRF攻击！</p>
-<p>这时候，懂得这个CSRF了吗？我认为一部分同学依然不懂，因为我看过太多这样的描述了！</p>
-<p>因为有这么一些疑惑，为什么在b网站可以仿造a网站的请求？Cookie不是跨域的吗？什么条件下，什么场景下，会发生这样的事情？</p>
-<p>这时候，我们要注意上面我对cookie的定义，在发送一个http请求的时候，携带的cookie是这个http请求域的地址的cookie。也就是我在b网站，发送a网站的一个请求，携带的是a网站域名下的cookie！很多同学的误解，就是觉得cookie是跨域的，b网站发送任何一个请求，我只能携带b网站域名下的cookie。</p>
-<p>当然，我们在b网站下，读取cookie的时候，只能读取b网站域名下的cookie，这是cookie的跨域限制。所以要记住，不要把http请求携带的cookie，和当前域名的访问权限的cookie混淆在一起。</p>
-<p>还要理解一个点：CSRF攻击，仅仅是利用了http携带cookie的特性进行攻击的，但是攻击站点还是无法得到被攻击站点的cookie。这个和XSS不同，XSS是直接通过拿到Cookie等信息进行攻击的。</p>
-<h4 id="2、Cookie相关特性？"><a href="#2、Cookie相关特性？" class="headerlink" title="2、Cookie相关特性？"></a>2、Cookie相关特性？</h4><p>在CSRF攻击中，就Cookie相关的特性：</p>
-<p>1、http请求，会自动携带Cookie。</p>
-<p>2、携带的cookie，还是http请求所在域名的cookie。</p>
-<h4 id="3、Cookie如何应对的-CSRF攻击？"><a href="#3、Cookie如何应对的-CSRF攻击？" class="headerlink" title="3、Cookie如何应对的 CSRF攻击？"></a>3、Cookie如何应对的 CSRF攻击？</h4><p>明白了CSRF的本质，就能理解如何防御CSRF的攻击。</p>
+<h3 id="3、Cookie如何应对的-CSRF攻击？"><a href="#3、Cookie如何应对的-CSRF攻击？" class="headerlink" title="3、Cookie如何应对的 CSRF攻击？"></a>3、Cookie如何应对的 CSRF攻击？</h3><p>明白了CSRF的本质，就能理解如何防御CSRF的攻击。</p>
 <p>方案一：放弃Cookie、使用Token！</p>
 <p>由于CSRF是通过Cookie伪造请求的方式，欺骗服务器，来达到自己的目的。那么我们采取的策略就是，不使用Cookie的方式来验证用户身份，我们使用Token！</p>
 <p>Token的策略，一般就是登陆的时候，服务端在response中，返回一个token字段，然后以后所有的通信，前端就把这个token添加到http请求的头部。</p>
@@ -282,8 +274,10 @@
 <li>劫持前端逻辑</li>
 <li>发送请求</li>
 </ol>
-<h3 id="预防XSS"><a href="#预防XSS" class="headerlink" title="预防XSS"></a>预防XSS</h3><ol>
+<h2 id="XSS防护"><a href="#XSS防护" class="headerlink" title="XSS防护"></a>XSS防护</h2><ol>
+<li>对数据进行严格的输出编码：如HTML元素的编码，JS编码，CSS编码，URL编码等等<br>避免拼接 HTML；Vue/React 技术栈，避免使用 v-html / dangerouslySetInnerHTML</li>
 <li>输入过滤<br>不要相信用户的输入，在用户输入提交到后台之前，过滤&lt;,&gt;,&amp;,”替换成Unicode编码就可以了</li>
+<li>输入验证：比如一些常见的数字、URL、电话号码、邮箱地址等等做校验判断</li>
 <li>HTTP-only Cookie: 禁止 JavaScript 读取某些敏感 Cookie，攻击者完成 XSS 注入后也无法窃取此 Cookie</li>
 <li>验证码：防止脚本冒充用户提交危险操作</li>
 <li>输入内容长度控制：对于不受信任的输入，都应该限定一个合理的长度。虽然无法完全防止 XSS 发生，但可以增加 XSS 攻击的难度</li>
@@ -297,6 +291,49 @@
 </ol>
 </blockquote>
 
+<p>CSP HTTP Header，即 Content-Security-Policy、X-XSS-Protection<br>增加攻击难度，配置CSP(本质是建立白名单，由浏览器进行拦截)<br>Content-Security-Policy: default-src ‘self’-所有内容均来自站点的同一个源（不包括其子域名）<br>Content-Security-Policy: default-src ‘self’ *.trusted.com-允许内容来自信任的域名及其子域名 (域名不必须与CSP设置所在的域名相同)<br>Content-Security-Policy: default-src <a target="_blank" rel="noopener" href="https://yideng.com-该服务器仅允许通过https方式并仅从yideng.com域名来访问文档/">https://yideng.com-该服务器仅允许通过HTTPS方式并仅从yideng.com域名来访问文档</a></p>
+<h3 id="X-XSS-Protection"><a href="#X-XSS-Protection" class="headerlink" title="X-XSS-Protection"></a>X-XSS-Protection</h3><p>HTTP X-XSS-Protection 响应头是 Internet Explorer，Chrome 和 Safari 的一个特性，当检测到跨站脚本攻击 (XSS (en-US))时，浏览器将停止加载页面。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">X-XSS-Protection: <span class="number">0</span></span><br><span class="line">X-XSS-Protection: <span class="number">1</span></span><br><span class="line">X-XSS-Protection: <span class="number">1</span>; mode=block</span><br><span class="line">X-XSS-Protection: <span class="number">1</span>; report=<span class="xml"><span class="tag">&lt;<span class="name">reporting-uri</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<blockquote><p><code>0</code><br>禁止XSS过滤。<br><code>1</code><br>启用XSS过滤（通常浏览器是默认的）。 如果检测到跨站脚本攻击，浏览器将清除页面（删除不安全的部分）。<br><code>1;mode=block</code><br>启用XSS过滤。 如果检测到攻击，浏览器将不会清除页面，而是阻止页面加载。<br><code>1; report=&lt;reporting-URI&gt;  (Chromium only)</code><br>启用XSS过滤。 如果检测到跨站脚本攻击，浏览器将清除页面并使用CSP report-uri (en-US)指令的功能发送违规报告。</p>
+</blockquote>
+
+<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><p>CSRF（Cross-site request forgery）跨站请求伪造：攻击者诱导受害者进入第三方网站，在第三方网站中，向被攻击网站发送跨站请求。利用受害者在被攻击网站已经获取的注册凭证，绕过后台的用户验证，达到冒充用户对被攻击的网站执行某项操作的目的。</p>
+<p>一个典型的CSRF攻击有着如下的流程：</p>
+<ul>
+<li>受害者登录a.com，并保留了登录凭证（Cookie）。</li>
+<li>攻击者引诱受害者访问了b.com。</li>
+<li>b.com 向 a.com 发送了一个请求：a.com/act=xx。浏览器会…</li>
+<li>a.com接收到请求后，对请求进行验证，并确认是受害者的凭证，误以为是受害者自己发送的请求。</li>
+<li>a.com以受害者的名义执行了act=xx。</li>
+<li>攻击完成，攻击者在受害者不知情的情况下，冒充受害者，让a.com执行了自己定义的操作。</li>
+</ul>
+<h3 id="1、CSRF是什么？"><a href="#1、CSRF是什么？" class="headerlink" title="1、CSRF是什么？"></a>1、CSRF是什么？</h3><p>CSRF，中文名叫跨站请求伪造，发生的场景就是，用户登陆了a网站，然后跳转到b网站，b网站直接发送一个a网站的请求，进行一些危险操作，就发生了CSRF攻击！</p>
+<p>这时候，懂得这个CSRF了吗？我认为一部分同学依然不懂，因为我看过太多这样的描述了！</p>
+<p>因为有这么一些疑惑，为什么在b网站可以仿造a网站的请求？Cookie不是跨域的吗？什么条件下，什么场景下，会发生这样的事情？</p>
+<p>这时候，我们要注意上面我对cookie的定义，在发送一个http请求的时候，携带的cookie是这个http请求域的地址的cookie。也就是我在b网站，发送a网站的一个请求，携带的是a网站域名下的cookie！很多同学的误解，就是觉得cookie是跨域的，b网站发送任何一个请求，我只能携带b网站域名下的cookie。</p>
+<p>当然，我们在b网站下，读取cookie的时候，只能读取b网站域名下的cookie，这是cookie的跨域限制。所以要记住，不要把http请求携带的cookie，和当前域名的访问权限的cookie混淆在一起。</p>
+<p>还要理解一个点：CSRF攻击，仅仅是利用了http携带cookie的特性进行攻击的，但是攻击站点还是无法得到被攻击站点的cookie。这个和XSS不同，XSS是直接通过拿到Cookie等信息进行攻击的。</p>
+<h3 id="2、Cookie相关特性？"><a href="#2、Cookie相关特性？" class="headerlink" title="2、Cookie相关特性？"></a>2、Cookie相关特性？</h3><p>在CSRF攻击中，就Cookie相关的特性：</p>
+<p>1、http请求，会自动携带Cookie。</p>
+<p>2、携带的cookie，还是http请求所在域名的cookie。</p>
+<h3 id="CSRF的特点"><a href="#CSRF的特点" class="headerlink" title="CSRF的特点"></a>CSRF的特点</h3><p>攻击一般发起在第三方网站，而不是被攻击的网站。被攻击的网站无法防止攻击发生。<br>攻击利用受害者在被攻击网站的登录凭证，冒充受害者提交操作；而不是直接窃取数据。<br>整个过程攻击者并不能获取到受害者的登录凭证，仅仅是“冒用”。<br>跨站请求可以用各种方式：图片URL、超链接、CORS、Form提交等等。部分请求方式可以直接嵌入在第三方论坛、文章中，难以进行追踪。</p>
+<p>CSRF通常是跨域的，因为外域通常更容易被攻击者掌控。但是如果本域下有容易被利用的功能，比如可以发图和链接的论坛和评论区，攻击可以直接在本域下进行，而且这种攻击更加危险。</p>
+<h2 id="CSRF防护"><a href="#CSRF防护" class="headerlink" title="CSRF防护"></a>CSRF防护</h2><p>CSRF通常从第三方网站发起，被攻击的网站无法防止攻击发生，只能通过增强自己网站针对CSRF的防护能力来提升安全性。<br>上文中讲了CSRF的两个特点：</p>
+<p>CSRF（通常）发生在第三方域名。<br>CSRF攻击者不能获取到Cookie等信息，只是使用。</p>
+<p>针对这两点，我们可以专门制定防护策略，如下：</p>
+<ul>
+<li>阻止不明外域的访问<ul>
+<li>同源检测</li>
+<li>Samesite Cookie</li>
+</ul>
+</li>
+<li>提交时要求附加本域才能获取的信息<ul>
+<li>CSRF Token</li>
+<li>双重Cookie验证</li>
+</ul>
+</li>
+</ul>
 <h2 id="Cookie-和-Token-对比"><a href="#Cookie-和-Token-对比" class="headerlink" title="Cookie 和 Token 对比"></a>Cookie 和 Token 对比</h2><p>1、cookie可以引起csrf攻击，token在保持用户会话的时候好一点。</p>
 <p>2、由于http请求携带cookie，当cookie过大的时候，会增大http请求的带宽。</p>
 <p>3、cookie的特性，导致了cookie面对CSRF攻击的时候，很不安全。</p>
@@ -387,7 +424,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">Cookie是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-%E5%92%8C-CSRF-%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">2.</span> <span class="nav-text">Cookie 和 CSRF 的关系是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81CSRF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.0.1.</span> <span class="nav-text">1、CSRF是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81Cookie%E7%9B%B8%E5%85%B3%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="nav-number">2.0.2.</span> <span class="nav-text">2、Cookie相关特性？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%81Cookie%E5%A6%82%E4%BD%95%E5%BA%94%E5%AF%B9%E7%9A%84-CSRF%E6%94%BB%E5%87%BB%EF%BC%9F"><span class="nav-number">2.0.3.</span> <span class="nav-text">3、Cookie如何应对的 CSRF攻击？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS"><span class="nav-number">3.</span> <span class="nav-text">XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="nav-number">3.1.</span> <span class="nav-text">XSS的危害</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E9%98%B2XSS"><span class="nav-number">3.2.</span> <span class="nav-text">预防XSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content-Security-Policy"><span class="nav-number">3.3.</span> <span class="nav-text">Content Security Policy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-%E5%92%8C-Token-%E5%AF%B9%E6%AF%94"><span class="nav-number">4.</span> <span class="nav-text">Cookie 和 Token 对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie%E5%A6%82%E4%BD%95%E5%81%9A%E4%BC%98%E5%8C%96"><span class="nav-number">5.</span> <span class="nav-text">Cookie如何做优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">Cookie是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-%E5%92%8C-CSRF-%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">2.</span> <span class="nav-text">Cookie 和 CSRF 的关系是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81Cookie%E5%A6%82%E4%BD%95%E5%BA%94%E5%AF%B9%E7%9A%84-CSRF%E6%94%BB%E5%87%BB%EF%BC%9F"><span class="nav-number">2.1.</span> <span class="nav-text">3、Cookie如何应对的 CSRF攻击？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS"><span class="nav-number">3.</span> <span class="nav-text">XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="nav-number">3.1.</span> <span class="nav-text">XSS的危害</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS%E9%98%B2%E6%8A%A4"><span class="nav-number">4.</span> <span class="nav-text">XSS防护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Content-Security-Policy"><span class="nav-number">4.1.</span> <span class="nav-text">Content Security Policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#X-XSS-Protection"><span class="nav-number">4.2.</span> <span class="nav-text">X-XSS-Protection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF"><span class="nav-number">5.</span> <span class="nav-text">CSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81CSRF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">5.1.</span> <span class="nav-text">1、CSRF是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81Cookie%E7%9B%B8%E5%85%B3%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="nav-number">5.2.</span> <span class="nav-text">2、Cookie相关特性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">5.3.</span> <span class="nav-text">CSRF的特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF%E9%98%B2%E6%8A%A4"><span class="nav-number">6.</span> <span class="nav-text">CSRF防护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-%E5%92%8C-Token-%E5%AF%B9%E6%AF%94"><span class="nav-number">7.</span> <span class="nav-text">Cookie 和 Token 对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie%E5%A6%82%E4%BD%95%E5%81%9A%E4%BC%98%E5%8C%96"><span class="nav-number">8.</span> <span class="nav-text">Cookie如何做优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">9.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
