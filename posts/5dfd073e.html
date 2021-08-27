@@ -20,16 +20,17 @@
     var CONFIG = {"hostname":"cengchengcc.github.io","root":"/CC/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="通过XHR实现Ajax通信的一个主要限制，来源于跨域安全策略（同源策略）。它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制我个人将跨域问题分类为两种：网络请求跨域和非网络请求跨域。 网络请求跨域             网络请求跨域的解决方案有：图像imgJSONPCORSNginx反向代理、Nodejs中间件SSE、Web Socket（它们是">
+  <meta name="description" content="Cross Domain Solutions">
 <meta property="og:type" content="article">
 <meta property="og:title" content="跨域问题">
 <meta property="og:url" content="https://cengchengcc.github.io/CC/posts/5dfd073e.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="通过XHR实现Ajax通信的一个主要限制，来源于跨域安全策略（同源策略）。它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制我个人将跨域问题分类为两种：网络请求跨域和非网络请求跨域。 网络请求跨域             网络请求跨域的解决方案有：图像imgJSONPCORSNginx反向代理、Nodejs中间件SSE、Web Socket（它们是">
+<meta property="og:description" content="Cross Domain Solutions">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-08T13:45:06.000Z">
-<meta property="article:modified_time" content="2021-03-08T16:18:36.000Z">
+<meta property="article:modified_time" content="2021-08-27T09:19:35.742Z">
 <meta property="article:author" content="CC">
+<meta property="article:tag" content="网络请求">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://cengchengcc.github.io/CC/posts/5dfd073e.html">
@@ -225,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-09 00:18:36" itemprop="dateModified" datetime="2021-03-09T00:18:36+08:00">2021-03-09</time>
+                <time title="Modified: 2021-08-27 17:19:35" itemprop="dateModified" datetime="2021-08-27T17:19:35+08:00">2021-08-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -233,7 +234,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/CC/categories/FE/" itemprop="url" rel="index"><span itemprop="name">FE</span></a>
+                  <a href="/CC/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
                 </span>
             </span>
 
@@ -248,12 +249,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>通过XHR实现Ajax通信的一个主要限制，来源于跨域安全策略（同源策略）。它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制<br>我个人将跨域问题分类为两种：<strong>网络请求跨域</strong>和<strong>非网络请求跨域</strong>。</p>
-<h1 id="网络请求跨域"><a href="#网络请求跨域" class="headerlink" title="网络请求跨域"></a>网络请求跨域</h1><div class="note info">
+        <p>Cross Domain Solutions</p>
+<span id="more"></span>
+<p>通过XHR实现Ajax通信的一个主要限制，来源于跨域安全策略（同源策略）。它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制<br>我个人将跨域问题分类为两种：<strong>网络请求跨域</strong>和<strong>非网络请求跨域</strong>。</p>
+<h2 id="网络请求跨域"><a href="#网络请求跨域" class="headerlink" title="网络请求跨域"></a>网络请求跨域</h2><div class="note info">
             <p>网络请求跨域的解决方案有：</p><ul><li>图像img</li><li>JSONP</li><li>CORS</li><li>Nginx反向代理、Nodejs中间件</li><li>SSE、Web Socket（它们是服务器推送技术，无跨域问题）</li></ul><p><a target="_blank" rel="noopener" href="https://aadonkeyz.com/posts/5ffed448/">详细信息在这里</a></p>
           </div>
 
-<h1 id="非网络请求跨域"><a href="#非网络请求跨域" class="headerlink" title="非网络请求跨域"></a>非网络请求跨域</h1><h2 id="document-domain"><a href="#document-domain" class="headerlink" title="document.domain"></a>document.domain</h2><div class="note info">
+<h2 id="CORS-Cross-origin-resource-sharing"><a href="#CORS-Cross-origin-resource-sharing" class="headerlink" title="CORS(Cross-origin resource sharing)"></a>CORS(Cross-origin resource sharing)</h2><p>CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。<br>整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。</p>
+<p>因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p>
+<h3 id="请求分类"><a href="#请求分类" class="headerlink" title="请求分类"></a>请求分类</h3><p>满足以下两个条件：则归属于简单请求：</p>
+<div class="note info">
+            <ul><li>请求方法是以下三种方法之一：<br>HEAD<br>GET<br>POST</li><li>HTTP的头信息不超出以下几种字段：<br>Accept<br>Accept-Language<br>Content-Language<br>Last-Event-ID<br>Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain</li></ul>
+          </div>
+
+<h3 id="简单请求"><a href="#简单请求" class="headerlink" title="简单请求"></a>简单请求</h3><p>简单请求：浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个Origin字段。</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/cors</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Origin</span>: http://api.bob.com</span><br><span class="line"><span class="attribute">Host</span>: api.alice.com</span><br><span class="line"><span class="attribute">Accept-Language</span>: en-US</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0...</span><br></pre></td></tr></table></figure>
+
+<p>Origin字段用来说明，本次请求来自哪个源:协议 + 域名 + 端口</p>
+<p>如果Origin指定的源，不在许可范围内，服务器会返回一个正常的HTTP回应。浏览器发现，这个回应的头信息没有包含Access-Control-Allow-Origin字段（详见下文），就知道出错了，从而抛出一个错误，被XMLHttpRequest的onerror回调函数捕获。注意，这种错误无法通过状态码识别，因为HTTP回应的状态码有可能是200。</p>
+<p>如果Origin指定的域名在许可范围内，服务器返回的响应，会多出几个头信息字段。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin: http:<span class="comment">//api.bob.com</span></span><br><span class="line">Access-Control-Allow-Credentials: <span class="literal">true</span></span><br><span class="line">Access-Control-Expose-Headers: FooBar</span><br><span class="line">Content-Type: text/html; charset=utf<span class="number">-8</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Access-Control-Allow-Origin"><a href="#Access-Control-Allow-Origin" class="headerlink" title="Access-Control-Allow-Origin"></a>Access-Control-Allow-Origin</h4><p>该字段是必须的。它的值要么是请求时Origin字段的值，要么是一个*，表示接受任意域名的请求。</p>
+<h4 id="Access-Control-Allow-Credentials"><a href="#Access-Control-Allow-Credentials" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h4><p>该字段可选。它的值是一个布尔值，表示是否允许发送Cookie。默认情况下，Cookie不包括在CORS请求之中。设为true，即表示服务器明确许可，Cookie可以包含在请求中，一起发给服务器。这个值也只能设为true，如果服务器不要浏览器发送Cookie，删除该字段即可。</p>
+<h4 id="Access-Control-Expose-Headers"><a href="#Access-Control-Expose-Headers" class="headerlink" title="Access-Control-Expose-Headers"></a>Access-Control-Expose-Headers</h4><p>该字段可选。CORS请求时，XMLHttpRequest对象的getResponseHeader()方法只能拿到6个基本字段：Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma。如果想拿到其他字段，就必须在Access-Control-Expose-Headers里面指定。上面的例子指定，getResponseHeader(‘FooBar’)可以返回FooBar字段的值。</p>
+<h3 id="非简单要求"><a href="#非简单要求" class="headerlink" title="非简单要求"></a>非简单要求</h3><p>非简单请求是那种对服务器有特殊要求的请求，比如请求方法是PUT或DELETE，或者Content-Type字段的类型是application/json。</p>
+<h3 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h3><p>非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求（preflight）。</p>
+<h2 id="非网络请求跨域"><a href="#非网络请求跨域" class="headerlink" title="非网络请求跨域"></a>非网络请求跨域</h2><h3 id="document-domain"><a href="#document-domain" class="headerlink" title="document.domain"></a>document.domain</h3><div class="note info">
             <p>如果要进行通信的窗口之间主域相同，子域不同，则可以直接将它们的 <code>document.domain</code> 修改为主域，这样就不存在跨域问题了。</p>
           </div>
 
@@ -263,17 +286,18 @@
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- domain 初始值为 b.domain.com --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.domain = <span class="string">&#x27;domain.com&#x27;</span>;</span></span><br><span class="line"><span class="javascript">  alert(<span class="string">&#x27;get js data from a ---&gt; &#x27;</span> + <span class="built_in">window</span>.parent.frames.a.user);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="location-hash"><a href="#location-hash" class="headerlink" title="location.hash"></a>location.hash</h2><div class="note info">
+<h3 id="location-hash"><a href="#location-hash" class="headerlink" title="location.hash"></a>location.hash</h3><div class="note info">
             <p>父窗口 A 修改子窗口 B 的 <code>location.hash</code> 值，会触发对应子窗口 B <code>window</code> 对象的 <code>onhashchange</code> 事件处理程序。这个过程是单向的，但是你可以通过在子窗口 B 中添加一个 <code>iframe</code> 标签，这个 <code>iframe</code> 的 <code>src</code> 域名与父窗口域名相同的，然后在这个 <code>iframe</code> 页面内调用父窗口 A 的函数，此时是不存在跨域的。</p>
           </div>
 
-<h2 id="window-name"><a href="#window-name" class="headerlink" title="window.name"></a>window.name</h2><div class="note info">
+<h3 id="window-name"><a href="#window-name" class="headerlink" title="window.name"></a>window.name</h3><div class="note info">
             <p><code>window</code> 对象的 <code>name</code> 属性有一个独特之处，一个窗口只要一直存在并且没有被主动的更改 <code>name</code> 属性，那么它的 <code>name</code> 属性会一直保持不变。即窗口的 URL（或 <code>iframe</code> 的 <code>src</code>）随意变化，<code>name</code> 属性也不会变。<code>name</code> 属性内存最大可以支持 2MB，所以可以通过它来传递数据。</p>
           </div>
 
-<h2 id="window-postMessage"><a href="#window-postMessage" class="headerlink" title="window.postMessage"></a>window.postMessage</h2><p>通过 <code>window.postMessage</code> 方法和 message 事件完成数据的传递。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<h3 id="window-postMessage"><a href="#window-postMessage" class="headerlink" title="window.postMessage"></a>window.postMessage</h3><p>通过 <code>window.postMessage</code> 方法和 message 事件完成数据的传递。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000011145364">前端常见跨域解决方案（全）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2016/04/cors.html">跨域资源共享 CORS 详解</a></li>
 </ul>
 
     </div>
@@ -283,6 +307,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/CC/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" rel="tag"># 网络请求</a>
+          </div>
 
         
 
@@ -355,7 +382,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E8%B7%A8%E5%9F%9F"><span class="nav-number">1.</span> <span class="nav-text">网络请求跨域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%9E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E8%B7%A8%E5%9F%9F"><span class="nav-number">2.</span> <span class="nav-text">非网络请求跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#document-domain"><span class="nav-number">2.1.</span> <span class="nav-text">document.domain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#location-hash"><span class="nav-number">2.2.</span> <span class="nav-text">location.hash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#window-name"><span class="nav-number">2.3.</span> <span class="nav-text">window.name</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#window-postMessage"><span class="nav-number">2.4.</span> <span class="nav-text">window.postMessage</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E8%B7%A8%E5%9F%9F"><span class="nav-number">1.</span> <span class="nav-text">网络请求跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CORS-Cross-origin-resource-sharing"><span class="nav-number">2.</span> <span class="nav-text">CORS(Cross-origin resource sharing)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%88%86%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">请求分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E8%AF%B7%E6%B1%82"><span class="nav-number">2.2.</span> <span class="nav-text">简单请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Access-Control-Allow-Origin"><span class="nav-number">2.2.1.</span> <span class="nav-text">Access-Control-Allow-Origin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Access-Control-Allow-Credentials"><span class="nav-number">2.2.2.</span> <span class="nav-text">Access-Control-Allow-Credentials</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Access-Control-Expose-Headers"><span class="nav-number">2.2.3.</span> <span class="nav-text">Access-Control-Expose-Headers</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E7%AE%80%E5%8D%95%E8%A6%81%E6%B1%82"><span class="nav-number">2.3.</span> <span class="nav-text">非简单要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E6%A3%80%E8%AF%B7%E6%B1%82"><span class="nav-number">2.4.</span> <span class="nav-text">预检请求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E8%B7%A8%E5%9F%9F"><span class="nav-number">3.</span> <span class="nav-text">非网络请求跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#document-domain"><span class="nav-number">3.1.</span> <span class="nav-text">document.domain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location-hash"><span class="nav-number">3.2.</span> <span class="nav-text">location.hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-name"><span class="nav-number">3.3.</span> <span class="nav-text">window.name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-postMessage"><span class="nav-number">3.4.</span> <span class="nav-text">window.postMessage</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -369,20 +396,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-count">80</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/CC/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/CC/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
