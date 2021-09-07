@@ -24,11 +24,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="第一部分 作用域和闭包">
 <meta property="og:url" content="https://cengchengcc.github.io/CC/posts/107d86cd.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="CC的学习小黑屋">
 <meta property="og:description" content="几乎所有编程语言最基本的功能之一，就是能够储存变量当中的值，并且能在之后对这个值进行访问或修改。事实上，正是这种储存和访问变量的值的能力将状态带给了程序。作用域：一套设计良好的规则来存储变量，并且之后可以方便地找到这些变量。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-21T03:50:25.000Z">
-<meta property="article:modified_time" content="2021-09-04T15:38:18.875Z">
+<meta property="article:modified_time" content="2021-09-05T16:21:59.085Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>第一部分 作用域和闭包 | Hexo</title>
+  <title>第一部分 作用域和闭包 | CC的学习小黑屋</title>
   
 
 
@@ -97,7 +97,7 @@
 
     <a href="/CC/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">CC的学习小黑屋</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -205,7 +205,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="CC的学习小黑屋">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-04 23:38:18" itemprop="dateModified" datetime="2021-09-04T23:38:18+08:00">2021-09-04</time>
+                <time title="Modified: 2021-09-06 00:21:59" itemprop="dateModified" datetime="2021-09-06T00:21:59+08:00">2021-09-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -311,6 +311,20 @@
 </li>
 </ol>
 <h4 id="执行阶段"><a href="#执行阶段" class="headerlink" title="执行阶段"></a>执行阶段</h4><p>未进入执行阶段之前，变量对象中的属性都不能访问,但是进入执行阶段之后，变量对象(VO)转变为了活动对象(AO)，里面的属性都能被访问了，然后开始进行执行阶段的操作。（变量对象和活动对象其实都是同一个对象，只是处于执行上下文的不同生命周期）</p>
+<h3 id="作用域及作用域链"><a href="#作用域及作用域链" class="headerlink" title="作用域及作用域链"></a>作用域及作用域链</h3><p>作用域是指在程序中定义变量的区域，控制着变量和函数的可见性和生命周期。</p>
+<p>在ES6阶段之前，作用域分为两种：全局作用域和函数作用域；进行ES6之后，作用域分为：全局作用域、函数作用域和块级作用域。</p>
+<ol>
+<li>全局作用域： 在该作用域中的对象在代码的任何地方都能访问，其生命周期伴随着页面的生命周期。</li>
+<li>函数作用域：在函数内部定义的变量或者函数，并且定义的变量或者函数只能在函数内部被访问。在函数执行结束之后，函数内部定义的变量会被销毁。</li>
+<li>块级作用域：在ES6阶段，出现了块的概念，新增了块级作用域，同时新增了let、const命令。块级作用域简言之就是使用一对大括号{}包裹的一段代码，通过单独的大括号、if块、while块、for块、try/catch/finallyd等都会产生块级作用域。</li>
+</ol>
+<p>作用域链</p>
+<p>在每个执行上下文的变量环境中，都包含一个outer引用指向外部的指向上下文。当在查找一个变量的时候，如果在当前的变量环境中没有找到，js引擎会继续在outer所指向的执行上下文中查找，把这个查找的链条称为作用域链。（作用域链可以理解为一组对象列表，包含 父级和自身的变量对象，因此我们便能通过作用域链访问到父级里声明的变量或者函数。）</p>
+<p>组成：</p>
+<ol>
+<li>[[scope]]属性：指向父级变量对象和作用域链，也就是包含了父级的[[scope]]和AO</li>
+<li>AO：自身活动对象，也就是该执行上下文中的变量对象。</li>
+</ol>
 <h3 id="引擎、编译器、作用域"><a href="#引擎、编译器、作用域" class="headerlink" title="引擎、编译器、作用域"></a>引擎、编译器、作用域</h3><ul>
 <li>引擎：从头到尾负责整个 JavaScript 程序的编译及执行过程。</li>
 <li>编译器：负责语法分析及代码生成等脏活累活（详见前一节的内容）。</li>
@@ -318,8 +332,10 @@
 </ul>
 <h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="闭包的特点"><a href="#闭包的特点" class="headerlink" title="闭包的特点"></a>闭包的特点</h3><p>（1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
 <p>（2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
+<h3 id="回收闭包"><a href="#回收闭包" class="headerlink" title="回收闭包"></a>回收闭包</h3><p>如果闭包引入的函数是一个全局变量，那么闭包会一直存在直到页面关闭；但如果这个闭包以后不再使用的话，就会造成内存泄露；<br>如果引用闭包的函数是一个局部变量，等函数销毁后，在下次JavaScript引擎执行垃圾回收时，判断闭包内容已经不再被使用，则js引擎的垃圾回收器就会进行回收。</p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039380905">JS执行过程详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/column/6961051238997688350">前端百题斩</a></li>
 </ul>
 
     </div>
@@ -404,7 +420,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">作用域是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">编译原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript%E4%BB%A3%E7%A0%81%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">JavaScript代码的执行过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">函数执行过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">1.4.</span> <span class="nav-text">执行上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.5.</span> <span class="nav-text">变量对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%98%B6%E6%AE%B5"><span class="nav-number">1.5.1.</span> <span class="nav-text">创建阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%98%B6%E6%AE%B5"><span class="nav-number">1.5.2.</span> <span class="nav-text">执行阶段</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E6%93%8E%E3%80%81%E7%BC%96%E8%AF%91%E5%99%A8%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.6.</span> <span class="nav-text">引擎、编译器、作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text">闭包的特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">3.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">作用域是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">编译原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript%E4%BB%A3%E7%A0%81%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">JavaScript代码的执行过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">函数执行过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">1.4.</span> <span class="nav-text">执行上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.5.</span> <span class="nav-text">变量对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%98%B6%E6%AE%B5"><span class="nav-number">1.5.1.</span> <span class="nav-text">创建阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%98%B6%E6%AE%B5"><span class="nav-number">1.5.2.</span> <span class="nav-text">执行阶段</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%8F%8A%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE"><span class="nav-number">1.6.</span> <span class="nav-text">作用域及作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E6%93%8E%E3%80%81%E7%BC%96%E8%AF%91%E5%99%A8%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.7.</span> <span class="nav-text">引擎、编译器、作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text">闭包的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E6%94%B6%E9%97%AD%E5%8C%85"><span class="nav-number">2.2.</span> <span class="nav-text">回收闭包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">3.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -418,20 +434,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/CC/archives/">
         
-          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/CC/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/CC/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
