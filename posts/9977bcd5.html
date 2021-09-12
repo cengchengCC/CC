@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25681734818441f7a16ea6cdc0e0bbc3~tplv-k3u1fbpfcp-watermark.awebp">
 <meta property="article:published_time" content="2021-05-31T11:46:11.000Z">
-<meta property="article:modified_time" content="2021-09-05T16:21:58.364Z">
+<meta property="article:modified_time" content="2021-09-10T05:29:55.491Z">
 <meta property="article:author" content="CC">
 <meta property="article:tag" content="Browser">
 <meta name="twitter:card" content="summary">
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-06 00:21:58" itemprop="dateModified" datetime="2021-09-06T00:21:58+08:00">2021-09-06</time>
+                <time title="Modified: 2021-09-10 13:29:55" itemprop="dateModified" datetime="2021-09-10T13:29:55+08:00">2021-09-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -254,6 +254,18 @@
         <p>单线程的浏览器实现异步的方法</p>
 <span id="more"></span>
 
+<h2 id="浏览器多进程"><a href="#浏览器多进程" class="headerlink" title="浏览器多进程"></a>浏览器多进程</h2><p>进程和线程的主要差别在于它们是不同的操作系统资源管理方式。进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响，而线程只是一个进程中的不同执行路径。线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉，所以多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些。<br>但对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程。</p>
+<ul>
+<li>一个程序至少有一个进程,一个进程至少有一个线程</li>
+<li>线程的划分尺度小于进程，使得多线程程序的并发性高</li>
+<li>进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率</li>
+<li>线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。 但是线程不能够独立执行， 必须依存在应用程序中，由应用程序提供多个线程执行控制</li>
+<li>从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。</li>
+</ul>
+<div class="note info">
+            <ul><li>Browser进程：浏览器的主进程（负责协调、主控），只有一个。作用有<br>负责浏览器界面显示，与用户交互。如前进，后退等<br>负责各个页面的管理，创建和销毁其他进程<br>将Renderer进程得到的内存中的Bitmap，绘制到用户界面上<br>网络资源的管理，下载等</li><li>第三方插件进程：每种类型的插件对应一个进程，仅当使用该插件时才创建</li><li>GPU进程：最多一个，用于3D绘制等</li><li>浏览器渲染进程（浏览器内核）（Renderer进程，内部是多线程的）：默认每个Tab页面一个进程，互不影响。主要作用为页面渲染，脚本执行，事件处理等</li></ul>
+          </div>
+
 <h2 id="浏览器内核（渲染进程）"><a href="#浏览器内核（渲染进程）" class="headerlink" title="浏览器内核（渲染进程）"></a>浏览器内核（渲染进程）</h2><div class="note info">
             <ul><li>GUI渲染线程<ul><li>负责渲染页面，布局和绘制</li><li>页面需要重绘和回流时，该线程就会执行</li><li>与js引擎线程互斥，防止渲染结果不可预期</li></ul></li><li>JS引擎线程<ul><li>负责处理解析和执行javascript脚本程序</li><li>只有一个JS引擎线程（单线程）</li><li>与GUI渲染线程互斥，防止渲染结果不可预期</li></ul></li><li>事件触发线程<ul><li>用来控制事件循环（鼠标点击、setTimeout、ajax等）</li><li>当事件满足触发条件时，将事件放入到JS引擎所在的执行队列中</li></ul></li><li>定时触发器线程<ul><li>setInterval与setTimeout所在的线程</li><li>定时任务并不是由JS引擎计时的，是由定时触发线程来计时的</li><li>计时完毕后，通知事件触发线程</li></ul></li><li>异步http请求线程<ul><li>浏览器有一个单独的线程用于处理AJAX请求</li><li>当请求完成时，若有回调函数，通知事件触发线程</li></ul></li></ul>
           </div>
@@ -262,6 +274,14 @@
 <h3 id="GUI-渲染线程与-JS-引擎线程互斥"><a href="#GUI-渲染线程与-JS-引擎线程互斥" class="headerlink" title="GUI 渲染线程与 JS 引擎线程互斥"></a>GUI 渲染线程与 JS 引擎线程互斥</h3><p>JS 是可以操作 DOM 的，如果同时修改元素属性并同时渲染界面(即 JS线程和UI线程同时运行)， 那么渲染线程前后获得的元素就可能冲突了。</p>
 <p>为防止渲染冲突，浏览器规定<em>GUI渲染线程</em>和<em>JS引擎线程</em>为互斥关系， 当<em>JS引擎线程</em>执行时GUI渲染线程会被挂起，<em>GUI更新</em>则会被保存在一个队列中等待<em>JS引擎线程</em>空闲时立即被执行。</p>
 <h3 id="JS阻塞页面加载"><a href="#JS阻塞页面加载" class="headerlink" title="JS阻塞页面加载"></a>JS阻塞页面加载</h3><p>从上述的互斥关系，可以推导出，JS如果执行时间过长就会阻塞页面。假设JS引擎正在进行巨量的计算，此时就算GUI有更新，也会被保存到队列中，等待JS引擎空闲后执行。所以，要尽量避免JS执行时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞。</p>
+<h2 id="Browser进程和浏览器内核（Renderer进程）的通信过程"><a href="#Browser进程和浏览器内核（Renderer进程）的通信过程" class="headerlink" title="Browser进程和浏览器内核（Renderer进程）的通信过程"></a>Browser进程和浏览器内核（Renderer进程）的通信过程</h2><ul>
+<li>Browser进程收到用户请求，首先需要获取页面内容（譬如通过网络下载资源），随后将该任务通过RendererHost接口传递给Render进程</li>
+<li>Renderer进程的Renderer接口收到消息，简单解释后，交给渲染线程，然后开始渲染</li>
+<li>渲染线程接收请求，加载网页并渲染网页，这其中可能需要Browser进程获取资源和需要GPU进程来帮助渲染</li>
+<li>当然可能会有JS线程操作DOM（这样可能会造成回流并重绘）</li>
+<li>最后Render进程将结果传递给Browser进程</li>
+<li>Browser进程接收到结果并将结果绘制出来</li>
+</ul>
 <h2 id="从-Event-Loop-看-JS-的运行机制"><a href="#从-Event-Loop-看-JS-的运行机制" class="headerlink" title="从 Event Loop 看 JS 的运行机制"></a>从 Event Loop 看 JS 的运行机制</h2><div class="note info">
             <ul><li>JS 分为同步任务和异步任务</li><li>同步任务都在JS引擎线程上执行，形成一个执行栈</li><li>事件触发线程管理一个任务队列，异步任务触发条件达成，将回调事件放到任务队列中</li><li>执行栈中所有同步任务执行完毕，此时JS引擎线程空闲，系统会读取任务队列，将可运行的异步任务回调事件添加到执行栈中，开始执行</li></ul>
           </div>
@@ -392,7 +412,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%EF%BC%88%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">浏览器内核（渲染进程）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GUI-%E6%B8%B2%E6%9F%93%E7%BA%BF%E7%A8%8B%E4%B8%8E-JS-%E5%BC%95%E6%93%8E%E7%BA%BF%E7%A8%8B%E4%BA%92%E6%96%A5"><span class="nav-number">1.1.</span> <span class="nav-text">GUI 渲染线程与 JS 引擎线程互斥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS%E9%98%BB%E5%A1%9E%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD"><span class="nav-number">1.2.</span> <span class="nav-text">JS阻塞页面加载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E-Event-Loop-%E7%9C%8B-JS-%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">从 Event Loop 看 JS 的运行机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%E3%80%81%E5%BE%AE%E4%BB%BB%E5%8A%A1-MacroTask%E3%80%81MicroTask"><span class="nav-number">3.</span> <span class="nav-text">宏任务、微任务(MacroTask、MicroTask)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-Loop"><span class="nav-number">4.</span> <span class="nav-text">Event Loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E7%9A%84%E6%96%B9%E6%A1%88"><span class="nav-number">5.</span> <span class="nav-text">异步的方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%9A%E8%BF%9B%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">浏览器多进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%EF%BC%88%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">浏览器内核（渲染进程）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GUI-%E6%B8%B2%E6%9F%93%E7%BA%BF%E7%A8%8B%E4%B8%8E-JS-%E5%BC%95%E6%93%8E%E7%BA%BF%E7%A8%8B%E4%BA%92%E6%96%A5"><span class="nav-number">2.1.</span> <span class="nav-text">GUI 渲染线程与 JS 引擎线程互斥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS%E9%98%BB%E5%A1%9E%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD"><span class="nav-number">2.2.</span> <span class="nav-text">JS阻塞页面加载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Browser%E8%BF%9B%E7%A8%8B%E5%92%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%EF%BC%88Renderer%E8%BF%9B%E7%A8%8B%EF%BC%89%E7%9A%84%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">Browser进程和浏览器内核（Renderer进程）的通信过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E-Event-Loop-%E7%9C%8B-JS-%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">从 Event Loop 看 JS 的运行机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%E3%80%81%E5%BE%AE%E4%BB%BB%E5%8A%A1-MacroTask%E3%80%81MicroTask"><span class="nav-number">5.</span> <span class="nav-text">宏任务、微任务(MacroTask、MicroTask)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-Loop"><span class="nav-number">6.</span> <span class="nav-text">Event Loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E7%9A%84%E6%96%B9%E6%A1%88"><span class="nav-number">7.</span> <span class="nav-text">异步的方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">8.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
